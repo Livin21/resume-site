@@ -44,6 +44,14 @@
   .tech-icon:nth-child(4) {
     animation-delay: 1.5s;
   }
+  
+  .tech-icon:nth-child(5) {
+    animation-delay: 2s;
+  }
+  
+  .tech-icon:nth-child(6) {
+    animation-delay: 2.5s;
+  }
 }
 
 @layer utilities {
