@@ -1,6 +1,6 @@
 # Livin Mathew - Resume Website
 
-A modern, responsive resume website built with Tailwind CSS, showcasing the professional experience and projects of Livin Mathew, an AI-driven Solutions Architect.
+A modern, responsive resume website built with Tailwind CSS, showcasing the professional experience and projects of Livin Mathew, an Solutions Architect.
 
 ## 🚀 Features
 

@@ -1,17 +1,17 @@
 {
-    "name": "Livin Mathew - AI Solutions Architect",
-    "short_name": "Livin Mathew",
-    "description": "AI-driven Solutions Architect with 10+ years of experience",
-    "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#2563eb",
-    "orientation": "portrait-primary",
-    "icons": [
-        {
-            "src": "./assets/ProfilePic.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ]
+  "name": "Livin Mathew - AI Solutions Architect",
+  "short_name": "Livin Mathew",
+  "description": "Solutions Architect with 10+ years of experience",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./assets/ProfilePic.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
 }
