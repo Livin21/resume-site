@@ -6,7 +6,7 @@
 
     <!-- Homepage -->
     <url>
-        <loc>https://livinmathew.dev/</loc>
+        <loc>https://livinmathew.com/</loc>
         <lastmod>2025-07-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
     <!-- Projects Page -->
     <url>
-        <loc>https://livinmathew.dev/projects.html</loc>
+        <loc>https://livinmathew.com/projects.html</loc>
         <lastmod>2025-07-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
     <!-- About Section -->
     <url>
-        <loc>https://livinmathew.dev/#about</loc>
+        <loc>https://livinmathew.com/#about</loc>
         <lastmod>2025-07-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -30,7 +30,7 @@
 
     <!-- Experience Section -->
     <url>
-        <loc>https://livinmathew.dev/#experience</loc>
+        <loc>https://livinmathew.com/#experience</loc>
         <lastmod>2025-07-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -38,7 +38,7 @@
 
     <!-- Contact Section -->
     <url>
-        <loc>https://livinmathew.dev/#contact</loc>
+        <loc>https://livinmathew.com/#contact</loc>
         <lastmod>2025-07-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
