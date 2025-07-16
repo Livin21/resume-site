@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found - Livin Mathew's Resume Site">
+    <title>404 - Page Not Found | Livin Mathew</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-2xl mx-auto text-center">
+            <div class="mb-8">
+                <i class="fas fa-exclamation-triangle text-8xl text-yellow-500 mb-6"></i>
+                <h1 class="text-6xl md:text-8xl font-bold mb-4 text-primary">404</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-4">Page Not Found</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="./index.html" class="btn btn-primary">
+                    <i class="fas fa-home mr-2"></i>Go Home
+                </a>
+                <a href="./projects.html" class="btn btn-secondary">
+                    <i class="fas fa-folder mr-2"></i>View Projects
+                </a>
+                <a href="mailto:livinmathew99@gmail.com" class="btn bg-gray-700 text-white hover:bg-gray-600">
+                    <i class="fas fa-envelope mr-2"></i>Contact Me
+                </a>
+            </div>
+            
+            <div class="text-gray-500 dark:text-gray-400">
+                <p>Looking for something specific? Feel free to reach out!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality (for consistency)
+        const html = document.documentElement;
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.classList.toggle('dark', savedTheme === 'dark');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+    </script>
+</body>
+</html>

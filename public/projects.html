@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Livin Mathew's Projects - Open source contributions and innovative solutions including KloudArch, CoverCraft AI, and create-sequelize-express.">
+    <title>Projects - Livin Mathew</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-primary">
+                    <a href="./index.html">LM</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="./index.html" class="hover:text-primary transition-colors">Home</a>
+                    <a href="./index.html#about" class="hover:text-primary transition-colors">About</a>
+                    <a href="./index.html#experience" class="hover:text-primary transition-colors">Experience</a>
+                    <a href="./projects.html" class="text-primary font-medium">Projects</a>
+                    <a href="./index.html#contact" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-sun dark:hidden"></i>
+                    <i class="fas fa-moon hidden dark:block"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Projects & Open Source
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Innovative solutions and contributions to the developer community
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                <!-- KloudArch -->
+                <div class="card group">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-6xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-3">KloudArch</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Revolutionary no-code GUI that converts architecture diagrams directly into Terraform infrastructure code. 
+                            Currently powering pilot clients in the healthcare sector, enabling rapid cloud deployment without manual coding.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Terraform</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GUI</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">No-Code</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-3">
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-users mr-1"></i>
+                                Pilot Clients
+                            </span>
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-rocket mr-1"></i>
+                                Production
+                            </span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
+                            <i class="fas fa-external-link-alt text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CoverCraft AI -->
+                <div class="card group">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-6xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-3">CoverCraft AI</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Chrome extension that leverages OpenAI's GPT models to generate personalized, tailored cover letters. 
+                            Analyzes job descriptions and user profiles to create compelling applications that stand out.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">OpenAI</span>
+                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Chrome Extension</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GPT</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">AI</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-3">
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-download mr-1"></i>
+                                Chrome Store
+                            </span>
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-star mr-1"></i>
+                                AI-Powered
+                            </span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
+                            <i class="fas fa-external-link-alt text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- create-sequelize-express -->
+                <div class="card group">
+                    <div class="mb-6">
+                        <div class="w-full h-48 bg-gradient-to-br from-red-500 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fab fa-npm text-white text-6xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-primary mb-3">create-sequelize-express</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Popular NPM scaffolding tool with over 2,000 downloads. Provides a complete boilerplate for Express.js applications 
+                            with Sequelize ORM, authentication, and best practices built-in.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">NPM</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Express.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Sequelize</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex space-x-3">
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-download mr-1"></i>
+                                2K+ Downloads
+                            </span>
+                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                                <i class="fas fa-code mr-1"></i>
+                                Open Source
+                            </span>
+                        </div>
+                        <a href="https://www.npmjs.com/package/create-sequelize-express" target="_blank" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
+                            <i class="fas fa-external-link-alt text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Contributions -->
+    <section class="py-20 px-4 bg-white dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Technical Contributions</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Open Source Impact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">NPM Downloads</span>
+                            <span class="font-semibold text-primary">2,000+</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">GitHub Stars</span>
+                            <span class="font-semibold text-primary">50+</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">Active Projects</span>
+                            <span class="font-semibold text-primary">3</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600 dark:text-gray-300">Production Users</span>
+                            <span class="font-semibold text-primary">Healthcare Pilots</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Technology Stack</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-medium mb-2">Backend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-sm">Node.js</span>
+                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-sm">Go</span>
+                                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-sm">Python</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Frontend</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded text-sm">React</span>
+                                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-sm">Next.js</span>
+                                <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded text-sm">Tailwind</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-medium mb-2">Cloud & DevOps</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded text-sm">AWS</span>
+                                <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded text-sm">Terraform</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-sm">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8">Interested in Collaborating?</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                I'm always open to discussing new projects, innovative ideas, and opportunities to contribute to the developer community.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:livinmathew99@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope mr-2"></i>Get in Touch
+                </a>
+                <a href="https://github.com/livin21" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github mr-2"></i>View GitHub
+                </a>
+                <a href="./index.html#contact" class="btn bg-gray-700 text-white hover:bg-gray-600">
+                    <i class="fas fa-user mr-2"></i>Back to Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Livin Mathew. All rights reserved.</p>
+            <p class="text-gray-400 mt-2">Built with Tailwind CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            html.classList.toggle('dark', savedTheme === 'dark');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            html.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Add hover effects to project cards
+        document.querySelectorAll('.card.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
