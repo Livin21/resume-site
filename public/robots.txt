@@ -11,6 +11,7 @@ Crawl-delay: 1
 Disallow: /assets/
 Disallow: /*.css$
 Disallow: /*.js$
+Disallow: /404.html
 
 # Allow specific important assets
 Allow: /assets/ProfilePic.png
