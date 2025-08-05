@@ -1,0 +1,176 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[11pt]{article}
+% Set margins - increased for better readability
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb}
+% Use a more readable font - Palatino
+\usepackage{palatino}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{4pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Reduce section spacing
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{12pt plus 2pt minus 2pt}{6pt plus 2pt minus 2pt}
+\usepackage{xcolor}
+% Define custom color for headings
+\definecolor{headingcolor}{HTML}{e95758}
+% Configure section formatting with color
+\titleformat{\section}{\large\bfseries\color{headingcolor}}{\thesection}{1em}{}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+% Header Section
+\begin{center}
+{\Large \textbf{LIVIN MATHEW}}
+\vspace{2pt}
+
+\textbf{Solutions Architect}
+\vspace{2pt}
+
++(91) 974414 2626 | Cochin, India | livinmathew99@gmail.com
+\end{center}
+
+\vspace{8pt}
+
+% Summary
+\textit{Solutions Architect with 10+ years of transforming ideas into scalable products. Expert in semantic search, Retrieval Augmented Generation (RAG), and serverless cloud on AWS. Entrepreneurial leader proficient in Go, Node.js, Python, and modern frontend stacks, with a record of accelerating delivery, hardening security, and growing usage to millions of users.}
+
+\vspace{8pt}
+
+% Work History Section
+\section*{WORK HISTORY}
+
+\textbf{TEKSystems (Remote @ Sage, UK) - Product Lead}
+
+\textit{Jan 2024 -- Present}
+
+\begin{itemize}
+\item Launched AWS Bedrock powered semantic search: Python/Fargate crawlers stream 500k+ docs nightly into an OpenSearch vector index, boosting answer relevance by 30\%.
+\item Built a serverless RAG pipeline (Step Functions + Lambda) that cut proposal prep from 2h to $\sim$10 min.
+\item Authored modular CDK/SAM stacks and GitHub Actions pipelines for one click promotions, shrinking deployment lead time from 1 day to 1 hour.
+\item Delivered WCAG compliant React/Next.js front-ends that surface live Bedrock insights with Lighthouse scores $\sim$95.
+\item Hardened FastAPI endpoints with OIDC and structured logging, driving zero security findings at audit.
+\item Developed a Go microservice using gRPC for realtime embedding sync, reducing vector refresh latency by 70\%.
+\end{itemize}
+
+\textbf{ChiSquare Labs (Remote @ SiteRx, US) - Solutions Architect}
+
+\textit{Apr 2023 -- Dec 2023}
+
+\begin{itemize}
+\item Led migration of a monolith to AWS serverless (Lambda, DynamoDB, EventBridge), boosting scalability and cutting infra cost 35\%.
+\item Accelerated service delivery by creating an IaC template using AWS CDK that automated logging and observability configurations; template is now used by 20+ engineers across the organization.
+\end{itemize}
+
+\textbf{Metric Tree Labs (Remote @ SiteRx, US) - Solutions Architect}
+
+\textit{Jun 2020 -- Mar 2023}
+
+\begin{itemize}
+\item Engineered a HIPAA compliant data pipeline that passed HITRUST audit on first attempt.
+\item Enforced coding standards and guided refactors that eliminated 95\% of legacy tech debt.
+\item Managed cross functional teams delivering Node.js \& React apps, lifting client revenue 40\% and developer productivity 30\%.
+\end{itemize}
+
+\textbf{Riafy Technologies (Cochin, India) - Software Architect}
+
+\textit{Mar 2019 -- May 2020}
+
+\begin{itemize}
+\item Scaled Android Cookbook app to 10M+ downloads and optimized a legacy AngularJS app, achieving a 90\% performance gain.
+\end{itemize}
+
+\textbf{Lmntrx Tech (Cochin, India) - CEO \& Co-Founder}
+
+\textit{Nov 2014 -- Mar 2019}
+
+\begin{itemize}
+\item Bootstrapped startup to acqui-hiring; cut expenses 25\% and tripled traffic through strategic partnerships and data driven growth.
+\end{itemize}
+
+% Skills Section
+\section*{SKILLS}
+
+\textbf{Languages \& Frameworks}
+
+Go · Node.js (TS/JS) · Python · Java/Kotlin · React · Next.js · Tailwind CSS
+
+\textbf{Cloud \& DevOps}
+
+AWS (Bedrock, Lambda, API Gateway, DynamoDB, S3, EventBridge, Step Functions, OpenSearch, SQS, SNS) · CDK · SAM · Terraform · GitHub Actions · Docker · Serverless Architectures
+
+\textbf{Data \& Analytics}
+
+Vector DBs (OpenSearch k-NN, pgvector) · PostgreSQL · MySQL · MongoDB
+
+\section*{PROJECTS \& OPEN SOURCE}
+
+\textbf{KloudArch} -- No-code GUI converting architecture diagrams to Terraform; powering pilot clients in healthcare.
+
+\textbf{CoverCraft AI} -- Chrome extension that generates tailored cover letters with OpenAI.
+
+\textbf{create-sequelize-express} -- NPM scaffolding tool (>2k downloads).
+
+% Education Section
+\section*{EDUCATION}
+
+\textbf{B.Tech, Computer Science} -- MG University, Kerala (coursework completed through 8th semester)
+
+% Languages Section
+\section*{LANGUAGES}
+
+English · Malayalam · Hindi
+
+\end{document}
