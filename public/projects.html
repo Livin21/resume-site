@@ -33,8 +33,8 @@
     <link rel="manifest" href="./manifest.json">
     
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Stylesheets -->
     <link href="./style.css" rel="stylesheet">
@@ -88,253 +88,250 @@
     }
     </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+<body class="bg-slate-50 dark:bg-dark-900 text-slate-900 dark:text-slate-50 font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+    
+    <!-- Background Blobs -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"></div>
+        <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/3 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-4000"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="font-bold text-xl text-primary">
-                    <a href="./index.html">LM</a>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="./index.html" class="hover:text-primary transition-colors">Home</a>
-                    <a href="./index.html#about" class="hover:text-primary transition-colors">About</a>
-                    <a href="./index.html#experience" class="hover:text-primary transition-colors">Experience</a>
-                    <a href="./projects.html" class="text-primary font-medium">Projects</a>
-                    <a href="./index.html#contact" class="hover:text-primary transition-colors">Contact</a>
-                </div>
-                <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                    <i class="fas fa-sun dark:hidden"></i>
-                    <i class="fas fa-moon hidden dark:block"></i>
-                </button>
+    <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-5xl z-50 transition-all duration-300">
+        <div class="glass rounded-full px-6 py-3 flex justify-between items-center">
+            <div class="font-heading font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <a href="./index.html">LM</a>
             </div>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="./index.html" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Home</a>
+                <a href="./index.html#about" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                <a href="./index.html#experience" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Experience</a>
+                <a href="./projects.html" class="text-sm font-bold text-primary">Projects</a>
+                <a href="./index.html#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
+            </div>
+
+            <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+                <i class="fas fa-sun dark:hidden text-lg"></i>
+                <i class="fas fa-moon hidden dark:block text-lg"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="mb-8">
-                <!-- Profile Picture (smaller version for projects page) -->
-                <div class="relative inline-block mb-6">
-                    <div class="w-24 h-24 mx-auto relative">
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-20"></div>
-                        <img src="./assets/ProfilePic.png" 
-                             alt="Livin Mathew" 
-                             class="w-full h-full object-cover rounded-full shadow-lg">
-                    </div>
-                </div>
-                
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Projects & Open Source
-                </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                    Innovative solutions and contributions to the developer community
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="py-10 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-                <!-- KloudArch -->
-                <div class="card group">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-cloud text-white text-6xl"></i>
+    <main class="pt-32">
+        <!-- Hero Section -->
+        <section class="py-12 px-4">
+            <div class="max-w-6xl mx-auto text-center">
+                <div class="mb-12 animate-fade-in">
+                    <!-- Profile Picture -->
+                    <div class="relative inline-block mb-8 group">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                        <div class="relative w-32 h-32 mx-auto">
+                            <div class="absolute inset-0 rounded-full border-2 border-primary/30 border-t-primary animate-spin-slow"></div>
+                            <div class="absolute inset-2 rounded-full border-2 border-secondary/30 border-b-secondary animate-spin-reverse-slow"></div>
+                            <img src="./assets/ProfilePic.png" 
+                                 alt="Livin Mathew" 
+                                 class="w-full h-full object-cover rounded-full border-4 border-white dark:border-dark-800 shadow-2xl relative z-10">
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-3">KloudArch</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">
+                        Projects & <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Open Source</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                        Innovative solutions and contributions to the developer community, built with modern technologies and best practices.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="py-12 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                    <!-- KloudArch -->
+                    <div class="glass-card p-6 flex flex-col h-full group">
+                        <div class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 h-48 flex items-center justify-center">
+                            <i class="fas fa-cloud text-6xl text-primary/50 group-hover:scale-110 transition-transform duration-500"></i>
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">KloudArch</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
                             Revolutionary no-code GUI that converts architecture diagrams directly into Terraform infrastructure code. 
-                            Currently powering pilot clients in the healthcare sector, enabling rapid cloud deployment without manual coding.
+                            Currently powering pilot clients in the healthcare sector.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Terraform</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GUI</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">No-Code</span>
-                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">IaC</span>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">Terraform</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300">GUI</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300">No-Code</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700">
+                            <div class="flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center"><i class="fas fa-users mr-2"></i>Pilot Clients</span>
+                                <span class="flex items-center"><i class="fas fa-rocket mr-2"></i>Production</span>
+                            </div>
+                            <a href="#" class="text-slate-400 hover:text-primary transition-colors text-lg">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-users mr-1"></i>
-                                Pilot Clients
-                            </span>
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-rocket mr-1"></i>
-                                Production
-                            </span>
-                        </div>
-                        <a href="#" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
-                            <i class="fas fa-external-link-alt text-lg"></i>
-                        </a>
-                    </div>
-                </div>
 
-                <!-- CoverCraft AI -->
-                <div class="card group">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-green-500 to-blue-600 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fas fa-robot text-white text-6xl"></i>
+                    <!-- CoverCraft AI -->
+                    <div class="glass-card p-6 flex flex-col h-full group">
+                        <div class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-green-500/20 to-blue-500/20 h-48 flex items-center justify-center">
+                            <i class="fas fa-robot text-6xl text-secondary/50 group-hover:scale-110 transition-transform duration-500"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-3">CoverCraft AI</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors">CoverCraft AI</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
                             Chrome extension that leverages OpenAI's GPT models to generate personalized, tailored cover letters. 
-                            Analyzes job descriptions and user profiles to create compelling applications that stand out.
+                            Analyzes job descriptions and user profiles.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">OpenAI</span>
-                            <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">Chrome Extension</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">GPT</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">AI</span>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300">OpenAI</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300">Chrome</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300">GPT</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700">
+                            <div class="flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center"><i class="fas fa-download mr-2"></i>Chrome Store</span>
+                                <span class="flex items-center"><i class="fas fa-star mr-2"></i>AI-Powered</span>
+                            </div>
+                            <a href="#" class="text-slate-400 hover:text-secondary transition-colors text-lg">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-download mr-1"></i>
-                                Chrome Store
-                            </span>
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-star mr-1"></i>
-                                AI-Powered
-                            </span>
-                        </div>
-                        <a href="#" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
-                            <i class="fas fa-external-link-alt text-lg"></i>
-                        </a>
-                    </div>
-                </div>
 
-                <!-- create-sequelize-express -->
-                <div class="card group">
-                    <div class="mb-6">
-                        <div class="w-full h-48 bg-gradient-to-br from-red-500 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
-                            <i class="fab fa-npm text-white text-6xl"></i>
+                    <!-- create-sequelize-express -->
+                    <div class="glass-card p-6 flex flex-col h-full group">
+                        <div class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 h-48 flex items-center justify-center">
+                            <i class="fab fa-npm text-6xl text-accent/50 group-hover:scale-110 transition-transform duration-500"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold text-primary mb-3">create-sequelize-express</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">create-sequelize-express</h3>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
                             Popular NPM scaffolding tool with over 2,000 downloads. Provides a complete boilerplate for Express.js applications 
-                            with Sequelize ORM, authentication, and best practices built-in.
+                            with Sequelize ORM.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Node.js</span>
-                            <span class="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full text-sm">NPM</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Express.js</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Sequelize</span>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300">Node.js</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300">NPM</span>
+                            <span class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">Express</span>
                         </div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-3">
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-download mr-1"></i>
-                                2K+ Downloads
-                            </span>
-                            <span class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
-                                <i class="fas fa-code mr-1"></i>
-                                Open Source
-                            </span>
+                        <div class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700">
+                            <div class="flex gap-4 text-sm text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center"><i class="fas fa-download mr-2"></i>2K+ Downloads</span>
+                                <span class="flex items-center"><i class="fas fa-code mr-2"></i>Open Source</span>
+                            </div>
+                            <a href="https://www.npmjs.com/package/create-sequelize-express" target="_blank" class="text-slate-400 hover:text-accent transition-colors text-lg">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
-                        <a href="https://www.npmjs.com/package/create-sequelize-express" target="_blank" class="text-primary hover:text-blue-700 transition-colors group-hover:scale-110 transform">
-                            <i class="fas fa-external-link-alt text-lg"></i>
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Technical Contributions -->
-    <section class="py-20 px-4 bg-white dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Technical Contributions</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="card">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">Open Source Impact</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600 dark:text-gray-300">NPM Downloads</span>
-                            <span class="font-semibold text-primary">2,000+</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600 dark:text-gray-300">GitHub Stars</span>
-                            <span class="font-semibold text-primary">50+</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600 dark:text-gray-300">Active Projects</span>
-                            <span class="font-semibold text-primary">3</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600 dark:text-gray-300">Production Users</span>
-                            <span class="font-semibold text-primary">Healthcare Pilots</span>
+        <!-- Technical Contributions -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="section-title">Technical Contributions</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-primary"></i> Open Source Impact
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                                <span class="text-slate-600 dark:text-slate-300 font-medium">NPM Downloads</span>
+                                <span class="font-bold text-primary text-xl">2,000+</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                                <span class="text-slate-600 dark:text-slate-300 font-medium">GitHub Stars</span>
+                                <span class="font-bold text-primary text-xl">50+</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                                <span class="text-slate-600 dark:text-slate-300 font-medium">Active Projects</span>
+                                <span class="font-bold text-primary text-xl">3</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+                                <span class="text-slate-600 dark:text-slate-300 font-medium">Production Users</span>
+                                <span class="font-bold text-primary text-right">Healthcare Pilots</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="card">
-                    <h3 class="text-2xl font-semibold text-primary mb-4">Technology Stack</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-medium mb-2">Backend</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded text-sm">Node.js</span>
-                                <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-sm">Go</span>
-                                <span class="px-2 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded text-sm">Python</span>
+                    <div class="glass-card p-8">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="fas fa-layer-group text-secondary"></i> Technology Stack
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">Backend</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300">Node.js</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300">Go</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300">Python</span>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <h4 class="font-medium mb-2">Frontend</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded text-sm">React</span>
-                                <span class="px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded text-sm">Next.js</span>
-                                <span class="px-2 py-1 bg-pink-100 dark:bg-pink-900 text-pink-800 dark:text-pink-200 rounded text-sm">Tailwind</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">Frontend</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-300">React</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300">Next.js</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300">Tailwind</span>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <h4 class="font-medium mb-2">Cloud & DevOps</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded text-sm">AWS</span>
-                                <span class="px-2 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded text-sm">Terraform</span>
-                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded text-sm">Docker</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">Cloud & DevOps</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300">AWS</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300">Terraform</span>
+                                    <span class="px-3 py-1.5 text-sm font-medium rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Docker</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action -->
-    <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Interested in Collaborating?</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                I'm always open to discussing new projects, innovative ideas, and opportunities to contribute to the developer community.
-            </p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:livinmathew99@gmail.com" class="btn btn-primary">
-                    <i class="fas fa-envelope mr-2"></i>Get in Touch
-                </a>
-                <a href="https://github.com/livin21" target="_blank" class="btn btn-secondary">
-                    <i class="fab fa-github mr-2"></i>View GitHub
-                </a>
-                <a href="./index.html#contact" class="btn bg-gray-700 text-white hover:bg-gray-600">
-                    <i class="fas fa-user mr-2"></i>Back to Resume
-                </a>
+        <!-- Call to Action -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="section-title">Interested in Collaborating?</h2>
+                <p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto">
+                    I'm always open to discussing new projects, innovative ideas, and opportunities to contribute to the developer community.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:livinmathew99@gmail.com" class="btn btn-primary flex items-center gap-2">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="https://github.com/livin21" target="_blank" class="btn btn-secondary flex items-center gap-2">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>
+                    <a href="./index.html#contact" class="btn bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 flex items-center gap-2">
+                        <i class="fas fa-user"></i> Back to Resume
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p>&copy; 2025 Livin Mathew. All rights reserved.</p>
-            <p class="text-gray-400 mt-2">Built with Tailwind CSS</p>
+    <footer class="bg-white dark:bg-dark-900 border-t border-slate-200 dark:border-slate-800 py-12" role="contentinfo">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-heading font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">LM</span>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">&copy; 2025 Livin Mathew. All rights reserved.</p>
+            </div>
+            
+            <div class="flex items-center gap-6 text-slate-400">
+                <a href="https://github.com/livin21" target="_blank" class="hover:text-primary transition-colors text-xl"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/livin21" target="_blank" class="hover:text-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://medium.com/@livinmathew" target="_blank" class="hover:text-primary transition-colors text-xl"><i class="fab fa-medium"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -343,11 +340,12 @@
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
 
-        // Check for saved theme preference or default to light mode
+        // Check for saved theme preference or default to dark mode
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             html.classList.toggle('dark', savedTheme === 'dark');
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        } else {
+            // Default to dark mode
             html.classList.add('dark');
         }
 
@@ -356,15 +354,26 @@
             localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
 
-        // Add hover effects to project cards
-        document.querySelectorAll('.card.group').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-8px)';
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
             });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
         });
     </script>
 </body>

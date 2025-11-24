@@ -1,153 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
   
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-blue-700;
+  body {
+    @apply font-sans antialiased text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-dark-900;
   }
-  
-  .btn-secondary {
-    @apply bg-secondary text-white hover:bg-teal-700;
-  }
-  
-  .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-200;
-  }
-  
-  .card:hover {
-    @apply shadow-xl transform -translate-y-1;
-  }
-  
-  /* Profile picture animations */
-  .profile-ring {
-    animation: rotate 8s linear infinite;
-  }
-  
-  .tech-icon {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  .tech-icon:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-  
-  .tech-icon:nth-child(3) {
-    animation-delay: 1s;
-  }
-  
-  .tech-icon:nth-child(4) {
-    animation-delay: 1.5s;
-  }
-  
-  .tech-icon:nth-child(5) {
-    animation-delay: 2s;
-  }
-  
-  .tech-icon:nth-child(6) {
-    animation-delay: 2.5s;
-  }
-  
-  /* Interests section animations */
-  .interest-card {
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .interest-card:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  
-  .interest-card:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  
-  .interest-card:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-  
-  .interest-card:nth-child(4) {
-    animation-delay: 0.4s;
-  }
-  
-  .racing-stripes {
-    background: linear-gradient(90deg, 
-      transparent 0%, 
-      #ef4444 10%, 
-      #ffffff 20%, 
-      #ef4444 30%, 
-      transparent 40%);
-    animation: raceStripes 2s linear infinite;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
   }
 }
 
-@layer utilities {
-  /* Custom keyframes */
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes raceStripes {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 0%;
-    }
-  }
-  
-  @keyframes pulse-dot {
-    0%, 100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.7;
-      transform: scale(1.1);
-    }
-  }
-  
-  /* Glassmorphism effect */
+@layer components {
   .glass {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
   }
   
-  .glass-dark {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .glass-card {
+    @apply bg-white/70 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-slate-700 shadow-lg rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30 hover:shadow-primary/50 border-none;
+  }
+
+  .btn-secondary {
+    @apply bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full hover:bg-slate-400 dark:hover:bg-slate-600;
 }
