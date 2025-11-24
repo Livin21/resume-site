@@ -139,11 +139,6 @@
                 <a href="./projects.html" class="text-sm font-bold text-primary">Projects</a>
                 <a href="./index.html#contact" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors">Contact</a>
             </div>
-
-            <button id="theme-toggle" class="w-10 h-10 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none">
-                <i class="fas fa-sun dark:hidden text-lg"></i>
-                <i class="fas fa-moon hidden dark:block text-lg"></i>
-            </button>
         </div>
     </nav>
 
@@ -416,26 +411,8 @@
     </footer>
 
     <script>
-      // Theme toggle functionality
-      const themeToggle = document.getElementById("theme-toggle");
-      const html = document.documentElement;
-
-        // Check for saved theme preference or default to dark mode
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            html.classList.toggle('dark', savedTheme === 'dark');
-        } else {
-            // Default to dark mode
-            html.classList.add('dark');
-        }
-
-      themeToggle.addEventListener("click", () => {
-        html.classList.toggle("dark");
-        localStorage.setItem(
-          "theme",
-          html.classList.contains("dark") ? "dark" : "light"
-        );
-      });
+        // Always use dark mode
+        document.documentElement.classList.add('dark');
 
         // Intersection Observer for fade-in animations
         const observerOptions = {
