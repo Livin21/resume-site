@@ -192,6 +192,30 @@
                 transform: translate(-50%, -50%) rotate(calc(-360deg - var(--rotation, 0deg)));
             }
         }
+
+        @media (max-width: 768px) {
+            .orbit-icon {
+                transform: rotate(var(--rotation, 0deg)) translateY(-8rem);
+            }
+        }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-top: 1rem;
+        }
+
+        #mobile-menu:not(.hidden) {
+            max-height: 700px;
+            opacity: 1;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
     </style>
 </head>
 
@@ -263,7 +287,30 @@
                     <i class="fas fa-download mr-2 text-primary" aria-hidden="true"></i>
                     Resume
                 </a>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="w-10 h-10 md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white" aria-label="Toggle mobile menu">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="menu-icon" fill-rule="evenodd" clip-rule="evenodd" d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z" fill="currentColor"></path>
+                        <path id="close-icon" class="hidden" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glass rounded-2xl mt-8 p-8 space-y-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border border-slate-200 dark:border-slate-700 shadow-xl">
+            <a href="#home" class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700">Home</a>
+            <a href="#about" class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700">About</a>
+            <a href="#experience" class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700">Experience</a>
+            <a href="./projects.html" class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700">Projects</a>
+            <a href="#interests" class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700">Interests</a>
+            <a href="#contact" class="block text-base font-medium hover:text-primary transition-colors py-3">Contact</a>
+            <a href="./LivinMathewResume.pdf" target="_blank" rel="noopener noreferrer" 
+                class="sm:hidden flex items-center justify-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 transition-all mt-6 shadow-lg">
+                <i class="fas fa-download mr-2"></i>
+                Download Resume
+            </a>
         </div>
     </nav>
 
@@ -491,7 +538,7 @@
                                 <li class="flex items-start gap-3">
                                     <i class="fas fa-check-circle text-secondary mt-1 shrink-0"></i>
                                     <span>Built serverless <strong>RAG pipeline</strong> cutting proposal prep from 2h
-                                        to <10min.< /span>
+                                        to &lt;10min.</span>
                                 </li>
                                 <li class="flex items-start gap-3">
                                     <i class="fas fa-check-circle text-secondary mt-1 shrink-0"></i>
@@ -874,6 +921,27 @@
     <script>
         // Always use dark mode
         document.documentElement.classList.add('dark');
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
