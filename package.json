@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/input.css -o ./public/style.css",
     "watch": "tailwindcss -i ./src/input.css -o ./public/style.css --watch",
+    "deploy": "npm run build && wrangler pages deploy ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "wrangler": "^4.59.1"
   }
 }
