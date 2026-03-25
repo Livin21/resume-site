@@ -112,8 +112,13 @@
         <link rel="manifest" href="./manifest.json" />
 
         <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+        <!-- View Transitions -->
+        <meta name="view-transition" content="same-origin" />
 
         <!-- Stylesheets -->
         <link href="./style.css" rel="stylesheet" />
@@ -271,7 +276,7 @@
         class="bg-slate-50 dark:bg-dark-900 text-slate-900 dark:text-slate-100 transition-colors duration-300 overflow-x-hidden"
     >
         <!-- Background Blobs -->
-        <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
             <div
                 class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"
             ></div>
@@ -504,18 +509,24 @@
                             <a
                                 href="https://github.com/livin21"
                                 target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
                                 class="hover:text-primary transition-colors text-2xl"
                                 ><i class="fab fa-github"></i
                             ></a>
                             <a
                                 href="https://linkedin.com/in/livin21"
                                 target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
                                 class="hover:text-primary transition-colors text-2xl"
                                 ><i class="fab fa-linkedin"></i
                             ></a>
                             <a
                                 href="https://medium.com/@livinmathew"
                                 target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Medium"
                                 class="hover:text-primary transition-colors text-2xl"
                                 ><i class="fab fa-medium"></i
                             ></a>
@@ -544,6 +555,8 @@
                                 <img
                                     src="./assets/ProfilePic.png"
                                     alt="Livin Mathew"
+                                    loading="lazy"
+                                    decoding="async"
                                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
                                 />
                             </div>
@@ -1134,9 +1147,10 @@
                                     >
                                 </div>
                                 <a
-                                    href="https://mideastpulse.live"
+                                    href="https://mideastpulse.live?utm_source=livinmathew.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="Visit MidEast Pulse"
                                     class="text-slate-400 hover:text-secondary transition-colors text-lg"
                                 >
                                     <i class="fas fa-external-link-alt"></i>
@@ -1182,9 +1196,10 @@
                                     >
                                 </div>
                                 <a
-                                    href="https://github.com/ZenousAI/GoRagToolkit"
+                                    href="https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="GoRagToolkit on GitHub"
                                     class="text-slate-400 hover:text-primary transition-colors text-lg"
                                 >
                                     <i class="fab fa-github"></i>
@@ -1227,9 +1242,10 @@
                                     >
                                 </div>
                                 <a
-                                    href="https://github.com/Livin21/s3-virus-scanner"
+                                    href="https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label="S3 Virus Scanner on GitHub"
                                     class="text-slate-400 hover:text-secondary transition-colors text-lg"
                                 >
                                     <i class="fab fa-github"></i>
@@ -1465,6 +1481,7 @@
                         <a
                             href="https://linkedin.com/in/livin21"
                             target="_blank"
+                            rel="noopener noreferrer"
                             class="btn btn-secondary flex items-center gap-2"
                         >
                             <i class="fab fa-linkedin"></i> LinkedIn
@@ -1507,18 +1524,24 @@
                     <a
                         href="https://github.com/livin21"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
                         class="hover:text-primary transition-colors text-xl"
                         ><i class="fab fa-github"></i
                     ></a>
                     <a
                         href="https://linkedin.com/in/livin21"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
                         class="hover:text-primary transition-colors text-xl"
                         ><i class="fab fa-linkedin"></i
                     ></a>
                     <a
                         href="https://medium.com/@livinmathew"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Medium"
                         class="hover:text-primary transition-colors text-xl"
                         ><i class="fab fa-medium"></i
                     ></a>

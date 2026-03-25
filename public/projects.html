@@ -36,6 +36,10 @@
       property="og:image"
       content="https://livinmathew.com/assets/ProfilePic.png"
     />
+    <meta
+      property="og:image:alt"
+      content="Livin Mathew - Solutions Architect Portfolio"
+    />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -66,6 +70,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- View Transitions -->
+    <meta name="view-transition" content="same-origin" />
+
     <!-- Stylesheets -->
     <link href="./style.css" rel="stylesheet" />
     <link
@@ -88,7 +95,7 @@
             "description": "Middle East news aggregator and pulse tracker with 500+ daily active users",
             "applicationCategory": "NewsApplication",
             "operatingSystem": "Web",
-            "url": "https://mideastpulse.live",
+            "url": "https://mideastpulse.live?utm_source=livinmathew.com",
             "author": {
               "@type": "Person",
               "name": "Livin Mathew"
@@ -100,7 +107,7 @@
             "name": "GoRagToolkit",
             "description": "A Go toolkit for building RAG (Retrieval-Augmented Generation) applications with multi-provider tokenization and token-aware context assembly",
             "applicationCategory": "DeveloperApplication",
-            "codeRepository": "https://github.com/ZenousAI/GoRagToolkit",
+            "codeRepository": "https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com",
             "programmingLanguage": "Go",
             "author": {
               "@type": "Person",
@@ -137,7 +144,7 @@
             "name": "create-sequelize-express",
             "description": "NPM scaffolding tool with over 2k downloads",
             "applicationCategory": "DeveloperApplication",
-            "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express",
+            "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express?utm_source=livinmathew.com",
             "author": {
               "@type": "Person",
               "name": "Livin Mathew"
@@ -149,7 +156,7 @@
             "name": "go-fake",
             "description": "AI-enhanced fake data generator for JSON/SQL schemas supporting 40+ data types",
             "applicationCategory": "DeveloperApplication",
-            "codeRepository": "https://github.com/Livin21/go-fake",
+            "codeRepository": "https://github.com/Livin21/go-fake?utm_source=livinmathew.com",
             "programmingLanguage": "Go",
             "author": {
               "@type": "Person",
@@ -162,7 +169,7 @@
             "name": "S3 Virus Scanner",
             "description": "Automated serverless solution for scanning AWS S3 files using ClamAV",
             "applicationCategory": "SecurityApplication",
-            "codeRepository": "https://github.com/Livin21/s3-virus-scanner",
+            "codeRepository": "https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com",
             "author": {
               "@type": "Person",
               "name": "Livin Mathew"
@@ -174,7 +181,7 @@
             "name": "XpenseShots",
             "description": "Privacy-focused expense tracker using OCR to convert payment screenshots into organized entries",
             "applicationCategory": "FinanceApplication",
-            "codeRepository": "https://github.com/Livin21/XpenseShots",
+            "codeRepository": "https://github.com/Livin21/XpenseShots?utm_source=livinmathew.com",
             "programmingLanguage": "JavaScript",
             "author": {
               "@type": "Person",
@@ -207,7 +214,14 @@
     class="bg-slate-50 dark:bg-dark-900 text-slate-900 dark:text-slate-50 font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden"
   >
     <!-- Background Blobs -->
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-primary text-white p-2 z-50 rounded-br-lg"
+      >Skip to main content</a
+    >
+
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
       <div
         class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"
       ></div>
@@ -323,7 +337,7 @@
       </div>
     </nav>
 
-    <main class="pt-8 md:pt-32">
+    <main id="main-content" class="pt-8 md:pt-32">
       <!-- Hero Section -->
       <section class="py-12 px-4">
         <div class="max-w-6xl mx-auto text-center">
@@ -343,6 +357,8 @@
                 <img
                   src="./assets/ProfilePic.png"
                   alt="Livin Mathew"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover rounded-full border-4 border-white dark:border-dark-800 shadow-2xl relative z-10"
                 />
               </div>
@@ -419,9 +435,10 @@
                   >
                 </div>
                 <a
-                  href="https://mideastpulse.live"
+                  href="https://mideastpulse.live?utm_source=livinmathew.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit MidEast Pulse"
                   class="text-slate-400 hover:text-secondary transition-colors text-lg"
                 >
                   <i class="fas fa-external-link-alt"></i>
@@ -480,9 +497,10 @@
                   >
                 </div>
                 <a
-                  href="https://github.com/ZenousAI/GoRagToolkit"
+                  href="https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GoRagToolkit on GitHub"
                   class="text-slate-400 hover:text-primary transition-colors text-lg"
                 >
                   <i class="fab fa-github"></i>
@@ -540,7 +558,8 @@
                   >
                 </div>
                 <a
-                  href="#"
+                  href="./projects.html"
+                  aria-label="View KloudArch"
                   class="text-slate-400 hover:text-primary transition-colors text-lg"
                 >
                   <i class="fas fa-external-link-alt"></i>
@@ -595,7 +614,8 @@
                   >
                 </div>
                 <a
-                  href="#"
+                  href="./projects.html"
+                  aria-label="View CoverCraft AI"
                   class="text-slate-400 hover:text-secondary transition-colors text-lg"
                 >
                   <i class="fas fa-external-link-alt"></i>
@@ -650,8 +670,10 @@
                   >
                 </div>
                 <a
-                  href="https://www.npmjs.com/package/create-sequelize-express"
+                  href="https://www.npmjs.com/package/create-sequelize-express?utm_source=livinmathew.com"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="create-sequelize-express on NPM"
                   class="text-slate-400 hover:text-accent transition-colors text-lg"
                 >
                   <i class="fas fa-external-link-alt"></i>
@@ -706,9 +728,10 @@
                   >
                 </div>
                 <a
-                  href="https://github.com/Livin21/go-fake"
+                  href="https://github.com/Livin21/go-fake?utm_source=livinmathew.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="go-fake on GitHub"
                   class="text-slate-400 hover:text-primary transition-colors text-lg"
                 >
                   <i class="fab fa-github"></i>
@@ -763,9 +786,10 @@
                   >
                 </div>
                 <a
-                  href="https://github.com/Livin21/s3-virus-scanner"
+                  href="https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="S3 Virus Scanner on GitHub"
                   class="text-slate-400 hover:text-secondary transition-colors text-lg"
                 >
                   <i class="fab fa-github"></i>
@@ -820,9 +844,10 @@
                   >
                 </div>
                 <a
-                  href="https://github.com/Livin21/XpenseShots"
+                  href="https://github.com/Livin21/XpenseShots?utm_source=livinmathew.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="XpenseShots on GitHub"
                   class="text-slate-400 hover:text-accent transition-colors text-lg"
                 >
                   <i class="fab fa-github"></i>
@@ -971,6 +996,7 @@
             <a
               href="https://github.com/livin21"
               target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-secondary flex items-center gap-2"
             >
               <i class="fab fa-github"></i> View GitHub
@@ -1008,18 +1034,24 @@
           <a
             href="https://github.com/livin21"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
             class="hover:text-primary transition-colors text-xl"
             ><i class="fab fa-github"></i
           ></a>
           <a
             href="https://linkedin.com/in/livin21"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
             class="hover:text-primary transition-colors text-xl"
             ><i class="fab fa-linkedin"></i
           ></a>
           <a
             href="https://medium.com/@livinmathew"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Medium"
             class="hover:text-primary transition-colors text-xl"
             ><i class="fab fa-medium"></i
           ></a>
