@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>I built an SPA in an hour, and this is what I learned (Part 1) — Livin Mathew</title>
+    <meta name="title" content="I built an SPA in an hour, and this is what I learned (Part 1) — Livin Mathew" />
+    <meta name="description" content="Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/thoughts/spa-in-an-hour-part-1.html" />
+    <meta property="og:title" content="I built an SPA in an hour, and this is what I learned (Part 1) — Livin Mathew" />
+    <meta property="og:description" content="Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+    <meta property="og:image:alt" content="Livin Mathew" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://livinmathew.com/thoughts/spa-in-an-hour-part-1.html" />
+    <meta property="twitter:title" content="I built an SPA in an hour, and this is what I learned (Part 1) — Livin Mathew" />
+    <meta property="twitter:description" content="Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component." />
+    <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/thoughts/spa-in-an-hour-part-1.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../thoughts/" class="text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="../index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="../index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="../index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="../projects.html" class="py-2 text-muted hover:text-fg">Projects</a>
+          <a href="../thoughts/" class="py-2 text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="py-2 text-muted hover:text-fg">About</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+
+      <article>
+        <header class="container-narrow pt-20 md:pt-24 pb-10">
+          <a href="./" class="label-mono hover:text-fg transition-colors">← All thoughts</a>
+          <p class="eyebrow mt-8 mb-5">medium · 11 Sept 2017</p>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tightest leading-[1.05] mb-5">
+            I built an SPA in an hour, and this is what I learned (Part 1)<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-1.5">
+            <span class="chip">Vue.js</span><span class="chip">Frontend</span><span class="chip">JavaScript</span>
+          </div>
+        </header>
+
+        <div class="container-narrow pb-12">
+          <div class="prose">
+            <p>So my teammates and I were planning to develop a basic webpage displaying about / contact information. After discovering Quasar, a Vue.js framework, I decided to build the project with Vue.</p><blockquote><p>Simple. Elegant. Powerful.</p></blockquote><p>Vue is a progressive JavaScript framework focused on building user interfaces. As a front-end framework, it makes it easy to create beautiful webpages.</p><h3>What Vue offers</h3><ul><li><strong>Reactive interfaces</strong> — dynamically update parts of the page in response to user interaction.</li><li><strong>Declarative rendering</strong> — bind dynamic variables straight to the DOM.</li><li><strong>Data binding</strong> — bind data to UI elements.</li><li><strong>Directives</strong> — compiler-level attributes for behaviour.</li><li><strong>Template logic</strong> — if-else, loops, and more.</li><li><strong>Components &amp; nesting</strong> — extend basic HTML elements with reusable code.</li><li><strong>Event handling</strong>, <strong>computed properties</strong>, <strong>CSS transitions</strong>, and <strong>custom filters</strong>.</li></ul><h2>Step 1 — Install Vue.js and set up the project</h2><p>There are a few ways to add Vue:</p><ul><li>Include a <code>&lt;script&gt;</code> tag in an HTML file</li><li>Install via npm</li><li>Use the Vue CLI tool with Webpack</li><li>Install via Bower</li></ul><p>The recommended path is the Vue CLI — it ships with everything you need. Run:</p><pre><code>$ npm install -g vue-cli
+$ vue init webpack myapp</code></pre><p>Answer the setup questions, then:</p><pre><code>$ cd myapp
+$ npm install</code></pre><p>This installs the project's dependencies. Run the template app with:</p><pre><code>$ npm run dev</code></pre><h2>Project structure</h2><p>All code lives inside the <code>src</code> folder. The <code>assets</code> folder holds images and other assets, while <code>components</code> holds Vue files.</p><h3>main.js</h3><p>In <code>main.js</code>, a Vue instance is created with parameters:</p><ul><li><strong>el</strong> — the id of the div this Vue instance binds to. Check <code>index.html</code> for the matching div.</li><li><strong>template</strong> — HTML-based template syntax that binds the rendered DOM to the Vue instance's data.</li><li><strong>components</strong> — the main component, <code>App</code>.</li></ul><h3>App.vue</h3><p>App.vue has three sections:</p><ul><li><strong>HTML</strong> — defines the template tag.</li><li><strong>Script</strong> — JavaScript that imports another Vue file component.</li><li><strong>CSS</strong> — style for the current component.</li></ul><p>App.vue itself is a component. The <code>Hello.vue</code> and <code>App.vue</code> files share the same shape because both are components. The <code>scoped</code> attribute on the <code>style</code> block scopes the CSS to that component only.</p><p>In <a href="./spa-in-an-hour-part-2.html">part 2</a>, we'll wire up data, write the template, and ship.</p>
+          </div>
+        </div>
+
+        <div class="container-narrow border-t border-line py-10">
+          <a href="https://medium.com/@livinmathew/i-built-a-spa-in-an-hour-and-this-is-what-i-learned-part-1-3d7b6001dc24" target="_blank" rel="noopener" class="arrow-link text-sm">Read on Medium&nbsp;</a>
+          <p class="label-mono mt-2">Originally on medium.</p>
+        </div>
+
+        <div class="container-narrow pb-20">
+          <a href="./" class="arrow-link text-sm">More thoughts&nbsp;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

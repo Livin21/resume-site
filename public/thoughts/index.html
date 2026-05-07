@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Thoughts — Livin Mathew</title>
+    <meta name="title" content="Thoughts — Livin Mathew" />
+    <meta name="description" content="Notes on building production GenAI — multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://livinmathew.com/thoughts/" />
+    <meta property="og:title" content="Thoughts — Livin Mathew" />
+    <meta property="og:description" content="Notes on building production GenAI — multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+    <meta property="og:image:alt" content="Livin Mathew" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://livinmathew.com/thoughts/" />
+    <meta property="twitter:title" content="Thoughts — Livin Mathew" />
+    <meta property="twitter:description" content="Notes on building production GenAI — multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn." />
+    <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/thoughts/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../thoughts/" class="text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="../index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="../index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="../index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="../projects.html" class="py-2 text-muted hover:text-fg">Projects</a>
+          <a href="../thoughts/" class="py-2 text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="py-2 text-muted hover:text-fg">About</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+
+      <section class="container-wide pt-20 md:pt-28 pb-12">
+        <p class="eyebrow mb-6">Thoughts · writing</p>
+        <h1 class="text-4xl md:text-6xl font-semibold tracking-tightest leading-[0.95] mb-6">
+          Thoughts<span class="text-accent">.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted max-w-2xl leading-snug">
+          Notes on what I'm learning building production GenAI — multi-agent RAG, evaluation,
+          serverless architecture, and the boring infrastructure decisions that quietly compound.
+          Cross-posted from Medium and LinkedIn.
+        </p>
+      </section>
+
+      <section class="container-wide pb-20">
+        <div class="border-t border-line">
+          <ul>
+            
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_something-ive-been-watching-in-kerala-for-activity-7457693059766722560-G3KR" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">6 May 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  Kerala&#39;s demographics crisis: built on borrowed labor
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Kerala&#39;s construction industry ground to a halt when migrant workers left to vote — revealing deeper demographic vulnerabilities behind a state quietly leaning on interstate labor.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">Kerala</span><span class="chip">Demographics</span><span class="chip">Economy</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_github-just-posted-insane-growth-numbers-activity-7452364193762254848-Fmte" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">21 Apr 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  GitHub growth and Jevons paradox in software
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Cheaper code means more code. GitHub&#39;s growth is the Jevons paradox playing out — and it&#39;s pushing the underlying infrastructure (API calls, scrapers, agent traffic) toward new limits.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">Software</span><span class="chip">Infrastructure</span><span class="chip">AI</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_i-went-deep-into-my-own-go-agent-framework-activity-7449780690637996032-FG7V" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">14 Apr 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  Handling AI agent iteration limits — a better UX pattern
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Most agent frameworks treat budget exhaustion as failure. A small Go framework I built routes to synthesis with partial results instead — letting the user decide whether to continue.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">Agents</span><span class="chip">Go</span><span class="chip">UX</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_stop-falling-in-love-with-your-code-that-activity-7439559428787482624-fms5" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">17 Mar 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  Stop falling in love with your code
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">AI agents are rapidly automating code generation. Developers&#39; centre of gravity is shifting from implementation craft toward product understanding and user empathy.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">AI</span><span class="chip">Software</span><span class="chip">Career</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_tool-search-tool-activity-7437137099767693312-gpuI" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">10 Mar 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  Optimize AI agents with dynamic tool discovery
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Loading every tool definition upfront wastes tokens and degrades selection accuracy. A meta-tool that discovers tools on demand fixes both — especially as integrations multiply.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">Agents</span><span class="chip">Claude API</span><span class="chip">Optimization</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/posts/livin21_youre-doomscrolling-twitter-for-war-updates-activity-7434623707517538304-5Arg" target="_blank" rel="noopener" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">3 Mar 2026</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  MidEast War Live — built in 2 days with Claude Code
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">A real-time conflict intelligence dashboard pulling Telegram OSINT and news feeds through an AI pipeline for live mapping. Whole stack pair-programmed in two days with Claude Code.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">linkedin</span>
+                  <span class="chip">MidEast Pulse</span><span class="chip">Claude Code</span><span class="chip">AI</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">↗</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./monolith-microservice-serverless.html" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">27 Feb 2023</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  Monolith vs microservice vs serverless
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">medium</span>
+                  <span class="chip">Architecture</span><span class="chip">Serverless</span><span class="chip">Microservices</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">→</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./spa-in-an-hour-part-2.html" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">18 Sept 2017</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  I built an SPA in an hour, and this is what I learned (Part 2)
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">medium</span>
+                  <span class="chip">Vue.js</span><span class="chip">Frontend</span><span class="chip">JavaScript</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">→</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="./spa-in-an-hour-part-1.html" class="block group p-6 md:p-8 border-b border-line hover:bg-surface transition-colors">
+            <div class="flex flex-col md:flex-row md:items-baseline md:gap-8">
+              <span class="label-mono shrink-0 md:w-32 mb-2 md:mb-0">11 Sept 2017</span>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-lg md:text-xl font-semibold text-fg group-hover:text-accent transition-colors mb-1.5">
+                  I built an SPA in an hour, and this is what I learned (Part 1)
+                </h3>
+                <p class="text-sm text-muted leading-relaxed mb-3 max-w-2xl">Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component.</p>
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="chip">medium</span>
+                  <span class="chip">Vue.js</span><span class="chip">Frontend</span><span class="chip">JavaScript</span>
+                </div>
+              </div>
+              <span class="font-mono text-xs text-subtle md:pt-1 mt-3 md:mt-0 shrink-0 group-hover:text-fg transition-colors">→</span>
+            </div>
+          </a>
+        </li>
+          </ul>
+        </div>
+        
+      </section>
+    </main>
+
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

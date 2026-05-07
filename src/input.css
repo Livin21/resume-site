@@ -96,6 +96,59 @@
   .kbd {
     @apply font-mono text-2xs px-1.5 py-0.5 rounded border border-line bg-elevated text-muted;
   }
+
+  /* Prose — used by /thoughts/<slug>.html mirrored bodies */
+  .prose {
+    @apply text-fg leading-relaxed;
+  }
+  .prose > * + * {
+    @apply mt-5;
+  }
+  .prose p {
+    @apply text-base text-fg;
+  }
+  .prose h2 {
+    @apply text-2xl font-semibold mt-12 mb-4 tracking-tight;
+  }
+  .prose h3 {
+    @apply text-lg font-semibold mt-8 mb-3 tracking-tight;
+  }
+  .prose ul {
+    @apply space-y-2 list-disc list-outside pl-5 marker:text-subtle;
+  }
+  .prose ol {
+    @apply space-y-2 list-decimal list-outside pl-5 marker:text-subtle;
+  }
+  .prose li > p {
+    @apply m-0;
+  }
+  .prose a {
+    @apply text-fg underline decoration-line decoration-1 underline-offset-4 hover:decoration-accent transition-colors;
+  }
+  .prose blockquote {
+    @apply pl-5 border-l border-line text-muted italic;
+  }
+  .prose code {
+    @apply font-mono text-sm bg-elevated px-1.5 py-0.5 rounded border border-line;
+  }
+  .prose pre {
+    @apply p-4 bg-elevated border border-line rounded-md overflow-x-auto;
+  }
+  .prose pre code {
+    @apply bg-transparent border-none p-0 text-sm;
+  }
+  .prose hr {
+    @apply border-line;
+  }
+  .prose strong {
+    @apply text-fg font-semibold;
+  }
+  .prose em {
+    @apply text-fg italic;
+  }
+  .prose img {
+    @apply rounded-md border border-line;
+  }
 }
 
 /* Scrollbar */

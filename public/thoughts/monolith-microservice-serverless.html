@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Monolith vs microservice vs serverless — Livin Mathew</title>
+    <meta name="title" content="Monolith vs microservice vs serverless — Livin Mathew" />
+    <meta name="description" content="Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/thoughts/monolith-microservice-serverless.html" />
+    <meta property="og:title" content="Monolith vs microservice vs serverless — Livin Mathew" />
+    <meta property="og:description" content="Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+    <meta property="og:image:alt" content="Livin Mathew" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://livinmathew.com/thoughts/monolith-microservice-serverless.html" />
+    <meta property="twitter:title" content="Monolith vs microservice vs serverless — Livin Mathew" />
+    <meta property="twitter:description" content="Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next." />
+    <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/thoughts/monolith-microservice-serverless.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../thoughts/" class="text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="../index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="../index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="../index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="../projects.html" class="py-2 text-muted hover:text-fg">Projects</a>
+          <a href="../thoughts/" class="py-2 text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="py-2 text-muted hover:text-fg">About</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+
+      <article>
+        <header class="container-narrow pt-20 md:pt-24 pb-10">
+          <a href="./" class="label-mono hover:text-fg transition-colors">← All thoughts</a>
+          <p class="eyebrow mt-8 mb-5">medium · 27 Feb 2023</p>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tightest leading-[1.05] mb-5">
+            Monolith vs microservice vs serverless<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-1.5">
+            <span class="chip">Architecture</span><span class="chip">Serverless</span><span class="chip">Microservices</span>
+          </div>
+        </header>
+
+        <div class="container-narrow pb-12">
+          <div class="prose">
+            <h2>The monolith</h2><p>With this architecture, everything is contained within a single codebase. That makes it easy to develop, test, and deploy an application — but it can quickly become unwieldy as the application grows in size and complexity.</p><h2>Microservices</h2><p>Microservices break the application down into smaller, independently-shippable components. The result is greater flexibility, scalability, and fault tolerance — if one component fails, the rest of the application can continue to function without issue.</p><p>The price you pay is complexity. Developers now have to manage multiple interdependent components, with high-level coordination and communication between teams.</p><h2>Serverless</h2><p>Serverless takes the microservices idea one step further by eliminating the need for servers altogether. You write code that runs in response to specific events or triggers, without worrying about server infrastructure.</p><p>That gets you cost efficiency — you only pay for the compute used during execution. The trade-offs include harder debugging and observability, and concerns around vendor lock-in.</p><h2>So which architecture is best?</h2><p>Each has its own strengths and weaknesses. The right choice depends on the specific shape of your application: its size, its complexity, your team's skillset, and your budget. The honest answer is almost always — it depends.</p>
+          </div>
+        </div>
+
+        <div class="container-narrow border-t border-line py-10">
+          <a href="https://medium.com/@livinmathew/monolith-vs-microservice-vs-serverless-407cbaa63f50" target="_blank" rel="noopener" class="arrow-link text-sm">Read on Medium&nbsp;</a>
+          <p class="label-mono mt-2">Originally on medium.</p>
+        </div>
+
+        <div class="container-narrow pb-20">
+          <a href="./" class="arrow-link text-sm">More thoughts&nbsp;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "keralas-demographics-crisis",
+    "title": "Kerala's demographics crisis: built on borrowed labor",
+    "date": "2026-05-06",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_something-ive-been-watching-in-kerala-for-activity-7457693059766722560-G3KR",
+    "excerpt": "Kerala's construction industry ground to a halt when migrant workers left to vote — revealing deeper demographic vulnerabilities behind a state quietly leaning on interstate labor.",
+    "tags": ["Kerala", "Demographics", "Economy"]
+  },
+  {
+    "slug": "github-jevons-paradox",
+    "title": "GitHub growth and Jevons paradox in software",
+    "date": "2026-04-21",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_github-just-posted-insane-growth-numbers-activity-7452364193762254848-Fmte",
+    "excerpt": "Cheaper code means more code. GitHub's growth is the Jevons paradox playing out — and it's pushing the underlying infrastructure (API calls, scrapers, agent traffic) toward new limits.",
+    "tags": ["Software", "Infrastructure", "AI"]
+  },
+  {
+    "slug": "ai-agent-iteration-limits",
+    "title": "Handling AI agent iteration limits — a better UX pattern",
+    "date": "2026-04-14",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_i-went-deep-into-my-own-go-agent-framework-activity-7449780690637996032-FG7V",
+    "excerpt": "Most agent frameworks treat budget exhaustion as failure. A small Go framework I built routes to synthesis with partial results instead — letting the user decide whether to continue.",
+    "tags": ["Agents", "Go", "UX"]
+  },
+  {
+    "slug": "stop-falling-in-love-with-your-code",
+    "title": "Stop falling in love with your code",
+    "date": "2026-03-17",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_stop-falling-in-love-with-your-code-that-activity-7439559428787482624-fms5",
+    "excerpt": "AI agents are rapidly automating code generation. Developers' centre of gravity is shifting from implementation craft toward product understanding and user empathy.",
+    "tags": ["AI", "Software", "Career"]
+  },
+  {
+    "slug": "dynamic-tool-discovery",
+    "title": "Optimize AI agents with dynamic tool discovery",
+    "date": "2026-03-10",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_tool-search-tool-activity-7437137099767693312-gpuI",
+    "excerpt": "Loading every tool definition upfront wastes tokens and degrades selection accuracy. A meta-tool that discovers tools on demand fixes both — especially as integrations multiply.",
+    "tags": ["Agents", "Claude API", "Optimization"]
+  },
+  {
+    "slug": "realtime-conflict-dashboard",
+    "title": "MidEast War Live — built in 2 days with Claude Code",
+    "date": "2026-03-03",
+    "source": "linkedin",
+    "source_url": "https://www.linkedin.com/posts/livin21_youre-doomscrolling-twitter-for-war-updates-activity-7434623707517538304-5Arg",
+    "excerpt": "A real-time conflict intelligence dashboard pulling Telegram OSINT and news feeds through an AI pipeline for live mapping. Whole stack pair-programmed in two days with Claude Code.",
+    "tags": ["MidEast Pulse", "Claude Code", "AI"]
+  },
+  {
+    "slug": "monolith-microservice-serverless",
+    "title": "Monolith vs microservice vs serverless",
+    "date": "2023-02-27",
+    "source": "medium",
+    "source_url": "https://medium.com/@livinmathew/monolith-vs-microservice-vs-serverless-407cbaa63f50",
+    "excerpt": "Three architectures, three sets of trade-offs. A short tour of monolith, microservice, and serverless — and the honest test for which one your team should reach for next.",
+    "tags": ["Architecture", "Serverless", "Microservices"],
+    "body": "<h2>The monolith</h2><p>With this architecture, everything is contained within a single codebase. That makes it easy to develop, test, and deploy an application — but it can quickly become unwieldy as the application grows in size and complexity.</p><h2>Microservices</h2><p>Microservices break the application down into smaller, independently-shippable components. The result is greater flexibility, scalability, and fault tolerance — if one component fails, the rest of the application can continue to function without issue.</p><p>The price you pay is complexity. Developers now have to manage multiple interdependent components, with high-level coordination and communication between teams.</p><h2>Serverless</h2><p>Serverless takes the microservices idea one step further by eliminating the need for servers altogether. You write code that runs in response to specific events or triggers, without worrying about server infrastructure.</p><p>That gets you cost efficiency — you only pay for the compute used during execution. The trade-offs include harder debugging and observability, and concerns around vendor lock-in.</p><h2>So which architecture is best?</h2><p>Each has its own strengths and weaknesses. The right choice depends on the specific shape of your application: its size, its complexity, your team's skillset, and your budget. The honest answer is almost always — it depends.</p>"
+  },
+  {
+    "slug": "spa-in-an-hour-part-2",
+    "title": "I built an SPA in an hour, and this is what I learned (Part 2)",
+    "date": "2017-09-18",
+    "source": "medium",
+    "source_url": "https://medium.com/@livinmathew/i-built-an-spa-in-an-hour-and-this-is-what-i-learned-part-2-32b6e31bb959",
+    "excerpt": "Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production.",
+    "tags": ["Vue.js", "Frontend", "JavaScript"],
+    "body": "<p>In <a href=\"./spa-in-an-hour-part-1.html\">part one</a>, Vue was introduced and we set up and created a simple app. If you haven't read that, start there.</p><h2>Step 2 — Collect and organise data</h2><p>For the webapp, I collected names, roles, and social-media profile links and organised them in JSON. Drop the JSON file inside <code>src/assets</code>.</p><h2>Step 3 — Import JSON to component</h2><p><code>Hello.vue</code> is a Vue component file inside <code>src/components</code>. Components are one of Vue's most powerful features — they extend basic HTML elements to encapsulate reusable code.</p><p>In <code>Hello.vue</code>, import the JSON. Set the component name inside <code>default{}</code>, and put the imported JSON inside <code>data(){}</code>.</p><h2>Step 4 — Write the template</h2><p>Vue uses an HTML-based template syntax that lets you declaratively bind the rendered DOM to the underlying instance's data.</p><h3>Directives</h3><p>Directives are special attributes prefixed with <code>v-</code>. Example: <code>&lt;p v-if=\"seen\"&gt;Now you see me&lt;/p&gt;</code></p><h3>Data binding</h3><ul><li><strong>Text</strong> — the most basic form, using mustache syntax: <code>{{ msg }}</code></li><li><strong>Raw HTML</strong> — use the <code>v-html</code> directive</li><li><strong>Attributes</strong> — use <code>v-bind</code>: <code>&lt;div v-bind:id=\"dynamicId\"&gt;&lt;/div&gt;</code></li><li><strong>Expressions</strong> — Vue supports full JavaScript expressions inside bindings: <code>{{ 1 + 2 }}</code> renders as <code>3</code></li></ul><h3>Looping through arrays</h3><p>Use <code>v-for</code> to loop array elements: <code>&lt;li v-for=\"mem in members\"&gt;</code></p><h3>Rendering data</h3><p>Access object properties through the loop variable to render profile images, names, roles, and social links — using directives like <code>:src</code> for attributes.</p><h2>Step 5 — Add styles and build</h2><p>Add CSS styles. Run the development server with <code>npm run dev</code>, build for production with <code>npm run build</code>.</p><p>Go build something with <a href=\"https://vuejs.org/v2/guide/\">Vue.js</a>. Happy coding.</p>"
+  },
+  {
+    "slug": "spa-in-an-hour-part-1",
+    "title": "I built an SPA in an hour, and this is what I learned (Part 1)",
+    "date": "2017-09-11",
+    "source": "medium",
+    "source_url": "https://medium.com/@livinmathew/i-built-a-spa-in-an-hour-and-this-is-what-i-learned-part-1-3d7b6001dc24",
+    "excerpt": "Vue.js fundamentals through the lens of a quick build — installation, project setup with Vue CLI + Webpack, and the structure of a single-file component.",
+    "tags": ["Vue.js", "Frontend", "JavaScript"],
+    "body": "<p>So my teammates and I were planning to develop a basic webpage displaying about / contact information. After discovering Quasar, a Vue.js framework, I decided to build the project with Vue.</p><blockquote><p>Simple. Elegant. Powerful.</p></blockquote><p>Vue is a progressive JavaScript framework focused on building user interfaces. As a front-end framework, it makes it easy to create beautiful webpages.</p><h3>What Vue offers</h3><ul><li><strong>Reactive interfaces</strong> — dynamically update parts of the page in response to user interaction.</li><li><strong>Declarative rendering</strong> — bind dynamic variables straight to the DOM.</li><li><strong>Data binding</strong> — bind data to UI elements.</li><li><strong>Directives</strong> — compiler-level attributes for behaviour.</li><li><strong>Template logic</strong> — if-else, loops, and more.</li><li><strong>Components &amp; nesting</strong> — extend basic HTML elements with reusable code.</li><li><strong>Event handling</strong>, <strong>computed properties</strong>, <strong>CSS transitions</strong>, and <strong>custom filters</strong>.</li></ul><h2>Step 1 — Install Vue.js and set up the project</h2><p>There are a few ways to add Vue:</p><ul><li>Include a <code>&lt;script&gt;</code> tag in an HTML file</li><li>Install via npm</li><li>Use the Vue CLI tool with Webpack</li><li>Install via Bower</li></ul><p>The recommended path is the Vue CLI — it ships with everything you need. Run:</p><pre><code>$ npm install -g vue-cli\n$ vue init webpack myapp</code></pre><p>Answer the setup questions, then:</p><pre><code>$ cd myapp\n$ npm install</code></pre><p>This installs the project's dependencies. Run the template app with:</p><pre><code>$ npm run dev</code></pre><h2>Project structure</h2><p>All code lives inside the <code>src</code> folder. The <code>assets</code> folder holds images and other assets, while <code>components</code> holds Vue files.</p><h3>main.js</h3><p>In <code>main.js</code>, a Vue instance is created with parameters:</p><ul><li><strong>el</strong> — the id of the div this Vue instance binds to. Check <code>index.html</code> for the matching div.</li><li><strong>template</strong> — HTML-based template syntax that binds the rendered DOM to the Vue instance's data.</li><li><strong>components</strong> — the main component, <code>App</code>.</li></ul><h3>App.vue</h3><p>App.vue has three sections:</p><ul><li><strong>HTML</strong> — defines the template tag.</li><li><strong>Script</strong> — JavaScript that imports another Vue file component.</li><li><strong>CSS</strong> — style for the current component.</li></ul><p>App.vue itself is a component. The <code>Hello.vue</code> and <code>App.vue</code> files share the same shape because both are components. The <code>scoped</code> attribute on the <code>style</code> block scopes the CSS to that component only.</p><p>In <a href=\"./spa-in-an-hour-part-2.html\">part 2</a>, we'll wire up data, write the template, and ship.</p>"
+  }
+]
