@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Multi-agent GenAI PLM at Centric Software — Livin Mathew</title>
+    <meta name="description" content="Case study: a multi-agent GenAI PLM suite at Centric Software — FastAPI + LangGraph + Bedrock Claude across millions of SKUs, deployed to Asics, Under Armour and other Tier-1 fashion brands." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/case-studies/centric-plm.html" />
+    <meta property="og:title" content="Multi-agent GenAI PLM at Centric Software — Livin Mathew" />
+    <meta property="og:description" content="Case study: a multi-agent GenAI PLM suite for Tier-1 fashion brands." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/case-studies/centric-plm.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <article>
+        <header class="container-narrow pt-20 md:pt-24 pb-12">
+          <a href="../index.html#work" class="label-mono hover:text-fg transition-colors">← Selected work</a>
+          <p class="eyebrow mt-8 mb-5">Case study · in production</p>
+          <h1 class="text-4xl md:text-5xl font-semibold tracking-tightest leading-[1] mb-6">
+            Multi-agent GenAI PLM at Centric Software<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">
+            A multi-agent GenAI suite over Centric's PLM data — AI-assisted tech-pack generation,
+            BOM intelligence, and design / material search — deployed to Tier-1 fashion brands
+            including Asics and Under Armour.
+          </p>
+
+          <dl class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden">
+            <div class="bg-bg p-4">
+              <dt class="label-mono">role</dt>
+              <dd class="text-sm text-fg mt-1">Lead AI Engineer</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">client</dt>
+              <dd class="text-sm text-fg mt-1">Centric Software · via Galent</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">period</dt>
+              <dd class="text-sm text-fg mt-1">May 2026 — present</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">stack</dt>
+              <dd class="font-mono text-xs text-fg mt-1">LangGraph · Bedrock · FastAPI</dd>
+            </div>
+          </dl>
+        </header>
+
+        <!-- Hero placeholder -->
+        <div class="container-narrow mb-16">
+          <!-- TODO: drop architecture diagram or screenshot in public/assets/work/centric-plm.png -->
+          <div class="aspect-[16/9] rounded-md border border-line overflow-hidden bg-elevated relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-mono text-xs uppercase tracking-[0.2em] text-subtle">centric · plm · multi-agent · tier-1 brands</span>
+            </div>
+            <div class="absolute inset-0" style="background:radial-gradient(50% 40% at 50% 50%, rgba(59,130,246,0.10), transparent 70%);"></div>
+          </div>
+        </div>
+
+        <div class="container-narrow pb-20 space-y-14">
+          <section>
+            <p class="eyebrow mb-4">The problem</p>
+            <p class="text-lg text-fg leading-relaxed mb-4">
+              PLM data is rich but unforgiving — styles, BOMs, suppliers, materials, sustainability and
+              compliance attributes, all coupled to real-world manufacturing operations and audited
+              regulatory regimes. Tier-1 fashion brands wanted natural-language workflows over this data
+              without sacrificing the structural correctness PLM exists to enforce.
+            </p>
+            <p class="text-muted leading-relaxed">
+              The brief: a GenAI PLM suite that's fast, multi-tenant, role-aware, and grounded enough
+              to be trusted by sourcing and design teams shipping product to global markets.
+            </p>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Constraints</p>
+            <ul class="space-y-2 text-fg">
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-tenant from day one — strict isolation between brands sharing the same deployment.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Role-based access enforcement that survives every agent hop, not just the API gate.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Domain-specific accuracy: BOM correctness, material code mapping, sustainability and compliance flags must be ground-truthable.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Cost-per-query is a product-level KPI, not just an infra one — every release is gated against it.</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Approach</p>
+            <div class="grid md:grid-cols-2 gap-px bg-line border border-line rounded-md overflow-hidden">
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">01 · Multi-agent system</p>
+                <p class="text-fg leading-relaxed">
+                  FastAPI + LangGraph orchestration over PLM entities. Specialised agents for
+                  tech-pack generation, BOM intelligence, and design / material search; shared retrieval
+                  and grounding layer; Bedrock Claude as the reasoning model.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">02 · Tenant &amp; role enforcement</p>
+                <p class="text-fg leading-relaxed">
+                  Tenant context and RBAC are embedded in every retrieval path, not bolted on at the
+                  API layer. Agents can't see what their caller can't see, even mid-graph.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">03 · PLM eval harness</p>
+                <p class="text-fg leading-relaxed">
+                  Domain-specific eval covering BOM correctness, material code mapping,
+                  sustainability and compliance flags, groundedness, and cost-per-query.
+                  Every release across every customer rollout is gated against it.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">04 · Workflow automation</p>
+                <p class="text-fg leading-relaxed">
+                  Natural-language queries map to deterministic PLM workflows where possible —
+                  the LLM picks the path, the system runs the actual operation. Predictable
+                  side-effects, auditable history.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Outcomes</p>
+            <dl class="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
+              <div class="bg-bg p-5">
+                <dt class="label-mono">customer base</dt>
+                <dd class="font-mono text-xl text-fg mt-1">tier-1 brands</dd>
+                <p class="text-xs text-subtle mt-1">incl. asics &amp; under armour</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">scope</dt>
+                <dd class="font-mono text-xl text-fg mt-1">millions of skus</dd>
+                <p class="text-xs text-subtle mt-1">styles · boms · suppliers · materials</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">release gating</dt>
+                <dd class="font-mono text-xl text-fg mt-1">automated</dd>
+                <p class="text-xs text-subtle mt-1">domain accuracy · groundedness · cost-per-query</p>
+              </div>
+            </dl>
+            <p class="text-xs text-subtle mt-3">
+              Specific figures redacted — published with client permission only.
+            </p>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Stack</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">FastAPI</span>
+              <span class="chip">LangGraph</span>
+              <span class="chip">AWS Bedrock</span>
+              <span class="chip">Claude</span>
+              <span class="chip">Multi-tenant</span>
+              <span class="chip">RBAC</span>
+              <span class="chip">Vector search</span>
+              <span class="chip">LLM eval</span>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Reflections</p>
+            <p class="text-fg leading-relaxed mb-4">
+              PLM is a domain where "plausible" is a failure mode — a confidently-wrong material code
+              breaks a real garment. The eval harness has to be domain-specific from day one; generic
+              groundedness scores aren't enough.
+            </p>
+            <p class="text-muted leading-relaxed">
+              The other lesson: lean on deterministic PLM operations whenever the LLM's job is "pick
+              the right action." Generative reasoning is the navigation layer; the actual mutation
+              should always be an audited, testable system call.
+            </p>
+          </section>
+        </div>
+
+        <div class="container-narrow border-t border-line pt-8 pb-20">
+          <a href="../index.html#work" class="arrow-link text-sm">More work&nbsp;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

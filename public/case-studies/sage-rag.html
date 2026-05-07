@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>GenAI knowledge platform at Sage — Livin Mathew</title>
+    <meta name="description" content="Case study: a multi-agent RAG knowledge platform on AWS Bedrock at Sage UK — 500k+ docs/nightly, 7+ locales, 35% inference cost cut, 2hr → 10min response time." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/case-studies/sage-rag.html" />
+    <meta property="og:title" content="GenAI knowledge platform at Sage — Livin Mathew" />
+    <meta property="og:description" content="Case study: a multi-agent RAG platform delivering 35% cost reduction and 12× faster response time across 7+ locales." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/case-studies/sage-rag.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <article>
+        <!-- Header -->
+        <header class="container-narrow pt-20 md:pt-24 pb-12">
+          <a href="../index.html#work" class="label-mono hover:text-fg transition-colors">← Selected work</a>
+          <p class="eyebrow mt-8 mb-5">Case study · delivered</p>
+          <h1 class="text-4xl md:text-5xl font-semibold tracking-tightest leading-[1] mb-6">
+            GenAI knowledge platform at Sage<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">
+            A multi-agent RAG platform serving Sage's product teams across multi-region AWS —
+            Bedrock-powered semantic search, semantic caching, multilingual support, and a
+            15-metric LLM evaluation harness gating every release.
+          </p>
+
+          <dl class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden">
+            <div class="bg-bg p-4">
+              <dt class="label-mono">role</dt>
+              <dd class="text-sm text-fg mt-1">Mobile Product Lead</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">client</dt>
+              <dd class="text-sm text-fg mt-1">Sage UK · via TEKsystems</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">period</dt>
+              <dd class="text-sm text-fg mt-1">Jan 2024 — Apr 2026</dd>
+            </div>
+            <div class="bg-bg p-4">
+              <dt class="label-mono">stack</dt>
+              <dd class="font-mono text-xs text-fg mt-1">Bedrock · LangGraph · OpenSearch</dd>
+            </div>
+          </dl>
+        </header>
+
+        <!-- Hero placeholder -->
+        <div class="container-narrow mb-16">
+          <!-- TODO: drop architecture diagram or screenshot in public/assets/work/sage-rag.png -->
+          <div class="aspect-[16/9] rounded-md border border-line overflow-hidden bg-elevated relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="font-mono text-xs uppercase tracking-[0.2em] text-subtle">sage · rag · semantic-search · architecture</span>
+            </div>
+            <div class="absolute inset-0" style="background:radial-gradient(50% 40% at 50% 50%, rgba(59,130,246,0.10), transparent 70%);"></div>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="container-narrow pb-20 space-y-14">
+          <section>
+            <p class="eyebrow mb-4">The problem</p>
+            <p class="text-lg text-fg leading-relaxed mb-4">
+              Sage's product teams needed an enterprise-grade GenAI knowledge platform serving multiple
+              products across multi-region AWS infrastructure. Customer queries were taking hours to
+              resolve, content was multilingual and growing faster than humans could curate, and the
+              cost and quality of any LLM-backed answer experience had to hold up under enterprise audit.
+            </p>
+            <p class="text-muted leading-relaxed">
+              The brief: build a multi-agent RAG system that meets the latency, accuracy, and compliance
+              bar of a 50-year-old enterprise software vendor — and prove it on every release.
+            </p>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Constraints</p>
+            <ul class="space-y-2 text-fg">
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multilingual coverage across <span class="font-mono">7+</span> locales — answer quality cannot regress in any language.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-region AWS; data residency, OIDC federation, and zero secret material in CI.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Conversational latency budget — token cost and inference time both treated as first-class metrics.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Audit-clean by default — no security findings tolerated at any release boundary.</span></li>
+            </ul>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Approach</p>
+            <div class="grid md:grid-cols-2 gap-px bg-line border border-line rounded-md overflow-hidden">
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">01 · Ingestion</p>
+                <p class="text-fg leading-relaxed">
+                  Distributed nightly ingestion on Step Functions with <span class="font-mono">10 concurrent maps</span>,
+                  embedding <span class="font-mono">500k+</span> documents into an OpenSearch hybrid vector index.
+                  Multi-region CDK stacks; GitHub Actions CI/CD over OIDC; no long-lived secrets.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">02 · Multi-agent RAG</p>
+                <p class="text-fg leading-relaxed">
+                  FastAPI + LangGraph orchestration with <span class="font-mono">6 concurrent agents</span> handling
+                  retrieval, ranking, synthesis, and follow-up disambiguation. Semantic caching to short-circuit
+                  repeat work; Claude on Bedrock as the answer model.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">03 · Evaluation</p>
+                <p class="text-fg leading-relaxed">
+                  A <span class="font-mono">15-metric</span> LLM eval framework — groundedness, relevance, latency,
+                  token cost, locale-specific accuracy. Every prompt and model change gated against the suite;
+                  drift alerts on production traffic.
+                </p>
+              </div>
+              <div class="bg-bg p-5">
+                <p class="label-mono mb-2">04 · Observability</p>
+                <p class="text-fg leading-relaxed">
+                  OpenTelemetry across the stack: agent traces, retrieval scoring, token spend per route.
+                  Audit posture clean enough to land <span class="font-mono">zero security findings</span> on review.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Outcomes</p>
+            <dl class="grid grid-cols-2 md:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
+              <div class="bg-bg p-5">
+                <dt class="label-mono">customer query time</dt>
+                <dd class="font-mono text-xl text-fg mt-1">2 hr → 10 min</dd>
+                <p class="text-xs text-subtle mt-1">automated RAG workflows replacing manual research</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">inference cost</dt>
+                <dd class="font-mono text-xl text-fg mt-1">−35%</dd>
+                <p class="text-xs text-subtle mt-1">eval-driven prompt &amp; model selection</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">nightly ingestion</dt>
+                <dd class="font-mono text-xl text-fg mt-1">500k+ docs</dd>
+                <p class="text-xs text-subtle mt-1">step functions · 10 concurrent maps</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">locale coverage</dt>
+                <dd class="font-mono text-xl text-fg mt-1">7+ locales</dd>
+                <p class="text-xs text-subtle mt-1">per-locale eval gating</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">eval coverage</dt>
+                <dd class="font-mono text-xl text-fg mt-1">15 metrics</dd>
+                <p class="text-xs text-subtle mt-1">groundedness · relevance · latency · token cost</p>
+              </div>
+              <div class="bg-bg p-5">
+                <dt class="label-mono">security audit</dt>
+                <dd class="font-mono text-xl text-fg mt-1">0 findings</dd>
+                <p class="text-xs text-subtle mt-1">enterprise compliance review</p>
+              </div>
+            </dl>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Stack</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">AWS Bedrock</span>
+              <span class="chip">Claude</span>
+              <span class="chip">FastAPI</span>
+              <span class="chip">LangGraph</span>
+              <span class="chip">OpenSearch</span>
+              <span class="chip">Step Functions</span>
+              <span class="chip">Lambda</span>
+              <span class="chip">EventBridge</span>
+              <span class="chip">CDK</span>
+              <span class="chip">OIDC</span>
+              <span class="chip">OpenTelemetry</span>
+              <span class="chip">RAG</span>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Reflections</p>
+            <p class="text-fg leading-relaxed mb-4">
+              The 15-metric eval harness — not the agent graph or the embedding model — turned out to be
+              the load-bearing piece. Without it, every prompt change felt like a coin flip; with it,
+              iteration speed compounded across 7 locales.
+            </p>
+            <p class="text-muted leading-relaxed">
+              If I were starting again, I'd build the eval harness first and the multi-agent retrieval
+              second. The honest version of "did this change help" is the only thing that buys trust at
+              enterprise scale — especially when an audit is the gate to production.
+            </p>
+          </section>
+        </div>
+
+        <!-- Footer nav -->
+        <div class="container-narrow border-t border-line pt-8 pb-20">
+          <a href="../index.html#work" class="arrow-link text-sm">More work&nbsp;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

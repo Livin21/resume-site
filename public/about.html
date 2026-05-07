@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>About — Livin Mathew</title>
+    <meta name="description" content="Solutions Architect from Cochin, India. A decade in product engineering, with detours into self-hosting, home labs, F1, and travel." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://livinmathew.com/about.html" />
+    <meta property="og:title" content="About — Livin Mathew" />
+    <meta property="og:description" content="Solutions Architect from Cochin. A decade of shipping." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/about.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="manifest" href="./manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="./index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="./index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="./index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="./index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="./projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="./about.html" class="text-fg" aria-current="page">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="./LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="./index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="./index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="./index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="./projects.html" class="py-2 text-muted hover:text-fg">Projects</a>
+          <a href="./about.html" class="py-2 text-fg" aria-current="page">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- Bio -->
+      <section class="container-wide pt-20 md:pt-28 pb-16">
+        <p class="eyebrow mb-6">About</p>
+        <div class="grid md:grid-cols-[180px_1fr] gap-8 md:gap-12 items-start">
+          <div>
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-md border border-line overflow-hidden">
+              <img src="./assets/ProfilePic.png" alt="Livin Mathew" loading="lazy" decoding="async" class="w-full h-full object-cover" />
+            </div>
+          </div>
+          <div class="max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tightest leading-[1] mb-6">
+              Hi, I'm Livin<span class="text-accent">.</span>
+            </h1>
+            <div class="space-y-5 text-fg text-lg leading-relaxed">
+              <p>
+                I'm a Solutions Architect based in <span class="text-fg">Cochin, India</span>. Eleven years
+                in, I've moved between hands-on engineering and architecture leadership — bootstrapping a
+                startup to acqui-hire, scaling consumer Android apps to 10M+ downloads, building HIPAA /
+                HITRUST-compliant clinical AI pipelines, and most recently shipping production GenAI
+                platforms — multi-agent RAG, semantic search, and evaluation frameworks — on AWS.
+              </p>
+              <p class="text-muted">
+                I gravitate toward problems that sit at the seam between product and infrastructure:
+                multi-agent orchestration, retrieval and ranking, evaluation frameworks, and the
+                boring-but-load-bearing glue that decides whether a system feels fast, accurate, and
+                audit-clean under real enterprise scrutiny.
+              </p>
+              <p class="text-muted">
+                Currently leading AI engineering at <span class="text-fg">Centric Software</span> via
+                <span class="text-fg">Galent</span> — building a multi-agent GenAI PLM suite deployed to
+                Tier-1 fashion brands including Asics and Under Armour.
+                Open to staff / principal engineering and architecture conversations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recognition -->
+      <section class="section">
+        <div class="container-wide grid md:grid-cols-[180px_1fr] gap-6 md:gap-12">
+          <p class="eyebrow md:pt-1">Recognition</p>
+          <ul class="divide-y divide-line border-y border-line max-w-2xl">
+            <li class="py-4">
+              <div class="flex items-baseline justify-between gap-4">
+                <h3 class="text-base font-medium">Pillar of Strength</h3>
+                <span class="label-mono shrink-0">Metric Tree Labs</span>
+              </div>
+              <p class="text-muted text-sm mt-1">For leadership and resilience through challenging delivery cycles.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Talks -->
+      <section class="section">
+        <div class="container-wide grid md:grid-cols-[180px_1fr] gap-6 md:gap-12">
+          <p class="eyebrow md:pt-1">Talks</p>
+          <ul class="divide-y divide-line border-y border-line max-w-2xl">
+            <li class="py-4 flex items-baseline justify-between gap-4">
+              <span>JavaScript Best Practices</span>
+              <span class="label-mono shrink-0">Siemens Gamesa · 2019</span>
+            </li>
+            <li class="py-4 flex items-baseline justify-between gap-4">
+              <span>Android Jetpack</span>
+              <span class="label-mono shrink-0">KSUM · 2019</span>
+            </li>
+            <li class="py-4 flex items-baseline justify-between gap-4">
+              <span>Android Development with Kotlin</span>
+              <span class="label-mono shrink-0">VJCET · 2019</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Beyond the code -->
+      <section class="section">
+        <div class="container-wide">
+          <p class="eyebrow mb-3">Beyond the code</p>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-12">Where attention goes when work is closed.</h2>
+
+          <div class="grid md:grid-cols-2 gap-px bg-line border border-line rounded-md overflow-hidden">
+            <div class="bg-bg p-6">
+              <p class="label-mono mb-2">Formula 1</p>
+              <p class="text-fg leading-relaxed">
+                Where precision engineering and human concentration get tested under fluorescent rules
+                every two weeks. I watch for the team radio more than the racing.
+              </p>
+            </div>
+            <div class="bg-bg p-6">
+              <p class="label-mono mb-2">Home lab</p>
+              <p class="text-fg leading-relaxed">
+                A small Proxmox + Unraid cluster at home — VMs, ZFS, and an embarrassing number of
+                Docker containers. It's where I learn infra by breaking it.
+              </p>
+            </div>
+            <div class="bg-bg p-6">
+              <p class="label-mono mb-2">Self-hosting</p>
+              <p class="text-fg leading-relaxed">
+                Slowly clawing data back from cloud SaaS. Vaultwarden, Immich, Audiobookshelf,
+                Tailscale, Caddy. Each replacement is a quiet kind of satisfaction.
+              </p>
+            </div>
+            <div class="bg-bg p-6">
+              <p class="label-mono mb-2">Travel</p>
+              <p class="text-fg leading-relaxed">
+                Slow trips when possible. New cultures sharpen perspective; new cuisines sharpen palates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container-wide">
+          <p class="eyebrow mb-3">Contact</p>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Want to talk?</h2>
+          <p class="text-muted max-w-xl mb-8">
+            The best way to reach me is email. I read everything; I reply to most.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:reach.livin@gmail.com" class="btn btn-primary">
+              Email me
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="./index.html" class="btn btn-ghost">Back home</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

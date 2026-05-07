@@ -1,57 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found - Livin Mathew's Resume Site">
-    <meta name="robots" content="noindex, follow">
-    <title>404 - Page Not Found | Livin Mathew</title>
-    
-    <!-- Canonical URL for 404 page -->
-    <link rel="canonical" href="https://livinmathew.com/404.html">
-    
-    <link href="./style.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
-    <div class="min-h-screen flex items-center justify-center px-4">
-        <div class="max-w-2xl mx-auto text-center">
-            <div class="mb-8">
-                <i class="fas fa-exclamation-triangle text-8xl text-yellow-500 mb-6"></i>
-                <h1 class="text-6xl md:text-8xl font-bold mb-4 text-primary">404</h1>
-                <h2 class="text-2xl md:text-3xl font-semibold mb-4">Page Not Found</h2>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                    Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
-                </p>
-            </div>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <a href="./index.html" class="btn btn-primary">
-                    <i class="fas fa-home mr-2"></i>Go Home
-                </a>
-                <a href="./projects.html" class="btn btn-secondary">
-                    <i class="fas fa-folder mr-2"></i>View Projects
-                </a>
-                <a href="mailto:livinmathew99@gmail.com" class="btn bg-gray-700 text-white hover:bg-gray-600">
-                    <i class="fas fa-envelope mr-2"></i>Contact Me
-                </a>
-            </div>
-            
-            <div class="text-gray-500 dark:text-gray-400">
-                <p>Looking for something specific? Feel free to reach out!</p>
-            </div>
-        </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Page not found — Livin Mathew" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <title>404 — Livin Mathew</title>
 
-    <script>
-        // Theme toggle functionality (for consistency)
-        const html = document.documentElement;
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            html.classList.toggle('dark', savedTheme === 'dark');
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            html.classList.add('dark');
-        }
-    </script>
-</body>
+    <link rel="canonical" href="https://livinmathew.com/404.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="min-h-screen flex items-center justify-center px-6">
+      <div class="container-wide w-full">
+        <p class="eyebrow mb-6">404 · not found</p>
+        <h1 class="text-6xl md:text-8xl font-semibold tracking-tightest leading-[0.95] mb-6">
+          Nothing here<span class="text-accent">.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted max-w-xl leading-snug mb-10">
+          Either the URL is wrong, or I removed it. Either way — you've got options.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="./index.html" class="btn btn-primary">
+            Go home
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="./projects.html" class="btn btn-ghost">View projects</a>
+          <a href="mailto:reach.livin@gmail.com" class="btn btn-ghost">Email me</a>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

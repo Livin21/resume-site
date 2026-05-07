@@ -1,1110 +1,397 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth overflow-x-hidden">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
 
-    <!-- Primary Meta Tags -->
-    <title>Projects - Livin Mathew | Solutions Architect Portfolio</title>
-    <meta
-      name="title"
-      content="Projects - Livin Mathew | Solutions Architect Portfolio"
-    />
-    <meta
-      name="description"
-      content="Explore innovative projects by Livin Mathew including MidEast Pulse (Middle East news aggregator with 500+ daily users), GoRagToolkit (Go RAG toolkit for LLM apps), XpenseShots (privacy-focused expense tracker), go-fake (AI data generator), S3 Virus Scanner (AWS security), KloudArch, CoverCraft AI, and create-sequelize-express."
-    />
-    <meta
-      name="keywords"
-      content="MidEast Pulse, Middle East News, GoRagToolkit, RAG, LLM, AI Projects, go-fake, S3 Virus Scanner, AWS Security, KloudArch, CoverCraft AI, XpenseShots, Expense Tracker, OCR, OpenAI, Terraform, Chrome Extension, NPM Package, Open Source, Healthcare Tech, Go Programming, ClamAV, React"
-    />
+    <title>Projects — Livin Mathew</title>
+    <meta name="title" content="Projects — Livin Mathew" />
+    <meta name="description" content="Projects and open-source by Livin Mathew: MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, S3 Virus Scanner, go-fake, XpenseShots, create-sequelize-express." />
+    <meta name="keywords" content="MidEast Pulse, GoRagToolkit, RAG, LLM, KloudArch, CoverCraft AI, XpenseShots, go-fake, S3 Virus Scanner, Open Source, Go, Node.js, AWS" />
     <meta name="author" content="Livin Mathew" />
     <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://livinmathew.com/projects.html" />
-    <meta
-      property="og:title"
-      content="Projects - Livin Mathew | Solutions Architect Portfolio"
-    />
-    <meta
-      property="og:description"
-      content="Explore innovative projects by Livin Mathew including MidEast Pulse (Middle East news aggregator with 500+ daily users), GoRagToolkit (Go RAG toolkit for LLM apps), XpenseShots (privacy-focused expense tracker), go-fake (AI data generator), S3 Virus Scanner (AWS security), KloudArch, CoverCraft AI, and create-sequelize-express."
-    />
-    <meta
-      property="og:image"
-      content="https://livinmathew.com/assets/ProfilePic.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="Livin Mathew - Solutions Architect Portfolio"
-    />
+    <meta property="og:title" content="Projects — Livin Mathew" />
+    <meta property="og:description" content="Projects and open-source by Livin Mathew." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+    <meta property="og:image:alt" content="Livin Mathew" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://livinmathew.com/projects.html"
-    />
-    <meta
-      property="twitter:title"
-      content="Projects - Livin Mathew | Solutions Architect Portfolio"
-    />
-    <meta
-      property="twitter:description"
-      content="Explore innovative projects by Livin Mathew including MidEast Pulse (Middle East news aggregator with 500+ daily users), GoRagToolkit (Go RAG toolkit for LLM apps), XpenseShots (privacy-focused expense tracker), go-fake (AI data generator), S3 Virus Scanner (AWS security), KloudArch, CoverCraft AI, and create-sequelize-express."
-    />
-    <meta
-      property="twitter:image"
-      content="https://livinmathew.com/assets/ProfilePic.png"
-    />
+    <meta property="twitter:url" content="https://livinmathew.com/projects.html" />
+    <meta property="twitter:title" content="Projects — Livin Mathew" />
+    <meta property="twitter:description" content="Projects and open-source by Livin Mathew." />
+    <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://livinmathew.com/projects.html" />
-
-    <!-- Web App Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="manifest" href="./manifest.json" />
 
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- View Transitions -->
-    <meta name="view-transition" content="same-origin" />
-
-    <!-- Stylesheets -->
     <link href="./style.css" rel="stylesheet" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
 
-    <!-- Structured Data for Creative Works -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Livin Mathew's Projects Portfolio",
-        "description": "Innovative software projects and open source contributions",
+        "name": "Livin Mathew's Projects",
         "itemListElement": [
-          {
-            "@type": "SoftwareApplication",
-            "position": 1,
-            "name": "MidEast Pulse",
-            "description": "Middle East news aggregator and pulse tracker with 500+ daily active users",
-            "applicationCategory": "NewsApplication",
-            "operatingSystem": "Web",
-            "url": "https://mideastpulse.live?utm_source=livinmathew.com",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 2,
-            "name": "GoRagToolkit",
-            "description": "A Go toolkit for building RAG (Retrieval-Augmented Generation) applications with multi-provider tokenization and token-aware context assembly",
-            "applicationCategory": "DeveloperApplication",
-            "codeRepository": "https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com",
-            "programmingLanguage": "Go",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 3,
-            "name": "KloudArch",
-            "description": "No-code GUI converting architecture diagrams to Terraform; powering pilot clients in healthcare",
-            "applicationCategory": "DeveloperApplication",
-            "operatingSystem": "Web",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 4,
-            "name": "CoverCraft AI",
-            "description": "Chrome extension that generates tailored cover letters with OpenAI",
-            "applicationCategory": "BrowserApplication",
-            "operatingSystem": "Chrome",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 5,
-            "name": "create-sequelize-express",
-            "description": "NPM scaffolding tool with over 2k downloads",
-            "applicationCategory": "DeveloperApplication",
-            "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express?utm_source=livinmathew.com",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 6,
-            "name": "go-fake",
-            "description": "AI-enhanced fake data generator for JSON/SQL schemas supporting 40+ data types",
-            "applicationCategory": "DeveloperApplication",
-            "codeRepository": "https://github.com/Livin21/go-fake?utm_source=livinmathew.com",
-            "programmingLanguage": "Go",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 7,
-            "name": "S3 Virus Scanner",
-            "description": "Automated serverless solution for scanning AWS S3 files using ClamAV",
-            "applicationCategory": "SecurityApplication",
-            "codeRepository": "https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          },
-          {
-            "@type": "SoftwareApplication",
-            "position": 8,
-            "name": "XpenseShots",
-            "description": "Privacy-focused expense tracker using OCR to convert payment screenshots into organized entries",
-            "applicationCategory": "FinanceApplication",
-            "codeRepository": "https://github.com/Livin21/XpenseShots?utm_source=livinmathew.com",
-            "programmingLanguage": "JavaScript",
-            "author": {
-              "@type": "Person",
-              "name": "Livin Mathew"
-            }
-          }
+          { "@type": "SoftwareApplication", "position": 1, "name": "MidEast Pulse", "url": "https://mideastpulse.live", "applicationCategory": "NewsApplication" },
+          { "@type": "SoftwareApplication", "position": 2, "name": "GoRagToolkit", "codeRepository": "https://github.com/ZenousAI/GoRagToolkit", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 3, "name": "KloudArch", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 4, "name": "CoverCraft AI", "applicationCategory": "BrowserApplication" },
+          { "@type": "SoftwareApplication", "position": 5, "name": "create-sequelize-express", "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 6, "name": "go-fake", "codeRepository": "https://github.com/Livin21/go-fake", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 7, "name": "S3 Virus Scanner", "codeRepository": "https://github.com/Livin21/s3-virus-scanner", "applicationCategory": "SecurityApplication" },
+          { "@type": "SoftwareApplication", "position": 8, "name": "XpenseShots", "codeRepository": "https://github.com/Livin21/XpenseShots", "applicationCategory": "FinanceApplication" }
         ]
       }
     </script>
-
-    <!-- Mobile Menu Animation -->
-    <style>
-      #mobile-menu {
-        transition: all 0.3s ease-in-out;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-
-      #mobile-menu:not(.hidden) {
-        max-height: 700px;
-        opacity: 1;
-        padding: 2rem;
-      }
-    </style>
   </head>
-  <body
-    class="bg-slate-50 dark:bg-dark-900 text-slate-900 dark:text-slate-50 font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden"
-  >
-    <!-- Background Blobs -->
-    <!-- Skip to main content for accessibility -->
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-primary text-white p-2 z-50 rounded-br-lg"
-      >Skip to main content</a
-    >
 
-    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div
-        class="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-blob"
-      ></div>
-      <div
-        class="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-blob animation-delay-2000"
-      ></div>
-      <div
-        class="absolute bottom-0 left-1/3 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-4000"
-      ></div>
-    </div>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
 
-    <!-- Navigation -->
-    <nav
-      class="fixed top-4 inset-x-0 mx-auto w-[95%] max-w-5xl z-50"
-    >
-      <div
-        class="glass rounded-full px-6 py-3 flex justify-between items-center"
-      >
-        <div
-          class="font-heading font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-        >
-          <a href="./index.html">LM</a>
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="./index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="./index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="./index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="./index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="./projects.html" class="text-fg" aria-current="page">Projects</a>
+          <a href="./about.html" class="hover:text-fg transition-colors">About</a>
         </div>
-
-        <div class="hidden md:flex items-center space-x-8">
-          <a
-            href="./index.html"
-            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >Home</a
-          >
-          <a
-            href="./index.html#about"
-            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >About</a
-          >
-          <a
-            href="./index.html#experience"
-            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >Experience</a
-          >
-          <a href="./projects.html" class="text-sm font-bold text-primary"
-            >Projects</a
-          >
-          <a
-            href="./index.html#contact"
-            class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-            >Contact</a
-          >
+        <div class="flex items-center gap-3">
+          <a href="./LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
         </div>
-
-        <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-btn"
-          class="w-10 h-10 md:hidden p-2 rounded-lg"
-          aria-label="Toggle mobile menu"
-        >
-          <svg
-            class="w-6 h-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              id="menu-icon"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M4 5C3.44772 5 3 5.44772 3 6C3 6.55228 3.44772 7 4 7H20C20.5523 7 21 6.55228 21 6C21 5.44772 20.5523 5 20 5H4ZM7 12C7 11.4477 7.44772 11 8 11H20C20.5523 11 21 11.4477 21 12C21 12.5523 20.5523 13 20 13H8C7.44772 13 7 12.5523 7 12ZM13 18C13 17.4477 13.4477 17 14 17H20C20.5523 17 21 17.4477 21 18C21 18.5523 20.5523 19 20 19H14C13.4477 19 13 18.5523 13 18Z"
-              fill="currentColor"
-            ></path>
-            <path
-              id="close-icon"
-              class="hidden"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2.5"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
       </div>
-
-      <!-- Mobile Menu -->
-      <div
-        id="mobile-menu"
-        class="w-full md:hidden hidden glass rounded-2xl mt-2 space-y-4 shadow-xl"
-      >
-        <a
-          href="./index.html"
-          class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700"
-          >Home</a
-        >
-        <a
-          href="./index.html#about"
-          class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700"
-          >About</a
-        >
-        <a
-          href="./index.html#experience"
-          class="block text-base font-medium hover:text-primary transition-colors py-3 border-b border-slate-200 dark:border-slate-700"
-          >Experience</a
-        >
-        <a
-          href="./projects.html"
-          class="block text-base font-bold text-primary py-3 border-b border-slate-200 dark:border-slate-700"
-          >Projects</a
-        >
-        <a
-          href="./index.html#contact"
-          class="block text-base font-medium hover:text-primary transition-colors py-3"
-          >Contact</a
-        >
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="./index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="./index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="./index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="./projects.html" class="py-2 text-fg" aria-current="page">Projects</a>
+          <a href="./about.html" class="py-2 text-muted hover:text-fg">About</a>
+        </div>
       </div>
     </nav>
 
-    <main id="main-content" class="pt-8 md:pt-32">
-      <!-- Hero Section -->
-      <section class="py-12 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-          <div class="mb-12 animate-fade-in">
-            <!-- Profile Picture -->
-            <div class="relative inline-block mb-8 group">
-              <div
-                class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"
-              ></div>
-              <div class="relative w-32 h-32 mx-auto">
-                <div
-                  class="absolute inset-0 rounded-full border-2 border-primary/30 border-t-primary animate-spin-slow"
-                ></div>
-                <div
-                  class="absolute inset-2 rounded-full border-2 border-secondary/30 border-b-secondary animate-spin-reverse-slow"
-                ></div>
-                <img
-                  src="./assets/ProfilePic.png"
-                  alt="Livin Mathew"
-                  loading="lazy"
-                  decoding="async"
-                  class="w-full h-full object-cover rounded-full border-4 border-white dark:border-dark-800 shadow-2xl relative z-10"
-                />
-              </div>
-            </div>
+    <main id="main">
+      <section class="container-wide pt-20 md:pt-28 pb-16 md:pb-20">
+        <p class="eyebrow mb-6">Projects · open source</p>
+        <h1 class="text-4xl md:text-6xl font-semibold tracking-tightest leading-[0.95] mb-6">
+          Things I've built<span class="text-accent">.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted max-w-2xl leading-snug">
+          A mix of shipped products, open-source tooling, and weekend experiments — most still alive,
+          a few resting peacefully.
+        </p>
 
-            <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">
-              Projects &
-              <span
-                class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-                >Open Source</span
-              >
-            </h1>
-            <p
-              class="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed"
-            >
-              Innovative solutions and contributions to the developer community,
-              built with modern technologies and best practices.
+        <dl class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden max-w-3xl">
+          <div class="bg-bg p-4">
+            <dt class="label-mono">npm downloads</dt>
+            <dd class="font-mono text-lg text-fg mt-1">2,000+</dd>
+          </div>
+          <div class="bg-bg p-4">
+            <dt class="label-mono">github stars</dt>
+            <dd class="font-mono text-lg text-fg mt-1">50+</dd>
+          </div>
+          <div class="bg-bg p-4">
+            <dt class="label-mono">live products</dt>
+            <dd class="font-mono text-lg text-fg mt-1">3</dd>
+          </div>
+          <div class="bg-bg p-4">
+            <dt class="label-mono">prod users</dt>
+            <dd class="font-mono text-lg text-fg mt-1">healthcare pilots</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="container-wide pb-16">
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
+          <!-- MidEast Pulse -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <!-- TODO: drop screenshot in public/assets/work/mideastpulse.png -->
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">mideastpulse · live</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(245,158,11,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">MidEast Pulse</h3>
+              <span class="label-mono">500+ DAU</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Middle East news aggregator and pulse tracker. Curated regional coverage with real-time updates.
             </p>
-          </div>
-        </div>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">News</span>
+                <span class="chip">Aggregation</span>
+              </div>
+              <a href="https://mideastpulse.live?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">live&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- GoRagToolkit -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <!-- TODO: drop screenshot in public/assets/work/goragtoolkit.png -->
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">$ go get goragtoolkit</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(99,102,241,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">GoRagToolkit</h3>
+              <span class="label-mono">open source</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Go toolkit for RAG: model metadata, multi-provider tokenization,
+              token-aware context assembly, query shape inference.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Go</span>
+                <span class="chip">RAG</span>
+              </div>
+              <a href="https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- KloudArch -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <!-- TODO: drop screenshot in public/assets/work/kloudarch.png -->
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">diagram → terraform</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(34,197,94,0.08), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">KloudArch</h3>
+              <span class="label-mono">pilot</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              No-code GUI that turns architecture diagrams directly into Terraform.
+              Powering pilot clients in healthcare.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Terraform</span>
+                <span class="chip">No-code</span>
+              </div>
+              <span class="label-mono text-xs text-subtle">private</span>
+            </div>
+          </li>
+
+          <!-- CoverCraft AI -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">covercraft · chrome ext</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(168,85,247,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">CoverCraft AI</h3>
+              <span class="label-mono">extension</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Chrome extension that uses GPT to generate tailored cover letters from job descriptions
+              and your profile.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">OpenAI</span>
+                <span class="chip">Chrome</span>
+              </div>
+              <span class="label-mono text-xs text-subtle">private</span>
+            </div>
+          </li>
+
+          <!-- create-sequelize-express -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">$ npx create-sequelize-express</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(239,68,68,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">create-sequelize-express</h3>
+              <span class="label-mono">2k+ dl</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              NPM scaffolding tool with 2,000+ downloads. Express + Sequelize boilerplate,
+              opinionated defaults, batteries-included.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Node.js</span>
+                <span class="chip">NPM</span>
+              </div>
+              <a href="https://www.npmjs.com/package/create-sequelize-express?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">npm&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- go-fake -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">go-fake · 40+ types</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(20,184,166,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">go-fake</h3>
+              <span class="label-mono">cli</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              AI-enhanced fake data generator for JSON / SQL schemas. 40+ data types,
+              relational generation, performance-tuned.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Go</span>
+                <span class="chip">CLI</span>
+              </div>
+              <a href="https://github.com/Livin21/go-fake?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- S3 Virus Scanner -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">s3 · clamav · serverless</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(244,63,94,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">S3 Virus Scanner</h3>
+              <span class="label-mono">aws</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Event-driven serverless solution for scanning files in AWS S3 buckets using ClamAV.
+              Drop-in for any S3-heavy stack.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">AWS</span>
+                <span class="chip">Security</span>
+              </div>
+              <a href="https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- XpenseShots -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">ocr · privacy-first</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(16,185,129,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">XpenseShots</h3>
+              <span class="label-mono">offline</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Privacy-focused expense tracker that turns payment screenshots into structured entries.
+              Runs entirely in-browser; nothing leaves the device.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">React</span>
+                <span class="chip">OCR</span>
+              </div>
+              <a href="https://github.com/Livin21/XpenseShots?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+        </ul>
       </section>
 
-      <!-- Featured Projects -->
-      <section class="py-12 px-4">
-        <div class="max-w-6xl mx-auto">
-          <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-            <!-- MidEast Pulse -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-amber-500/20 to-red-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-globe-americas text-6xl text-secondary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-                <div
-                  class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
-                ></div>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors"
-              >
-                MidEast Pulse
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Middle East news aggregator and pulse tracker delivering
-                real-time updates. Serving 500+ daily active users with
-                curated regional coverage.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-300"
-                  >News</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300"
-                  >Aggregator</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300"
-                  >Real-time</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-users mr-2"></i>500+ DAU</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-rocket mr-2"></i>Production</span
-                  >
-                </div>
-                <a
-                  href="https://mideastpulse.live?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Visit MidEast Pulse"
-                  class="text-slate-400 hover:text-secondary transition-colors text-lg"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- GoRagToolkit -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-indigo-500/20 to-cyan-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-brain text-6xl text-primary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-                <div
-                  class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
-                ></div>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors"
-              >
-                GoRagToolkit
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                A Go toolkit for building RAG (Retrieval-Augmented Generation)
-                applications. Provides model metadata, multi-provider
-                tokenization, token-aware context assembly, and query shape
-                inference.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
-                  >Go</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300"
-                  >RAG</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-300"
-                  >LLM</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-robot mr-2"></i>AI/ML</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-code mr-2"></i>Open Source</span
-                  >
-                </div>
-                <a
-                  href="https://github.com/ZenousAI/GoRagToolkit?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GoRagToolkit on GitHub"
-                  class="text-slate-400 hover:text-primary transition-colors text-lg"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- KloudArch -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-cloud text-6xl text-primary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-                <div
-                  class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"
-                ></div>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors"
-              >
-                KloudArch
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Revolutionary no-code GUI that converts architecture diagrams
-                directly into Terraform infrastructure code. Currently powering
-                pilot clients in the healthcare sector.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
-                  >Terraform</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300"
-                  >GUI</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
-                  >No-Code</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-users mr-2"></i>Pilot Clients</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-rocket mr-2"></i>Production</span
-                  >
-                </div>
-                <a
-                  href="./projects.html"
-                  aria-label="View KloudArch"
-                  class="text-slate-400 hover:text-primary transition-colors text-lg"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- CoverCraft AI -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-green-500/20 to-blue-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-robot text-6xl text-secondary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors"
-              >
-                CoverCraft AI
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Chrome extension that leverages OpenAI's GPT models to generate
-                personalized, tailored cover letters. Analyzes job descriptions
-                and user profiles.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
-                  >OpenAI</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300"
-                  >Chrome</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300"
-                  >GPT</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-download mr-2"></i>Chrome Store</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-star mr-2"></i>AI-Powered</span
-                  >
-                </div>
-                <a
-                  href="./projects.html"
-                  aria-label="View CoverCraft AI"
-                  class="text-slate-400 hover:text-secondary transition-colors text-lg"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- create-sequelize-express -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fab fa-npm text-6xl text-accent/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
-              >
-                create-sequelize-express
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Popular NPM scaffolding tool with over 2,000 downloads. Provides
-                a complete boilerplate for Express.js applications with
-                Sequelize ORM.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300"
-                  >Node.js</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300"
-                  >NPM</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
-                  >Express</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-download mr-2"></i>2K+ Downloads</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-code mr-2"></i>Open Source</span
-                  >
-                </div>
-                <a
-                  href="https://www.npmjs.com/package/create-sequelize-express?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="create-sequelize-express on NPM"
-                  class="text-slate-400 hover:text-accent transition-colors text-lg"
-                >
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- go-fake -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-database text-6xl text-primary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-primary transition-colors"
-              >
-                go-fake
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                AI-enhanced fake data generator for JSON/SQL schemas. Supports
-                40+ data types, complex relationships, and enterprise-grade
-                performance optimizations.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
-                  >Go</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
-                  >AI</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300"
-                  >CLI</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-robot mr-2"></i>AI-Powered</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-code mr-2"></i>Open Source</span
-                  >
-                </div>
-                <a
-                  href="https://github.com/Livin21/go-fake?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="go-fake on GitHub"
-                  class="text-slate-400 hover:text-primary transition-colors text-lg"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- S3 Virus Scanner -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-red-500/20 to-orange-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-shield-virus text-6xl text-secondary/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors"
-              >
-                S3 Virus Scanner
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Automated serverless solution for scanning files in AWS S3
-                buckets using ClamAV. Event-driven architecture ensures
-                efficient malware detection.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300"
-                  >AWS</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-300"
-                  >Security</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
-                  >Serverless</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-cloud mr-2"></i>Serverless</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-code mr-2"></i>Open Source</span
-                  >
-                </div>
-                <a
-                  href="https://github.com/Livin21/s3-virus-scanner?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="S3 Virus Scanner on GitHub"
-                  class="text-slate-400 hover:text-secondary transition-colors text-lg"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- XpenseShots -->
-            <div class="glass-card p-6 flex flex-col h-full group">
-              <div
-                class="mb-6 relative overflow-hidden rounded-xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 h-48 flex items-center justify-center"
-              >
-                <i
-                  class="fas fa-receipt text-6xl text-accent/50 group-hover:scale-110 transition-transform duration-500"
-                ></i>
-              </div>
-              <h3
-                class="text-2xl font-bold mb-3 group-hover:text-accent transition-colors"
-              >
-                XpenseShots
-              </h3>
-              <p class="text-slate-600 dark:text-slate-300 mb-6 flex-grow">
-                Privacy-focused expense tracker that converts payment screenshots
-                into organized entries using OCR. Runs entirely offline in the
-                browser with no cloud storage.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6">
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-300"
-                  >React</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-300"
-                  >Tesseract.js</span
-                >
-                <span
-                  class="px-2 py-1 text-xs font-medium rounded bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300"
-                  >IndexedDB</span
-                >
-              </div>
-              <div
-                class="flex justify-between items-center mt-auto pt-6 border-t border-slate-200 dark:border-slate-700"
-              >
-                <div
-                  class="flex gap-4 text-sm text-slate-500 dark:text-slate-400"
-                >
-                  <span class="flex items-center"
-                    ><i class="fas fa-lock mr-2"></i>Privacy-First</span
-                  >
-                  <span class="flex items-center"
-                    ><i class="fas fa-code mr-2"></i>Open Source</span
-                  >
-                </div>
-                <a
-                  href="https://github.com/Livin21/XpenseShots?utm_source=livinmathew.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="XpenseShots on GitHub"
-                  class="text-slate-400 hover:text-accent transition-colors text-lg"
-                >
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Technical Contributions -->
-      <section class="py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-          <h2 class="section-title">Technical Contributions</h2>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-card p-8">
-              <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                <i class="fas fa-chart-line text-primary"></i> Open Source
-                Impact
-              </h3>
-              <div class="space-y-6">
-                <div
-                  class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50"
-                >
-                  <span class="text-slate-600 dark:text-slate-300 font-medium"
-                    >NPM Downloads</span
-                  >
-                  <span class="font-bold text-primary text-xl">2,000+</span>
-                </div>
-                <div
-                  class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50"
-                >
-                  <span class="text-slate-600 dark:text-slate-300 font-medium"
-                    >GitHub Stars</span
-                  >
-                  <span class="font-bold text-primary text-xl">50+</span>
-                </div>
-                <div
-                  class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50"
-                >
-                  <span class="text-slate-600 dark:text-slate-300 font-medium"
-                    >Active Projects</span
-                  >
-                  <span class="font-bold text-primary text-xl">3</span>
-                </div>
-                <div
-                  class="flex items-center justify-between p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50"
-                >
-                  <span class="text-slate-600 dark:text-slate-300 font-medium"
-                    >Production Users</span
-                  >
-                  <span class="font-bold text-primary text-right"
-                    >Healthcare Pilots</span
-                  >
-                </div>
-              </div>
-            </div>
-
-            <div class="glass-card p-8">
-              <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                <i class="fas fa-layer-group text-secondary"></i> Technology
-                Stack
-              </h3>
-              <div class="space-y-6">
-                <div>
-                  <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">
-                    Backend
-                  </h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300"
-                      >Node.js</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300"
-                      >Go</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-300"
-                      >Python</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">
-                    Frontend
-                  </h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-300"
-                      >React</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300"
-                      >Next.js</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300"
-                      >Tailwind</span
-                    >
-                  </div>
-                </div>
-                <div>
-                  <h4 class="font-bold text-slate-800 dark:text-slate-200 mb-3">
-                    Cloud & DevOps
-                  </h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-300"
-                      >AWS</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300"
-                      >Terraform</span
-                    >
-                    <span
-                      class="px-3 py-1.5 text-sm font-medium rounded bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300"
-                      >Docker</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Call to Action -->
-      <section class="py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="section-title">Interested in Collaborating?</h2>
-          <p
-            class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto"
-          >
-            I'm always open to discussing new projects, innovative ideas, and
-            opportunities to contribute to the developer community.
+      <section class="section">
+        <div class="container-wide">
+          <p class="eyebrow mb-3">Collaborate</p>
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Building something interesting?</h2>
+          <p class="text-muted max-w-xl mb-8">
+            I'm always up for a conversation about hard infrastructure problems,
+            RAG systems, or scaling early-stage products.
           </p>
-
-          <div class="flex flex-wrap justify-center gap-6">
-            <a
-              href="mailto:livinmathew99@gmail.com"
-              class="btn btn-primary flex items-center gap-2"
-            >
-              <i class="fas fa-envelope"></i> Get in Touch
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:reach.livin@gmail.com" class="btn btn-primary">
+              Email me
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             </a>
-            <a
-              href="https://github.com/livin21"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary flex items-center gap-2"
-            >
-              <i class="fab fa-github"></i> View GitHub
-            </a>
-            <a
-              href="./index.html#contact"
-              class="btn bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700 flex items-center gap-2"
-            >
-              <i class="fas fa-user"></i> Back to Resume
-            </a>
+            <a href="./index.html" class="btn btn-ghost">Back home</a>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer
-      class="bg-white dark:bg-dark-900 border-t border-slate-200 dark:border-slate-800 py-12"
-      role="contentinfo"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6"
-      >
-        <div class="text-center md:text-left">
-          <span
-            class="font-heading font-bold text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-            >LM</span
-          >
-          <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">
-            &copy; 2026 Livin Mathew. All rights reserved.
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
           </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
         </div>
-
-        <div class="flex items-center gap-6 text-slate-400">
-          <a
-            href="https://github.com/livin21"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            class="hover:text-primary transition-colors text-xl"
-            ><i class="fab fa-github"></i
-          ></a>
-          <a
-            href="https://linkedin.com/in/livin21"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            class="hover:text-primary transition-colors text-xl"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a
-            href="https://medium.com/@livinmathew"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Medium"
-            class="hover:text-primary transition-colors text-xl"
-            ><i class="fab fa-medium"></i
-          ></a>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
         </div>
       </div>
     </footer>
 
     <script>
-      // Always use dark mode
-      document.documentElement.classList.add("dark");
-
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const menuIcon = document.getElementById("menu-icon");
-      const closeIcon = document.getElementById("close-icon");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        menuIcon.classList.toggle("hidden");
-        closeIcon.classList.toggle("hidden");
-      });
-
-      // Close mobile menu when clicking on a link
-      mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          menuIcon.classList.remove("hidden");
-          closeIcon.classList.add("hidden");
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
         });
-      });
-
-      // Intersection Observer for fade-in animations
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-slide-up");
-            entry.target.style.opacity = "1";
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll("section").forEach((section) => {
-        section.style.opacity = "0";
-        observer.observe(section);
-      });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>
