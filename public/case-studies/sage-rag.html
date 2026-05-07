@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark" />
 
     <title>GenAI knowledge platform at Sage — Livin Mathew</title>
-    <meta name="description" content="Case study: a multi-agent RAG knowledge platform on AWS Bedrock at Sage UK — 500k+ docs/nightly, 7+ locales, 35% inference cost cut, 2hr → 10min response time." />
+    <meta name="description" content="Case study: a multi-agent RAG knowledge platform on AWS Bedrock at Sage UK. 500k+ docs/nightly, 7+ locales, 35% inference cost cut, 2hr → 10min response time." />
     <meta name="author" content="Livin Mathew" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0A0A0A" />
@@ -65,7 +65,7 @@
             GenAI knowledge platform at Sage<span class="text-accent">.</span>
           </h1>
           <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">
-            A multi-agent RAG platform serving Sage's product teams across multi-region AWS —
+            A multi-agent RAG platform serving Sage's product teams across multi-region AWS:
             Bedrock-powered semantic search, semantic caching, multilingual support, and a
             15-metric LLM evaluation harness gating every release.
           </p>
@@ -112,18 +112,19 @@
               cost and quality of any LLM-backed answer experience had to hold up under enterprise audit.
             </p>
             <p class="text-muted leading-relaxed">
-              The brief: build a multi-agent RAG system that meets the latency, accuracy, and compliance
-              bar of a 50-year-old enterprise software vendor — and prove it on every release.
+              The brief was to build a multi-agent RAG system that met the latency, accuracy, and
+              compliance bar of a 50-year-old enterprise software vendor, and to prove it on every
+              release.
             </p>
           </section>
 
           <section>
             <p class="eyebrow mb-4">Constraints</p>
             <ul class="space-y-2 text-fg">
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multilingual coverage across <span class="font-mono">7+</span> locales — answer quality cannot regress in any language.</span></li>
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-region AWS; data residency, OIDC federation, and zero secret material in CI.</span></li>
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Conversational latency budget — token cost and inference time both treated as first-class metrics.</span></li>
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Audit-clean by default — no security findings tolerated at any release boundary.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multilingual coverage across <span class="font-mono">7+</span> locales. Answer quality cannot regress in any language.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-region AWS, with data residency, OIDC federation, and zero secret material in CI.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Conversational latency budget. Token cost and inference time are both treated as first-class metrics.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Audit-clean by default. No security findings tolerated at any release boundary.</span></li>
             </ul>
           </section>
 
@@ -142,16 +143,16 @@
                 <p class="label-mono mb-2">02 · Multi-agent RAG</p>
                 <p class="text-fg leading-relaxed">
                   FastAPI + LangGraph orchestration with <span class="font-mono">6 concurrent agents</span> handling
-                  retrieval, ranking, synthesis, and follow-up disambiguation. Semantic caching to short-circuit
-                  repeat work; Claude on Bedrock as the answer model.
+                  retrieval, ranking, synthesis, and follow-up disambiguation. Semantic caching short-circuits
+                  repeat work. Claude on Bedrock is the answer model.
                 </p>
               </div>
               <div class="bg-bg p-5">
                 <p class="label-mono mb-2">03 · Evaluation</p>
                 <p class="text-fg leading-relaxed">
-                  A <span class="font-mono">15-metric</span> LLM eval framework — groundedness, relevance, latency,
-                  token cost, locale-specific accuracy. Every prompt and model change gated against the suite;
-                  drift alerts on production traffic.
+                  A <span class="font-mono">15-metric</span> LLM eval framework covering groundedness, relevance,
+                  latency, token cost, and locale-specific accuracy. Every prompt and model change is gated
+                  against the suite, with drift alerts on production traffic.
                 </p>
               </div>
               <div class="bg-bg p-5">
@@ -221,14 +222,14 @@
           <section>
             <p class="eyebrow mb-4">Reflections</p>
             <p class="text-fg leading-relaxed mb-4">
-              The 15-metric eval harness — not the agent graph or the embedding model — turned out to be
-              the load-bearing piece. Without it, every prompt change felt like a coin flip; with it,
-              iteration speed compounded across 7 locales.
+              The 15-metric eval harness mattered more than the agent graph or the embedding model.
+              Without it, every prompt change felt like a coin flip. With it, iteration speed compounded
+              across 7 locales.
             </p>
             <p class="text-muted leading-relaxed">
-              If I were starting again, I'd build the eval harness first and the multi-agent retrieval
-              second. The honest version of "did this change help" is the only thing that buys trust at
-              enterprise scale — especially when an audit is the gate to production.
+              If I were starting again, I would build the eval harness first and the multi-agent
+              retrieval second. At enterprise scale, an honest answer to "did this change help" is what
+              earns trust, especially when an audit is the gate to production.
             </p>
           </section>
         </div>
@@ -247,7 +248,7 @@
             <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
             <span class="text-subtle"> · cochin, in</span>
           </p>
-          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
         </div>
         <div class="flex items-center gap-5 text-muted">
           <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>

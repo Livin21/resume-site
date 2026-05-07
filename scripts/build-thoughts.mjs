@@ -81,7 +81,7 @@ function footerHTML() {
             <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
             <span class="text-subtle"> · cochin, in</span>
           </p>
-          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
         </div>
         <div class="flex items-center gap-5 text-muted">
           <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
@@ -212,8 +212,8 @@ function indexBody(posts) {
           Thoughts<span class="text-accent">.</span>
         </h1>
         <p class="text-lg md:text-xl text-muted max-w-2xl leading-snug">
-          Notes on what I'm learning building production GenAI — multi-agent RAG, evaluation,
-          serverless architecture, and the boring infrastructure decisions that quietly compound.
+          Notes on what I'm learning while building production GenAI: multi-agent RAG, evaluation,
+          serverless architecture, and the infrastructure decisions that quietly compound.
           Cross-posted from Medium and LinkedIn.
         </p>
       </section>
@@ -320,7 +320,7 @@ async function main() {
   // Index
   const indexHTML = pageShell({
     title: "Thoughts — Livin Mathew",
-    description: "Notes on building production GenAI — multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn.",
+    description: "Notes on building production GenAI: multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn.",
     canonical: `${SITE}/thoughts/`,
     ogImage: `${SITE}/assets/ProfilePic.png`,
     body: indexBody(posts),

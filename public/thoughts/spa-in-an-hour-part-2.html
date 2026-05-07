@@ -7,7 +7,7 @@
 
     <title>I built an SPA in an hour, and this is what I learned (Part 2) — Livin Mathew</title>
     <meta name="title" content="I built an SPA in an hour, and this is what I learned (Part 2) — Livin Mathew" />
-    <meta name="description" content="Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
+    <meta name="description" content="Picking up where part 1 left off: collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
     <meta name="author" content="Livin Mathew" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0A0A0A" />
@@ -15,14 +15,14 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://livinmathew.com/thoughts/spa-in-an-hour-part-2.html" />
     <meta property="og:title" content="I built an SPA in an hour, and this is what I learned (Part 2) — Livin Mathew" />
-    <meta property="og:description" content="Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
+    <meta property="og:description" content="Picking up where part 1 left off: collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
     <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
     <meta property="og:image:alt" content="Livin Mathew" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://livinmathew.com/thoughts/spa-in-an-hour-part-2.html" />
     <meta property="twitter:title" content="I built an SPA in an hour, and this is what I learned (Part 2) — Livin Mathew" />
-    <meta property="twitter:description" content="Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
+    <meta property="twitter:description" content="Picking up where part 1 left off: collecting and importing data, writing the template with Vue directives, and shipping the SPA to production." />
     <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
 
     <link rel="canonical" href="https://livinmathew.com/thoughts/spa-in-an-hour-part-2.html" />
@@ -85,7 +85,7 @@
           <h1 class="text-3xl md:text-5xl font-semibold tracking-tightest leading-[1.05] mb-5">
             I built an SPA in an hour, and this is what I learned (Part 2)<span class="text-accent">.</span>
           </h1>
-          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">Picking up where part 1 left off — collecting and importing data, writing the template with Vue directives, and shipping the SPA to production.</p>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">Picking up where part 1 left off: collecting and importing data, writing the template with Vue directives, and shipping the SPA to production.</p>
           <div class="mt-8 flex flex-wrap items-center gap-1.5">
             <span class="chip">Vue.js</span><span class="chip">Frontend</span><span class="chip">JavaScript</span>
           </div>
@@ -93,7 +93,7 @@
 
         <div class="container-narrow pb-12">
           <div class="prose">
-            <p>In <a href="./spa-in-an-hour-part-1.html">part one</a>, Vue was introduced and we set up and created a simple app. If you haven't read that, start there.</p><h2>Step 2 — Collect and organise data</h2><p>For the webapp, I collected names, roles, and social-media profile links and organised them in JSON. Drop the JSON file inside <code>src/assets</code>.</p><h2>Step 3 — Import JSON to component</h2><p><code>Hello.vue</code> is a Vue component file inside <code>src/components</code>. Components are one of Vue's most powerful features — they extend basic HTML elements to encapsulate reusable code.</p><p>In <code>Hello.vue</code>, import the JSON. Set the component name inside <code>default{}</code>, and put the imported JSON inside <code>data(){}</code>.</p><h2>Step 4 — Write the template</h2><p>Vue uses an HTML-based template syntax that lets you declaratively bind the rendered DOM to the underlying instance's data.</p><h3>Directives</h3><p>Directives are special attributes prefixed with <code>v-</code>. Example: <code>&lt;p v-if="seen"&gt;Now you see me&lt;/p&gt;</code></p><h3>Data binding</h3><ul><li><strong>Text</strong> — the most basic form, using mustache syntax: <code>{{ msg }}</code></li><li><strong>Raw HTML</strong> — use the <code>v-html</code> directive</li><li><strong>Attributes</strong> — use <code>v-bind</code>: <code>&lt;div v-bind:id="dynamicId"&gt;&lt;/div&gt;</code></li><li><strong>Expressions</strong> — Vue supports full JavaScript expressions inside bindings: <code>{{ 1 + 2 }}</code> renders as <code>3</code></li></ul><h3>Looping through arrays</h3><p>Use <code>v-for</code> to loop array elements: <code>&lt;li v-for="mem in members"&gt;</code></p><h3>Rendering data</h3><p>Access object properties through the loop variable to render profile images, names, roles, and social links — using directives like <code>:src</code> for attributes.</p><h2>Step 5 — Add styles and build</h2><p>Add CSS styles. Run the development server with <code>npm run dev</code>, build for production with <code>npm run build</code>.</p><p>Go build something with <a href="https://vuejs.org/v2/guide/">Vue.js</a>. Happy coding.</p>
+            <p>In <a href="./spa-in-an-hour-part-1.html">part one</a>, Vue was introduced and we set up and created a simple app. If you haven't read that, start there.</p><h2>Step 2. Collect and organise data</h2><p>For the webapp, I collected names, roles, and social-media profile links and organised them in JSON. Drop the JSON file inside <code>src/assets</code>.</p><h2>Step 3. Import JSON to component</h2><p><code>Hello.vue</code> is a Vue component file inside <code>src/components</code>. Components are one of Vue's most powerful features; they extend basic HTML elements to encapsulate reusable code.</p><p>In <code>Hello.vue</code>, import the JSON. Set the component name inside <code>default{}</code>, and put the imported JSON inside <code>data(){}</code>.</p><h2>Step 4. Write the template</h2><p>Vue uses an HTML-based template syntax that lets you declaratively bind the rendered DOM to the underlying instance's data.</p><h3>Directives</h3><p>Directives are special attributes prefixed with <code>v-</code>. Example: <code>&lt;p v-if="seen"&gt;Now you see me&lt;/p&gt;</code></p><h3>Data binding</h3><ul><li><strong>Text</strong>: the most basic form, using mustache syntax: <code>{{ msg }}</code></li><li><strong>Raw HTML</strong>: use the <code>v-html</code> directive</li><li><strong>Attributes</strong>: use <code>v-bind</code>: <code>&lt;div v-bind:id="dynamicId"&gt;&lt;/div&gt;</code></li><li><strong>Expressions</strong>: Vue supports full JavaScript expressions inside bindings: <code>{{ 1 + 2 }}</code> renders as <code>3</code></li></ul><h3>Looping through arrays</h3><p>Use <code>v-for</code> to loop array elements: <code>&lt;li v-for="mem in members"&gt;</code></p><h3>Rendering data</h3><p>Access object properties through the loop variable to render profile images, names, roles, and social links, using directives like <code>:src</code> for attributes.</p><h2>Step 5. Add styles and build</h2><p>Add CSS styles. Run the development server with <code>npm run dev</code>, build for production with <code>npm run build</code>.</p><p>Go build something with <a href="https://vuejs.org/v2/guide/">Vue.js</a>. Happy coding.</p>
           </div>
         </div>
 
@@ -115,7 +115,7 @@
             <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
             <span class="text-subtle"> · cochin, in</span>
           </p>
-          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
         </div>
         <div class="flex items-center gap-5 text-muted">
           <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>

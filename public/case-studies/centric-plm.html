@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark" />
 
     <title>Multi-agent GenAI PLM at Centric Software — Livin Mathew</title>
-    <meta name="description" content="Case study: a multi-agent GenAI PLM suite at Centric Software — FastAPI + LangGraph + Bedrock Claude across millions of SKUs, deployed to Asics, Under Armour and other Tier-1 fashion brands." />
+    <meta name="description" content="Case study: a multi-agent GenAI PLM suite at Centric Software. FastAPI + LangGraph + Bedrock Claude across millions of SKUs, deployed to Asics, Under Armour and other Tier-1 fashion brands." />
     <meta name="author" content="Livin Mathew" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0A0A0A" />
@@ -64,8 +64,8 @@
             Multi-agent GenAI PLM at Centric Software<span class="text-accent">.</span>
           </h1>
           <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">
-            A multi-agent GenAI suite over Centric's PLM data — AI-assisted tech-pack generation,
-            BOM intelligence, and design / material search — deployed to Tier-1 fashion brands
+            A multi-agent GenAI suite over Centric's PLM data: AI-assisted tech-pack generation,
+            BOM intelligence, and design and material search. Deployed to Tier-1 fashion brands
             including Asics and Under Armour.
           </p>
 
@@ -104,24 +104,25 @@
           <section>
             <p class="eyebrow mb-4">The problem</p>
             <p class="text-lg text-fg leading-relaxed mb-4">
-              PLM data is rich but unforgiving — styles, BOMs, suppliers, materials, sustainability and
-              compliance attributes, all coupled to real-world manufacturing operations and audited
+              PLM data is rich and unforgiving. Styles, BOMs, suppliers, materials, sustainability,
+              compliance attributes are all coupled to real-world manufacturing operations and audited
               regulatory regimes. Tier-1 fashion brands wanted natural-language workflows over this data
-              without sacrificing the structural correctness PLM exists to enforce.
+              without giving up the structural correctness PLM exists to enforce.
             </p>
             <p class="text-muted leading-relaxed">
-              The brief: a GenAI PLM suite that's fast, multi-tenant, role-aware, and grounded enough
-              to be trusted by sourcing and design teams shipping product to global markets.
+              The brief was a GenAI PLM suite fast and grounded enough that sourcing and design teams
+              shipping product to global markets would actually trust it, with multi-tenant isolation
+              and role-aware access built in.
             </p>
           </section>
 
           <section>
             <p class="eyebrow mb-4">Constraints</p>
             <ul class="space-y-2 text-fg">
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-tenant from day one — strict isolation between brands sharing the same deployment.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Multi-tenant from day one, with strict isolation between brands sharing the same deployment.</span></li>
               <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Role-based access enforcement that survives every agent hop, not just the API gate.</span></li>
               <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Domain-specific accuracy: BOM correctness, material code mapping, sustainability and compliance flags must be ground-truthable.</span></li>
-              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Cost-per-query is a product-level KPI, not just an infra one — every release is gated against it.</span></li>
+              <li class="flex gap-3"><span class="label-mono shrink-0 pt-1">·</span><span>Cost-per-query treated as a product-level KPI, not just an infra one. Every release is gated against it.</span></li>
             </ul>
           </section>
 
@@ -132,8 +133,8 @@
                 <p class="label-mono mb-2">01 · Multi-agent system</p>
                 <p class="text-fg leading-relaxed">
                   FastAPI + LangGraph orchestration over PLM entities. Specialised agents for
-                  tech-pack generation, BOM intelligence, and design / material search; shared retrieval
-                  and grounding layer; Bedrock Claude as the reasoning model.
+                  tech-pack generation, BOM intelligence, and design and material search, with a
+                  shared retrieval and grounding layer. Bedrock Claude is the reasoning model.
                 </p>
               </div>
               <div class="bg-bg p-5">
@@ -154,9 +155,9 @@
               <div class="bg-bg p-5">
                 <p class="label-mono mb-2">04 · Workflow automation</p>
                 <p class="text-fg leading-relaxed">
-                  Natural-language queries map to deterministic PLM workflows where possible —
-                  the LLM picks the path, the system runs the actual operation. Predictable
-                  side-effects, auditable history.
+                  Natural-language queries map to deterministic PLM workflows where possible. The LLM
+                  picks the path; the system runs the actual operation. Predictable side-effects,
+                  auditable history.
                 </p>
               </div>
             </div>
@@ -182,7 +183,7 @@
               </div>
             </dl>
             <p class="text-xs text-subtle mt-3">
-              Specific figures redacted — published with client permission only.
+              Specific figures redacted; published with client permission only.
             </p>
           </section>
 
@@ -203,14 +204,14 @@
           <section>
             <p class="eyebrow mb-4">Reflections</p>
             <p class="text-fg leading-relaxed mb-4">
-              PLM is a domain where "plausible" is a failure mode — a confidently-wrong material code
+              PLM is a domain where "plausible" is a failure mode. A confidently-wrong material code
               breaks a real garment. The eval harness has to be domain-specific from day one; generic
               groundedness scores aren't enough.
             </p>
             <p class="text-muted leading-relaxed">
-              The other lesson: lean on deterministic PLM operations whenever the LLM's job is "pick
-              the right action." Generative reasoning is the navigation layer; the actual mutation
-              should always be an audited, testable system call.
+              The other lesson is to lean on deterministic PLM operations whenever the LLM's job is to
+              pick the right action. Let the LLM choose the path; let the system execute it. Mutations
+              should always run through audited, testable system calls.
             </p>
           </section>
         </div>
@@ -228,7 +229,7 @@
             <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
             <span class="text-subtle"> · cochin, in</span>
           </p>
-          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew. Built with restraint.</p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
         </div>
         <div class="flex items-center gap-5 text-muted">
           <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
