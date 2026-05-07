@@ -1,0 +1,45 @@
+# Livin Mathew
+
+> Solutions Architect and AI Engineer with 11+ years building production GenAI platforms, multi-agent RAG systems, and serverless architectures on AWS. Currently leading AI engineering at Centric Software (via Galent), building a multi-agent GenAI PLM suite deployed to Tier-1 fashion brands including Asics and Under Armour. Based in Cochin, India. Available for advisory consulting only.
+
+## About
+
+- [Home](https://livinmathew.com/): Overview, selected work, experience, and stack
+- [About](https://livinmathew.com/about.html): Bio, recognition, talks, and FAQs
+- [Projects](https://livinmathew.com/projects.html): Open source and shipped products including MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, create-sequelize-express, go-fake, S3 Virus Scanner, XpenseShots
+- [Resume (PDF)](https://livinmathew.com/LivinMathewResume.pdf)
+
+## Case studies
+
+- [Multi-agent GenAI PLM at Centric Software](https://livinmathew.com/case-studies/centric-plm.html): FastAPI + LangGraph + Bedrock Claude across millions of SKUs; multi-tenant, RBAC, deployed to Asics and Under Armour
+- [GenAI knowledge platform at Sage](https://livinmathew.com/case-studies/sage-rag.html): Multi-agent RAG, Bedrock semantic search, 500k+ docs/nightly across 7+ locales, 35% inference cost cut, 2hr to 10min response time
+
+## Thoughts
+
+- [Index](https://livinmathew.com/thoughts/): Notes on production GenAI, multi-agent RAG, evaluation, serverless architecture
+- [Kerala's demographics crisis: built on borrowed labor](https://livinmathew.com/thoughts/keralas-demographics-crisis.html)
+- [GitHub growth and Jevons paradox in software](https://livinmathew.com/thoughts/github-jevons-paradox.html)
+- [Handling AI agent iteration limits: a better UX pattern](https://livinmathew.com/thoughts/ai-agent-iteration-limits.html)
+- [Stop falling in love with your code](https://livinmathew.com/thoughts/stop-falling-in-love-with-your-code.html)
+- [Optimize AI agents with dynamic tool discovery](https://livinmathew.com/thoughts/dynamic-tool-discovery.html)
+- [MidEast War Live: built in 2 days with Claude Code](https://livinmathew.com/thoughts/realtime-conflict-dashboard.html)
+- [Monolith vs microservice vs serverless](https://livinmathew.com/thoughts/monolith-microservice-serverless.html)
+
+## Stack
+
+- Languages: Go, Python, TypeScript, Node.js
+- Frameworks: FastAPI, LangGraph, React
+- Cloud and infra: AWS Lambda, Fargate, Step Functions, EventBridge, DynamoDB, OpenSearch, CDK, Terraform
+- GenAI and data: AWS Bedrock, Claude, multi-agent orchestration, semantic caching, hybrid vector search, pgvector, Qdrant, LLM evaluation
+- Security and ops: OIDC, OAuth2, RBAC, SOC 2, HIPAA, HITRUST, secure SDLC, OpenTelemetry
+
+## Availability
+
+Advisory consulting only. Engagements typically cover GenAI architecture, multi-agent RAG, evaluation harnesses, serverless on AWS, and adjacent infrastructure decisions. Not currently looking for staff, principal, or fractional engineering roles.
+
+## Contact
+
+- Email: reach.livin@gmail.com
+- LinkedIn: https://linkedin.com/in/livin21
+- GitHub: https://github.com/livin21
+- Medium: https://medium.com/@livinmathew

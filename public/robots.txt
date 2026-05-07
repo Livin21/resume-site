@@ -1,17 +1,6 @@
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://livinmathew.com/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1
-
-# Disallow common non-essential files
-Disallow: /assets/
-Disallow: /*.css$
-Disallow: /*.js$
 Disallow: /404.html
+Disallow: /redirect.html
 
-# Allow specific important assets
-Allow: /assets/ProfilePic.png
+Sitemap: https://livinmathew.com/sitemap.xml

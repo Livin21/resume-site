@@ -1,11 +1,11 @@
 {
-  "name": "Livin Mathew - Solutions Architect",
+  "name": "Livin Mathew - Solutions Architect & AI Engineer",
   "short_name": "Livin Mathew",
-  "description": "Solutions Architect with 10+ years of experience",
+  "description": "Solutions Architect with 11+ years building production GenAI platforms, multi-agent RAG, and serverless systems on AWS.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "background_color": "#0A0A0A",
+  "theme_color": "#3B82F6",
   "orientation": "portrait-primary",
   "icons": [
     {

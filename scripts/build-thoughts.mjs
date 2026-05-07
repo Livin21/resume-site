@@ -123,7 +123,10 @@ function scriptsHTML() {
     </script>`;
 }
 
-function pageShell({ title, description, canonical, ogImage, ogType = "website", body, active }) {
+function pageShell({ title, description, canonical, ogImage, ogType = "website", body, active, jsonLd = [] }) {
+  const jsonLdBlocks = jsonLd
+    .map((obj) => `    <script type="application/ld+json">${JSON.stringify(obj)}</script>`)
+    .join("\n");
   return `<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
@@ -162,6 +165,7 @@ function pageShell({ title, description, canonical, ogImage, ogType = "website",
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link href="../style.css" rel="stylesheet" />
+${jsonLdBlocks}
   </head>
 
   <body>
@@ -318,6 +322,29 @@ async function main() {
   await rmGenerated(outDir);
 
   // Index
+  const indexBlogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Thoughts — Livin Mathew",
+    description: "Notes on building production GenAI: multi-agent RAG, evaluation frameworks, serverless architecture.",
+    url: `${SITE}/thoughts/`,
+    author: { "@type": "Person", name: "Livin Mathew", url: `${SITE}/` },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      url: p.body ? `${SITE}/thoughts/${p.slug}.html` : p.source_url,
+      datePublished: p.date,
+      author: { "@type": "Person", name: "Livin Mathew" },
+    })),
+  };
+  const indexBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+      { "@type": "ListItem", position: 2, name: "Thoughts", item: `${SITE}/thoughts/` },
+    ],
+  };
   const indexHTML = pageShell({
     title: "Thoughts — Livin Mathew",
     description: "Notes on building production GenAI: multi-agent RAG, evaluation frameworks, serverless architecture. Cross-posted from Medium and LinkedIn.",
@@ -325,19 +352,46 @@ async function main() {
     ogImage: `${SITE}/assets/ProfilePic.png`,
     body: indexBody(posts),
     active: "thoughts",
+    jsonLd: [indexBlogSchema, indexBreadcrumb],
   });
   await writeFile(join(outDir, "index.html"), indexHTML, "utf8");
 
   // Posts
   for (const p of posts) {
+    const canonical = p.body ? `${SITE}/thoughts/${p.slug}.html` : p.source_url;
+    const articleSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: p.title,
+      description: p.excerpt,
+      author: { "@type": "Person", name: "Livin Mathew", url: `${SITE}/` },
+      publisher: { "@type": "Person", name: "Livin Mathew", url: `${SITE}/` },
+      datePublished: p.date,
+      dateModified: p.date,
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      image: `${SITE}/assets/ProfilePic.png`,
+      url: canonical,
+      keywords: (p.tags || []).join(", "),
+      inLanguage: "en",
+    };
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: "Thoughts", item: `${SITE}/thoughts/` },
+        { "@type": "ListItem", position: 3, name: p.title, item: `${SITE}/thoughts/${p.slug}.html` },
+      ],
+    };
     const html = pageShell({
       title: `${p.title} — Livin Mathew`,
       description: p.excerpt,
-      canonical: p.body ? `${SITE}/thoughts/${p.slug}.html` : p.source_url,
+      canonical,
       ogImage: `${SITE}/assets/ProfilePic.png`,
       ogType: "article",
       body: postBody(p),
       active: "thoughts",
+      jsonLd: [articleSchema, breadcrumbSchema],
     });
     await writeFile(join(outDir, `${p.slug}.html`), html, "utf8");
   }
