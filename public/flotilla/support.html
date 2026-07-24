@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flotilla — Support</title>
+  <style>
+    body { background: #000; color: #eee; font-family: -apple-system, system-ui, sans-serif;
+           max-width: 640px; margin: 0 auto; padding: 40px 20px; line-height: 1.6; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 2em; }
+    a { color: #6ab7ff; }
+  </style>
+</head>
+<body>
+  <h1>Flotilla — Support</h1>
+  <p>Flotilla is a native iOS client for Unraid and Proxmox VE.</p>
+  <h2>Common setup notes</h2>
+  <ul>
+    <li><strong>Unraid:</strong> create an API key in Settings → Management Access → API,
+        then add the server with its LAN address (HTTPS, port 443).</li>
+    <li><strong>Proxmox VE:</strong> create an API token (Datacenter → Permissions →
+        API Tokens) with PVEAuditor + PVEVMAdmin, port 8006. If privilege separation is
+        on, grant the token the same roles.</li>
+    <li><strong>Self-signed certificates</strong> are pinned on first connect — if you
+        replace a server's certificate, re-approve it from Settings → the server →
+        endpoint list.</li>
+    <li><strong>Away from home:</strong> add your Tailscale address as a remote endpoint
+        (Settings → server → Endpoints).</li>
+  </ul>
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:livinmathew99@gmail.com">livinmathew99@gmail.com</a> — include
+     your platform (Unraid/Proxmox) and its version.</p>
+</body>
+</html>
