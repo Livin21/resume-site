@@ -55,7 +55,12 @@
     <li>For encrypted events, the size of the ciphertext — not its contents.</li>
     <li>A one-time cryptographic proof, checked at enrollment, that your device has an
         active Flotilla Pro purchase — not your Apple ID, not payment details, just a
-        signed Apple transaction the relay verifies and discards.</li>
+        signed Apple transaction the relay verifies and discards. That signed transaction
+        does technically carry a couple of other fields alongside the purchase proof
+        itself — a stable-but-pseudonymous <code>originalTransactionId</code> (Apple's own
+        purchase identifier, not tied to your Apple ID or name) and a <code>storefront</code>
+        (your App Store country) — but the relay never reads, logs, or persists either one;
+        it verifies the signature and discards the whole transaction on the spot.</li>
     <li><strong>For the beacon-less Proxmox path only</strong> (Proxmox's webhook posting
         straight to the relay, without <code>flotilla-beacon</code> installed): the actual
         event title, message, and severity, in plaintext. There's no local encryption step
@@ -107,6 +112,17 @@
      moves to that fork — not a simple settings change. Every other part of Flotilla
      (your direct connections to Unraid and Proxmox VE) needs none of this and keeps
      working regardless of what happens to Push.</p>
+
+  <h2>Reset / revoke</h2>
+  <p>"Reset pairing" (the Unraid plugin's settings page) and re-running Proxmox push setup for
+     an already-paired server (Flotilla → Settings → Notifications) both revoke the old pairing
+     at the relay — every key it holds (device tokens, heartbeat state, everything) — before
+     the new one takes over, rather than leaving it to linger there unused. This revoke is
+     best-effort: it never blocks the reset/re-pair itself, which always completes locally
+     regardless, so if the relay happens to be unreachable at that exact moment, the old
+     pairing may persist there rather than being cleanly wiped. Unpairing a single device
+     (swiping it away in that same screen) is narrower and unaffected by this: it only removes
+     that one device's Push token from the relay, the same best-effort way.</p>
 
   <h2>Caps</h2>
   <p>Per pairing, to keep a misbehaving script or a flapping server from turning into a
