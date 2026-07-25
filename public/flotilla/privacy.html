@@ -46,8 +46,10 @@
      <a href="push.html">Flotilla Push</a>.</p>
   <p>There is still no account and no analytics: enabling Push creates a random pairing ID
      and stores your device's Push token against it — nothing that identifies you.
-     Unpairing (in the app, or "Reset pairing" on the server) deletes that token from the
-     relay.</p>
+     Unpairing in the app removes that device's Push token from the relay. "Reset pairing"
+     on the server goes further: it revokes the whole pairing at the relay — every paired
+     device's token and all of that pairing's stored state (heartbeat and rate-limit
+     bookkeeping) — not just one token.</p>
   <h2>Contact</h2>
   <p><a href="mailto:livinmathew99@gmail.com">livinmathew99@gmail.com</a></p>
   <p style="color:#888; font-size:0.85rem;">Effective 2026 — this policy changes only if

@@ -61,6 +61,9 @@
         event title, message, and severity, in plaintext. There's no local encryption step
         in that path, so this is the one place in Flotilla Push where your server's event
         content genuinely isn't private from the relay operator.</li>
+    <li>The relay runs on Cloudflare. Like any hosted service, that means the network layer
+        sees the source IP address of requests reaching it — from your server and from your
+        phone — simply to deliver them; our own code neither logs nor stores it.</li>
   </ul>
   <p><strong>Cannot see</strong> (Unraid via the plugin, and Proxmox via
      <code>flotilla-beacon</code> — both take the encrypted path):</p>
@@ -111,8 +114,9 @@
   <ul>
     <li><strong>60 event pushes/hour</strong> and <strong>500/day.</strong></li>
     <li><strong>"Server unreachable" alerts capped at 3/day</strong> — the dead-man's
-        switch checks in roughly every 3 minutes and pages you once if it stops hearing
-        from your server, but won't spam you if a connection flaps all day.</li>
+        switch isn't a periodic check: every heartbeat rearms a roughly 3-minute timer at
+        the relay, and it pages you only if that timer is ever allowed to expire (your
+        server goes quiet). It won't spam you if a connection flaps all day.</li>
     <li><strong>At most one "notification cap reached" notice per day,</strong> so you
         know when you've hit the ceiling instead of alerts silently vanishing.</li>
     <li>Heartbeats themselves don't count against any cap.</li>
