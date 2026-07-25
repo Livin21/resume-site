@@ -14,7 +14,8 @@
 <body>
   <h1>Flotilla — Privacy Policy</h1>
   <p><strong>Flotilla collects no data — by default, none.</strong> The one optional
-     exception is Flotilla Push, described below; it's off unless you turn it on.</p>
+     exception is Flotilla Push, described below; it ships starting in Flotilla 1.1, off
+     unless you turn it on, and isn't present at all in Flotilla 1.0.</p>
   <p>Flotilla is a client for your own self-hosted servers. The app connects directly
      from your device to the Unraid and Proxmox VE machines you configure, and that direct
      connection is the whole app — no server of ours is involved. There is no account
@@ -28,13 +29,15 @@
   <p>"Load container icons" (off by default) fetches container icon images from the
      URLs your server's templates reference. Purchases are processed by Apple; Flotilla
      never sees payment details.</p>
-  <h2>Flotilla Push (optional)</h2>
-  <p>Flotilla Push sends alerts from your Unraid or Proxmox VE server to your iPhone when
-     the app isn't open. It's <strong>off by default</strong>, requires
-     <strong>Flotilla Pro</strong>, and is the only feature that isn't a direct
-     device-to-server connection — turning it on registers an Apple Push token for your
-     device with a relay server we operate, so it can hand your alerts to Apple's Push
-     Notification service on your server's behalf.</p>
+  <h2>Flotilla Push (optional — Flotilla 1.1 and later)</h2>
+  <p><strong>Flotilla 1.0 has no Push feature:</strong> it makes no connection to any
+     server of ours and collects no data at all. Starting in Flotilla 1.1, Flotilla Push
+     sends alerts from your Unraid or Proxmox VE server to your iPhone when the app isn't
+     open. It's <strong>off by default</strong>, requires <strong>Flotilla Pro</strong>,
+     and is the only feature that isn't a direct device-to-server connection — turning it
+     on registers an Apple Push token for your device with a relay server we operate, so
+     it can hand your alerts to Apple's Push Notification service on your server's
+     behalf.</p>
   <p>Notification content is end-to-end encrypted with a key that never leaves your
      network except inside the pairing QR code — the relay only ever forwards ciphertext
      it cannot read. The one exception is the beacon-less Proxmox VE setup, where the

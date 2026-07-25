@@ -16,6 +16,10 @@
 </head>
 <body>
   <h1>Flotilla — Push Notifications</h1>
+  <p style="background:#1a1a1a; border-left:3px solid #6ab7ff; padding:0.75em 1em;">
+     <strong>Flotilla Push arrives in Flotilla 1.1</strong> — it does not exist in the
+     current 1.0 release. This page documents how it will work when it ships; it's
+     opt-in (off by default) and requires Flotilla Pro.</p>
   <p>Flotilla Push is an optional, paid feature that sends alerts from your Unraid or
      Proxmox VE server to your iPhone even when the app isn't open. It's the one part of
      Flotilla that isn't a direct connection from your device to your server — turning it
@@ -83,10 +87,11 @@
 
   <h2>Self-hosting &amp; continuity</h2>
   <p>Both halves of this feature — <code>flotilla-agent</code> (the Unraid plugin and the
-     Proxmox beacon) and <code>flotilla-relay</code> (the relay itself) — are open source
-     under the MIT license. The relay URL isn't hardcoded: it's a config value in the
-     Unraid plugin's settings page, in the beacon's config file, and in the iOS app
-     itself, so you can point any of them at a different relay.</p>
+     Proxmox beacon) and <code>flotilla-relay</code> (the relay itself) — are MIT-licensed
+     and will be published as open source on GitHub at launch. The relay URL isn't
+     hardcoded: it's a config value in the Unraid plugin's settings page, in the beacon's
+     config file, and in the iOS app itself, so you can point any of them at a different
+     relay.</p>
   <p>To be honest about what that actually buys you: repointing the URL alone doesn't get
      you a fully independent setup. Delivering to Apple requires the relay to hold its own
      Apple Push Notification service credentials and its own App Store transaction
