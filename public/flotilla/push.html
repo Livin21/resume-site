@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flotilla — Push Notifications</title>
+  <style>
+    body { background: #000; color: #eee; font-family: -apple-system, system-ui, sans-serif;
+           max-width: 640px; margin: 0 auto; padding: 40px 20px; line-height: 1.6; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 2em; }
+    a { color: #6ab7ff; }
+    code { background: #1a1a1a; padding: 0.1em 0.35em; border-radius: 3px; font-size: 0.9em; }
+    ul { padding-left: 1.3em; }
+    li { margin-bottom: 0.5em; }
+  </style>
+</head>
+<body>
+  <h1>Flotilla — Push Notifications</h1>
+  <p>Flotilla Push is an optional, paid feature that sends alerts from your Unraid or
+     Proxmox VE server to your iPhone even when the app isn't open. It's the one part of
+     Flotilla that isn't a direct connection from your device to your server — turning it
+     on adds a relay in the middle. This page explains exactly what that relay does and
+     doesn't see. See also the <a href="privacy.html">privacy policy</a>.</p>
+
+  <h2>How it works</h2>
+  <p>In plain words: <strong>your server → the relay → Apple → your phone.</strong></p>
+  <ul>
+    <li><strong>On Unraid,</strong> the Flotilla Agent plugin hooks into Unraid's own
+        notification system. Each event is encrypted on the server, locally, with a key
+        that only your paired iPhone has, then sent to the relay. A heartbeat every 60
+        seconds tells the relay the server is alive.</li>
+    <li><strong>On Proxmox VE,</strong> the same thing happens via <code>flotilla-beacon</code>,
+        a small daemon you install with a one-line script — it receives Proxmox's native
+        webhook locally, encrypts it, and forwards it. If you skip the beacon, Proxmox's
+        webhook can instead post straight to the relay with no local encryption step; see
+        the plaintext exception below.</li>
+    <li><strong>The relay's</strong> job is to hold your device's Apple Push token,
+        enforce a few abuse caps, run a dead-man's-switch off your heartbeats, and forward
+        whatever it received — encrypted or not — to Apple's Push Notification service
+        (APNs).</li>
+    <li><strong>Apple</strong> delivers the push to your phone, where a Notification
+        Service Extension decrypts it (if it was encrypted) before you see it.</li>
+  </ul>
+
+  <h2>What the relay can and cannot see</h2>
+  <p><strong>Can see:</strong></p>
+  <ul>
+    <li>Your pairing ID — a random UUID, not tied to your name, email, or Apple ID.</li>
+    <li>Your device's Apple Push token(s) — up to 10 per pairing.</li>
+    <li>Timing: when your server sends events and heartbeats, and how often.</li>
+    <li>For encrypted events, the size of the ciphertext — not its contents.</li>
+    <li>A one-time cryptographic proof, checked at enrollment, that your device has an
+        active Flotilla Pro purchase — not your Apple ID, not payment details, just a
+        signed Apple transaction the relay verifies and discards.</li>
+    <li><strong>For the beacon-less Proxmox path only</strong> (Proxmox's webhook posting
+        straight to the relay, without <code>flotilla-beacon</code> installed): the actual
+        event title, message, and severity, in plaintext. There's no local encryption step
+        in that path, so this is the one place in Flotilla Push where your server's event
+        content genuinely isn't private from the relay operator.</li>
+  </ul>
+  <p><strong>Cannot see</strong> (Unraid via the plugin, and Proxmox via
+     <code>flotilla-beacon</code> — both take the encrypted path):</p>
+  <ul>
+    <li>What your alert says. The event's subject and description are sealed
+        (ChaCha20-Poly1305) on your server before they ever leave your network, with a key
+        that exists only in your server's local config and your phone's Keychain. The
+        relay only ever handles ciphertext it cannot decrypt — even the placeholder text
+        it puts in the outgoing push ("Flotilla" / "New server event") is a fixed dummy
+        string, never your real content.</li>
+    <li>Your server's address, hostname, or any credential. Your Unraid API key and
+        Proxmox API token never leave your LAN — the relay never receives them and never
+        asks for them. Your server's name is embedded in the pairing QR code for the app
+        to display locally; it's never sent to the relay.</li>
+    <li>Who you are. There's no account, login, email, or personal identifier — only a
+        random pairing ID and a Push token.</li>
+  </ul>
+  <p><strong>Apple</strong> sits downstream of the relay and necessarily sees whatever is
+     in a push's visible alert text, the same as any app that sends notifications: for
+     encrypted events that's the inert placeholder above; for the beacon-less Proxmox path
+     it's your real title and message, same as the relay. Apple also sees ordinary
+     delivery metadata (device token, timestamp) for every push — that's inherent to how
+     APNs works, not specific to Flotilla.</p>
+
+  <h2>Self-hosting &amp; continuity</h2>
+  <p>Both halves of this feature — <code>flotilla-agent</code> (the Unraid plugin and the
+     Proxmox beacon) and <code>flotilla-relay</code> (the relay itself) — are open source
+     under the MIT license. The relay URL isn't hardcoded: it's a config value in the
+     Unraid plugin's settings page, in the beacon's config file, and in the iOS app
+     itself, so you can point any of them at a different relay.</p>
+  <p>To be honest about what that actually buys you: repointing the URL alone doesn't get
+     you a fully independent setup. Delivering to Apple requires the relay to hold its own
+     Apple Push Notification service credentials and its own App Store transaction
+     verification, both tied to a specific app bundle ID — credentials that can't be
+     shared between deployments. So a self-hosted relay only delivers push for a build of
+     the app registered under its own operator's Apple Developer account, not for the
+     official App Store build of Flotilla. If the official relay ever goes away, the
+     realistic continuity path is a community fork: someone stands up their own relay and
+     publishes their own signed build of the app, and anyone who wants to keep using Push
+     moves to that fork — not a simple settings change. Every other part of Flotilla
+     (your direct connections to Unraid and Proxmox VE) needs none of this and keeps
+     working regardless of what happens to Push.</p>
+
+  <h2>Caps</h2>
+  <p>Per pairing, to keep a misbehaving script or a flapping server from turning into a
+     notification storm:</p>
+  <ul>
+    <li><strong>60 event pushes/hour</strong> and <strong>500/day.</strong></li>
+    <li><strong>"Server unreachable" alerts capped at 3/day</strong> — the dead-man's
+        switch checks in roughly every 3 minutes and pages you once if it stops hearing
+        from your server, but won't spam you if a connection flaps all day.</li>
+    <li><strong>At most one "notification cap reached" notice per day,</strong> so you
+        know when you've hit the ceiling instead of alerts silently vanishing.</li>
+    <li>Heartbeats themselves don't count against any cap.</li>
+    <li><strong>Up to 10 paired devices</strong> per server.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:livinmathew99@gmail.com">livinmathew99@gmail.com</a></p>
+</body>
+</html>

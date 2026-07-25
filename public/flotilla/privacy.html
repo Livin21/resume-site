@@ -13,11 +13,13 @@
 </head>
 <body>
   <h1>Flotilla — Privacy Policy</h1>
-  <p><strong>Flotilla collects no data. None.</strong></p>
+  <p><strong>Flotilla collects no data — by default, none.</strong> The one optional
+     exception is Flotilla Push, described below; it's off unless you turn it on.</p>
   <p>Flotilla is a client for your own self-hosted servers. The app connects directly
-     from your device to the Unraid and Proxmox VE machines you configure. There is no
-     Flotilla backend, no account system, no analytics, no crash reporting, no
-     advertising, and no third-party SDKs.</p>
+     from your device to the Unraid and Proxmox VE machines you configure, and that direct
+     connection is the whole app — no server of ours is involved. There is no account
+     system, no analytics, no crash reporting, no advertising, and no third-party SDKs,
+     anywhere in Flotilla, whether or not you use Push.</p>
   <h2>What stays on your device</h2>
   <p>Server addresses, API tokens (stored in the iOS Keychain), pinned certificate
      fingerprints, and cached fleet status for the widget. Nothing leaves your device
@@ -26,9 +28,27 @@
   <p>"Load container icons" (off by default) fetches container icon images from the
      URLs your server's templates reference. Purchases are processed by Apple; Flotilla
      never sees payment details.</p>
+  <h2>Flotilla Push (optional)</h2>
+  <p>Flotilla Push sends alerts from your Unraid or Proxmox VE server to your iPhone when
+     the app isn't open. It's <strong>off by default</strong>, requires
+     <strong>Flotilla Pro</strong>, and is the only feature that isn't a direct
+     device-to-server connection — turning it on registers an Apple Push token for your
+     device with a relay server we operate, so it can hand your alerts to Apple's Push
+     Notification service on your server's behalf.</p>
+  <p>Notification content is end-to-end encrypted with a key that never leaves your
+     network except inside the pairing QR code — the relay only ever forwards ciphertext
+     it cannot read. The one exception is the beacon-less Proxmox VE setup, where the
+     server's webhook posts its alert text to the relay in plaintext because that path has
+     no local encryption step. Full detail on exactly what the relay can and cannot see:
+     <a href="push.html">Flotilla Push</a>.</p>
+  <p>There is still no account and no analytics: enabling Push creates a random pairing ID
+     and stores your device's Push token against it — nothing that identifies you.
+     Unpairing (in the app, or "Reset pairing" on the server) deletes that token from the
+     relay.</p>
   <h2>Contact</h2>
   <p><a href="mailto:livinmathew99@gmail.com">livinmathew99@gmail.com</a></p>
   <p style="color:#888; font-size:0.85rem;">Effective 2026 — this policy changes only if
-     the app's behavior does, and the app's behavior is: collect nothing.</p>
+     the app's behavior does, and the app's behavior is: collect nothing beyond what
+     Flotilla Push, described above, discloses if and when you turn it on.</p>
 </body>
 </html>
