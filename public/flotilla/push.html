@@ -100,6 +100,10 @@
      hardcoded: it's a config value in the Unraid plugin's settings page, in the beacon's
      config file, and in the iOS app itself, so you can point any of them at a different
      relay.</p>
+  <p>Honesty note on where the bits come from: the Proxmox beacon's install script and its
+     binary releases are fetched directly from the <code>flotilla-agent</code> GitHub repo
+     (<code>raw.githubusercontent.com</code> and GitHub Releases), not proxied through the
+     relay. The relay only ever handles the pairing/push traffic described above.</p>
   <p>To be honest about what that actually buys you: repointing the URL alone doesn't get
      you a fully independent setup. Delivering to Apple requires the relay to hold its own
      Apple Push Notification service credentials and its own App Store transaction
