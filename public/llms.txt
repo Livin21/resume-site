@@ -6,7 +6,7 @@
 
 - [Home](https://livinmathew.com/): Overview, selected work, experience, and stack
 - [About](https://livinmathew.com/about.html): Bio, recognition, talks, and FAQs
-- [Projects](https://livinmathew.com/projects.html): Open source and shipped products including MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, create-sequelize-express, go-fake, S3 Virus Scanner, XpenseShots
+- [Projects](https://livinmathew.com/projects.html): Open source and shipped products including PitStop, MeetNote, MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, create-sequelize-express, go-fake, S3 Virus Scanner, XpenseShots
 - [Resume (PDF)](https://livinmathew.com/LivinMathewResume.pdf)
 
 ## Case studies
@@ -27,7 +27,7 @@
 
 ## Stack
 
-- Languages: Go, Python, TypeScript, Node.js
+- Languages: Go, Python, Swift, TypeScript, Node.js
 - Frameworks: FastAPI, LangGraph, React
 - Cloud and infra: AWS Lambda, Fargate, Step Functions, EventBridge, DynamoDB, OpenSearch, CDK, Terraform
 - GenAI and data: AWS Bedrock, Claude, multi-agent orchestration, semantic caching, hybrid vector search, pgvector, Qdrant, LLM evaluation

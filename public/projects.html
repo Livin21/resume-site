@@ -7,8 +7,8 @@
 
     <title>Projects — Livin Mathew</title>
     <meta name="title" content="Projects — Livin Mathew" />
-    <meta name="description" content="Projects and open-source by Livin Mathew: MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, S3 Virus Scanner, go-fake, XpenseShots, create-sequelize-express." />
-    <meta name="keywords" content="MidEast Pulse, GoRagToolkit, RAG, LLM, KloudArch, CoverCraft AI, XpenseShots, go-fake, S3 Virus Scanner, Open Source, Go, Node.js, AWS" />
+    <meta name="description" content="Projects and open-source by Livin Mathew: PitStop, MeetNote, MidEast Pulse, GoRagToolkit, KloudArch, CoverCraft AI, S3 Virus Scanner, go-fake, XpenseShots, create-sequelize-express." />
+    <meta name="keywords" content="PitStop, MeetNote, MidEast Pulse, GoRagToolkit, RAG, LLM, KloudArch, CoverCraft AI, XpenseShots, go-fake, S3 Virus Scanner, Open Source, Swift, macOS, Go, Node.js, AWS" />
     <meta name="author" content="Livin Mathew" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0A0A0A" />
@@ -44,14 +44,16 @@
         "@type": "ItemList",
         "name": "Livin Mathew's Projects",
         "itemListElement": [
-          { "@type": "SoftwareApplication", "position": 1, "name": "MidEast Pulse", "url": "https://mideastpulse.live", "applicationCategory": "NewsApplication" },
-          { "@type": "SoftwareApplication", "position": 2, "name": "GoRagToolkit", "codeRepository": "https://github.com/ZenousAI/GoRagToolkit", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
-          { "@type": "SoftwareApplication", "position": 3, "name": "KloudArch", "applicationCategory": "DeveloperApplication" },
-          { "@type": "SoftwareApplication", "position": 4, "name": "CoverCraft AI", "applicationCategory": "BrowserApplication" },
-          { "@type": "SoftwareApplication", "position": 5, "name": "create-sequelize-express", "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express", "applicationCategory": "DeveloperApplication" },
-          { "@type": "SoftwareApplication", "position": 6, "name": "go-fake", "codeRepository": "https://github.com/Livin21/go-fake", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
-          { "@type": "SoftwareApplication", "position": 7, "name": "S3 Virus Scanner", "codeRepository": "https://github.com/Livin21/s3-virus-scanner", "applicationCategory": "SecurityApplication" },
-          { "@type": "SoftwareApplication", "position": 8, "name": "XpenseShots", "codeRepository": "https://github.com/Livin21/XpenseShots", "applicationCategory": "FinanceApplication" }
+          { "@type": "SoftwareApplication", "position": 1, "name": "PitStop", "codeRepository": "https://github.com/Livin21/pitstop", "programmingLanguage": "Swift", "operatingSystem": "macOS", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 2, "name": "MeetNote", "codeRepository": "https://github.com/Livin21/meetnote", "programmingLanguage": "Swift", "operatingSystem": "macOS", "applicationCategory": "BusinessApplication" },
+          { "@type": "SoftwareApplication", "position": 3, "name": "MidEast Pulse", "url": "https://mideastpulse.live", "applicationCategory": "NewsApplication" },
+          { "@type": "SoftwareApplication", "position": 4, "name": "GoRagToolkit", "codeRepository": "https://github.com/ZenousAI/GoRagToolkit", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 5, "name": "KloudArch", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 6, "name": "CoverCraft AI", "applicationCategory": "BrowserApplication" },
+          { "@type": "SoftwareApplication", "position": 7, "name": "create-sequelize-express", "downloadUrl": "https://www.npmjs.com/package/create-sequelize-express", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 8, "name": "go-fake", "codeRepository": "https://github.com/Livin21/go-fake", "programmingLanguage": "Go", "applicationCategory": "DeveloperApplication" },
+          { "@type": "SoftwareApplication", "position": 9, "name": "S3 Virus Scanner", "codeRepository": "https://github.com/Livin21/s3-virus-scanner", "applicationCategory": "SecurityApplication" },
+          { "@type": "SoftwareApplication", "position": 10, "name": "XpenseShots", "codeRepository": "https://github.com/Livin21/XpenseShots", "applicationCategory": "FinanceApplication" }
         ]
       }
     </script>
@@ -129,6 +131,58 @@
 
       <section class="container-wide pb-16">
         <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
+          <!-- PitStop -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <!-- TODO: drop screenshot in public/assets/work/pitstop.png -->
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">claude · codex · gemini</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(56,189,248,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">PitStop</h3>
+              <span class="label-mono">menu bar</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              macOS menu bar app that tracks usage limits across Claude Code, Codex and Gemini
+              accounts — and switches between them in one click when one hits its cap.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Swift</span>
+                <span class="chip">Dev tools</span>
+              </div>
+              <a href="https://github.com/Livin21/pitstop?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+
+          <!-- MeetNote -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <!-- TODO: drop screenshot in public/assets/work/meetnote.png -->
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">mic + system audio · on-device</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(132,204,22,0.10), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">MeetNote</h3>
+              <span class="label-mono">on-device</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Privacy-first meeting notes for macOS. Records mic and system audio, transcribes
+              on-device, summarizes with a local LLM. Nothing ever leaves the Mac.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Swift</span>
+                <span class="chip">Local LLM</span>
+              </div>
+              <a href="https://github.com/Livin21/meetnote?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+            </div>
+          </li>
+
           <!-- MidEast Pulse -->
           <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
             <!-- TODO: drop screenshot in public/assets/work/mideastpulse.png -->

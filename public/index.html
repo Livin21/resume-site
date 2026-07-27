@@ -320,6 +320,64 @@
                 <span class="label-mono text-xs text-subtle">private</span>
               </div>
             </li>
+
+            <!-- PitStop -->
+            <li class="bg-bg p-6 md:p-8 group transition-colors hover:bg-surface">
+              <!-- TODO: drop screenshot in public/assets/work/pitstop.png -->
+              <div class="aspect-[16/10] mb-6 rounded-sm border border-line overflow-hidden bg-elevated relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">claude · codex · gemini</span>
+                </div>
+                <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(56,189,248,0.10), transparent 70%);"></div>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold">PitStop</h3>
+                <span class="label-mono">open source</span>
+              </div>
+              <p class="text-muted text-sm leading-relaxed mb-4">
+                macOS menu bar app that tracks usage limits across Claude Code, Claude Desktop, OpenAI
+                Codex and Google Gemini accounts, then <span class="text-fg">switches between them in one click</span>
+                when one hits its rate limit. Reads each provider's credentials locally and swaps them in place.
+              </p>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="chip">Swift</span>
+                  <span class="chip">SwiftUI</span>
+                  <span class="chip">macOS</span>
+                  <span class="chip">Dev tools</span>
+                </div>
+                <a href="https://github.com/Livin21/pitstop?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+              </div>
+            </li>
+
+            <!-- MeetNote -->
+            <li class="bg-bg p-6 md:p-8 group transition-colors hover:bg-surface">
+              <!-- TODO: drop screenshot in public/assets/work/meetnote.png -->
+              <div class="aspect-[16/10] mb-6 rounded-sm border border-line overflow-hidden bg-elevated relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">mic + system audio · on-device</span>
+                </div>
+                <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(132,204,22,0.10), transparent 70%);"></div>
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold">MeetNote</h3>
+                <span class="label-mono">fully local</span>
+              </div>
+              <p class="text-muted text-sm leading-relaxed mb-4">
+                Privacy-first meeting notes for macOS. Captures mic and system audio from a Teams/Zoom/Meet
+                call, transcribes both on-device with Apple's SpeechAnalyzer, and summarizes with a local
+                LM Studio model. <span class="text-fg">Nothing touches the network</span> — menu bar app and CLI over one engine.
+              </p>
+              <div class="flex items-center justify-between gap-2 flex-wrap">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="chip">Swift</span>
+                  <span class="chip">SpeechAnalyzer</span>
+                  <span class="chip">LM Studio</span>
+                  <span class="chip">Privacy</span>
+                </div>
+                <a href="https://github.com/Livin21/meetnote?utm_source=livinmathew.com" target="_blank" rel="noopener" class="arrow-link text-xs label-mono">github&nbsp;</a>
+              </div>
+            </li>
           </ul>
 
           <div class="md:hidden mt-6">
@@ -424,6 +482,7 @@
                 <li>Go</li>
                 <li>Node.js</li>
                 <li>Python</li>
+                <li>Swift</li>
                 <li>TypeScript</li>
                 <li>React</li>
                 <li>FastAPI</li>
