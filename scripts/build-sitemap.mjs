@@ -17,6 +17,7 @@ const STATIC_PAGES = [
   { path: "/about", priority: "0.7", changefreq: "yearly" },
   { path: "/projects", priority: "0.8", changefreq: "monthly" },
   { path: "/thoughts/", priority: "0.8", changefreq: "weekly" },
+  { path: "/flotilla/", priority: "0.8", changefreq: "monthly" },
   { path: "/case-studies/centric-plm", priority: "0.7", changefreq: "yearly" },
   { path: "/case-studies/sage-rag", priority: "0.7", changefreq: "yearly" },
 ];

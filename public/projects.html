@@ -131,6 +131,33 @@
 
       <section class="container-wide pb-16">
         <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line rounded-md overflow-hidden">
+          <!-- Flotilla -->
+          <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
+            <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <span class="font-mono text-2xs uppercase tracking-[0.2em] text-subtle">unraid · proxmox · e2e push</span>
+              </div>
+              <div class="absolute inset-0" style="background:radial-gradient(60% 50% at 50% 40%, rgba(56,189,248,0.14), transparent 70%);"></div>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-lg font-semibold">Flotilla</h3>
+              <span class="label-mono">ios app</span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed mb-4 flex-grow">
+              Native iOS and iPad client for Unraid and Proxmox VE. One fleet view, container and VM
+              control, parity and disk operations. Push alerts are sealed on your own server, so the
+              relay that forwards them can't read them — agent and relay are both open source.
+            </p>
+            <div class="flex items-center justify-between mt-auto pt-3 border-t border-line">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="chip">Swift</span>
+                <span class="chip">SwiftUI</span>
+                <span class="chip">Go</span>
+              </div>
+              <a href="./flotilla/" class="arrow-link text-xs label-mono">details&nbsp;</a>
+            </div>
+          </li>
+
           <!-- Stowed -->
           <li class="bg-bg p-6 group transition-colors hover:bg-surface flex flex-col">
             <div class="aspect-[16/10] mb-5 rounded-sm border border-line overflow-hidden bg-elevated relative">

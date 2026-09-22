@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>Flotilla — iOS app for Unraid &amp; Proxmox — Livin Mathew</title>
+    <meta name="description" content="Flotilla is a native iOS and iPadOS client for Unraid and Proxmox VE. One fleet view, container and VM control, parity and disk operations, and end-to-end encrypted push from an open-source agent the relay cannot read." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/flotilla/" />
+    <meta property="og:title" content="Flotilla — iOS app for Unraid &amp; Proxmox" />
+    <meta property="og:description" content="Manage Unraid and Proxmox servers from one app. Encrypted push alerts through a relay that cannot read them. No accounts, no telemetry." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/flotilla/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+
+      <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Flotilla for Unraid & Proxmox",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "iOS 17.0 or later, iPadOS",
+      "author": { "@type": "Person", "name": "Livin Mathew", "url": "https://livinmathew.com" },
+      "url": "https://livinmathew.com/flotilla/",
+      "downloadUrl": "https://apps.apple.com/app/flotilla-for-unraid-proxmox/id6794414215",
+      "offers": [
+        { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free for one server" },
+        { "@type": "Offer", "price": "4.99", "priceCurrency": "USD", "description": "Flotilla Pro, one-time purchase" }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../thoughts/" class="hover:text-fg transition-colors">Thoughts</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="hidden btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <article>
+        <header class="container-narrow pt-20 md:pt-24 pb-12">
+          <a href="../projects.html" class="label-mono hover:text-fg transition-colors">← All projects</a>
+          <p class="eyebrow mt-8 mb-5">iOS &amp; iPadOS · on the App Store</p>
+          <h1 class="text-4xl md:text-5xl font-semibold tracking-tightest leading-[1] mb-6">
+            Flotilla<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">
+            A native client for Unraid and Proxmox VE. Your whole homelab in one fleet view, with
+            encrypted push alerts delivered through a relay that cannot read them.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://apps.apple.com/app/flotilla-for-unraid-proxmox/id6794414215?utm_source=livinmathew.com" target="_blank" rel="noopener" class="btn btn-primary h-10 px-4 text-sm">App&nbsp;Store</a>
+            <a href="https://github.com/Livin21/flotilla-agent" target="_blank" rel="noopener" class="btn btn-ghost h-10 px-4 text-sm">Agent source</a>
+            <a href="https://github.com/Livin21/flotilla-relay" target="_blank" rel="noopener" class="btn btn-ghost h-10 px-4 text-sm">Relay source</a>
+          </div>
+
+          <dl class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-md overflow-hidden">
+            <div class="bg-bg p-4"><dt class="label-mono">platforms</dt><dd class="mt-1 text-sm">Unraid · Proxmox VE</dd></div>
+            <div class="bg-bg p-4"><dt class="label-mono">devices</dt><dd class="mt-1 text-sm">iPhone · iPad</dd></div>
+            <div class="bg-bg p-4"><dt class="label-mono">price</dt><dd class="mt-1 text-sm">Free · $4.99 one-time</dd></div>
+            <div class="bg-bg p-4"><dt class="label-mono">server side</dt><dd class="mt-1 text-sm">MIT, open source</dd></div>
+          </dl>
+        </header>
+
+        <div class="container-narrow pb-20 space-y-14">
+          <section>
+            <p class="eyebrow mb-4">The problem</p>
+            <div class="prose">
+              <p>
+                Homelab servers tell you nothing until you go looking. A disk starts throwing errors, a
+                parity check finishes, an array goes offline — and you find out the next time you open a
+                browser tab. The existing mobile options were single-platform, so running Unraid and
+                Proxmox meant two apps, and the ones that offered alerts did it by handing your
+                notifications to somebody else's server in plain text.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">What it does</p>
+            <div class="prose">
+              <ul>
+                <li><strong>One fleet view.</strong> Every server on one screen — storage under management, nodes online, containers and VMs running, live CPU.</li>
+                <li><strong>Containers and VMs.</strong> Start, stop, restart, pause and update. Follow logs live. Open a container's web UI from its port mappings.</li>
+                <li><strong>Unraid operations.</strong> Start, pause, resume and cancel parity checks with computed ETA and history; array start and stop; mover status; UPS battery, load and input voltage.</li>
+                <li><strong>Disk health.</strong> Per-disk temperature, errors and usage — and it never wakes a sleeping disk to tell you.</li>
+                <li><strong>Activity feed.</strong> Server notifications merged with state changes the app detects itself, grouped so a flapping service does not bury everything else.</li>
+                <li><strong>Widgets and Face ID.</strong> Home and lock screen widgets; optional biometric lock.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Push, without trusting the relay</p>
+            <div class="prose">
+              <p>
+                Apple only accepts pushes signed with a developer's credential, so any iOS push feature
+                for self-hosted software routes your alerts through a server the developer runs. That was
+                the part worth engineering around.
+              </p>
+              <p>
+                Pairing happens on your LAN through a QR code carrying a symmetric key. Your server seals
+                each event with ChaCha20-Poly1305 <em>before</em> anything leaves the network. The relay
+                authenticates the sender, forwards ciphertext to Apple, and stores nothing it can decrypt.
+                A Notification Service Extension decrypts on the phone and fills in the server's name from
+                local storage, so the name never crosses the wire either. The relay's complete view of you
+                is a pairing ID, an auth secret and an opaque blob.
+              </p>
+              <p>
+                Push is a paid feature and there are still no accounts. The app sends its StoreKit
+                transaction receipt and the relay verifies that signature offline against a pinned Apple
+                certificate chain — so it can prove an install is entitled without knowing who owns it.
+                No user table exists.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Design decisions</p>
+            <div class="prose">
+              <ul>
+                <li><strong>Pure client.</strong> The app talks to your servers and nothing else. No analytics, no crash reporting, no accounts. The one optional outbound request is fetching container icons, off by default.</li>
+                <li><strong>Trust on first use.</strong> Unraid ships a self-signed certificate, so the app pins the one it saw when you added the server and refuses quietly if it ever changes.</li>
+                <li><strong>Smart Connect.</strong> Add a Tailscale address as a second endpoint and reads fail over automatically when you leave the house. Mutations never fail over — retrying a stop command against a different endpoint risks running it twice.</li>
+                <li><strong>Never wake a disk.</strong> Temperatures are only rendered when the platform reports the disk as already spinning.</li>
+                <li><strong>Zero third-party dependencies.</strong> Foundation, SwiftUI, CryptoKit and Security. Nothing else ships in the binary.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Stack</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Swift Package</span>
+              <span class="chip">GraphQL</span><span class="chip">REST</span><span class="chip">CryptoKit</span>
+              <span class="chip">StoreKit 2</span><span class="chip">WidgetKit</span><span class="chip">APNs</span>
+              <span class="chip">Go</span><span class="chip">Cloudflare Workers</span><span class="chip">ChaCha20-Poly1305</span>
+            </div>
+            <div class="prose mt-5">
+              <p>
+                All testable logic lives in a Swift package with no UI imports, which is why it carries a
+                suite of several hundred tests that run in about three seconds. The app target is a thin
+                SwiftUI layer over it. On the server side, the Unraid plugin is plain shell and PHP, the
+                Proxmox companion is a small Go daemon, and the relay is a Cloudflare Worker — all MIT.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <p class="eyebrow mb-4">Install</p>
+            <div class="prose">
+              <p>
+                The app is on the <a href="https://apps.apple.com/app/flotilla-for-unraid-proxmox/id6794414215?utm_source=livinmathew.com" target="_blank" rel="noopener">App Store</a>,
+                free for one server with nothing held back. Push, widgets and additional servers are a
+                single $4.99 unlock with Family Sharing — no subscription.
+              </p>
+              <p>
+                Push also needs the agent on your server. Unraid users can install it from
+                <a href="https://ca.unraid.net/apps/flotilla-agent-0ed8zp01he1b40" target="_blank" rel="noopener">Community Applications</a>
+                (search for Flotilla); Proxmox users run a small daemon that receives PVE's native webhook
+                locally and seals it before it leaves the node. Both are documented in the
+                <a href="https://github.com/Livin21/flotilla-agent" target="_blank" rel="noopener">agent repository</a>,
+                along with the <a href="https://github.com/Livin21/flotilla-agent/blob/main/PROTOCOL.md" target="_blank" rel="noopener">wire protocol</a>.
+              </p>
+              <p>
+                Questions and feature requests go to
+                <a href="https://github.com/Livin21/flotilla-agent/discussions" target="_blank" rel="noopener">GitHub Discussions</a>,
+                or <a href="./support.html">support</a>. There's a <a href="./privacy.html">privacy policy</a> too —
+                it is short, because there is very little to say.
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+
