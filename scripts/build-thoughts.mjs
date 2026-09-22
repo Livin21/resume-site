@@ -16,6 +16,7 @@ const SOURCES = {
   linkedin: { label: "linkedin", verb: "Read on LinkedIn" },
   substack: { label: "substack", verb: "Read on Substack" },
   twitter: { label: "twitter", verb: "Read on X" },
+  original: { label: "original", verb: "" },
 };
 
 const SITE = "https://livinmathew.com";
@@ -258,10 +259,11 @@ function postBody(p) {
           </div>
         </div>
 
+        ${p.source_url ? `
         <div class="container-narrow border-t border-line py-10">
           <a href="${esc(p.source_url)}" target="_blank" rel="noopener" class="arrow-link text-sm">${esc(src.verb)}&nbsp;</a>
           <p class="label-mono mt-2">Originally on ${esc(src.label)}.</p>
-        </div>
+        </div>` : ""}
 
         <div class="container-narrow pb-20">
           <a href="./" class="arrow-link text-sm">More thoughts&nbsp;</a>

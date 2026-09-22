@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>My homelab broke a dozen times. There were two causes. — Livin Mathew</title>
+    <meta name="title" content="My homelab broke a dozen times. There were two causes. — Livin Mathew" />
+    <meta name="description" content="Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them." />
+    <meta name="author" content="Livin Mathew" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://livinmathew.com/thoughts/homelab-two-causes.html" />
+    <meta property="og:title" content="My homelab broke a dozen times. There were two causes. — Livin Mathew" />
+    <meta property="og:description" content="Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them." />
+    <meta property="og:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+    <meta property="og:image:alt" content="Livin Mathew" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://livinmathew.com/thoughts/homelab-two-causes.html" />
+    <meta property="twitter:title" content="My homelab broke a dozen times. There were two causes. — Livin Mathew" />
+    <meta property="twitter:description" content="Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them." />
+    <meta property="twitter:image" content="https://livinmathew.com/assets/ProfilePic.png" />
+
+    <link rel="canonical" href="https://livinmathew.com/thoughts/homelab-two-causes.html" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="../style.css" rel="stylesheet" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"My homelab broke a dozen times. There were two causes.","description":"Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them.","author":{"@type":"Person","name":"Livin Mathew","url":"https://livinmathew.com/"},"publisher":{"@type":"Person","name":"Livin Mathew","url":"https://livinmathew.com/"},"datePublished":"2026-09-22","dateModified":"2026-09-22","mainEntityOfPage":{"@type":"WebPage","@id":"https://livinmathew.com/thoughts/homelab-two-causes.html"},"image":"https://livinmathew.com/assets/ProfilePic.png","url":"https://livinmathew.com/thoughts/homelab-two-causes.html","keywords":"Homelab, Unraid, Postmortem","inLanguage":"en"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://livinmathew.com/"},{"@type":"ListItem","position":2,"name":"Thoughts","item":"https://livinmathew.com/thoughts/"},{"@type":"ListItem","position":3,"name":"My homelab broke a dozen times. There were two causes.","item":"https://livinmathew.com/thoughts/homelab-two-causes.html"}]}</script>
+  </head>
+
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:btn focus:btn-primary">Skip to content</a>
+
+    <nav class="sticky top-0 z-40 bg-bg/80 backdrop-blur border-b border-line" aria-label="Primary">
+      <div class="container-wide flex items-center justify-between h-14">
+        <a href="../index.html" class="font-mono text-sm tracking-tight" aria-label="Home">
+          <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm text-muted">
+          <a href="../index.html#work" class="hover:text-fg transition-colors">Work</a>
+          <a href="../index.html#experience" class="hover:text-fg transition-colors">Experience</a>
+          <a href="../index.html#stack" class="hover:text-fg transition-colors">Stack</a>
+          <a href="../projects.html" class="hover:text-fg transition-colors">Projects</a>
+          <a href="../thoughts/" class="text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="hover:text-fg transition-colors">About</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="../LivinMathewResume.pdf" target="_blank" rel="noopener" class="btn btn-ghost h-9 px-3 text-xs">
+            Resume
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/><path d="M5 21h14"/></svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden w-9 h-9 inline-flex items-center justify-center rounded-md border border-line text-muted hover:text-fg" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+            <svg id="menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+            <svg id="close-icon" class="hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden border-t border-line">
+        <div class="container-wide py-3 flex flex-col text-sm">
+          <a href="../index.html#work" class="py-2 text-muted hover:text-fg">Work</a>
+          <a href="../index.html#experience" class="py-2 text-muted hover:text-fg">Experience</a>
+          <a href="../index.html#stack" class="py-2 text-muted hover:text-fg">Stack</a>
+          <a href="../projects.html" class="py-2 text-muted hover:text-fg">Projects</a>
+          <a href="../thoughts/" class="py-2 text-fg" aria-current="page">Thoughts</a>
+          <a href="../about.html" class="py-2 text-muted hover:text-fg">About</a>
+        </div>
+      </div>
+    </nav>
+    <main id="main">
+
+      <article>
+        <header class="container-narrow pt-20 md:pt-24 pb-10">
+          <a href="./" class="label-mono hover:text-fg transition-colors">← All thoughts</a>
+          <p class="eyebrow mt-8 mb-5">original · 22 Sept 2026</p>
+          <h1 class="text-3xl md:text-5xl font-semibold tracking-tightest leading-[1.05] mb-5">
+            My homelab broke a dozen times. There were two causes.<span class="text-accent">.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-muted leading-snug max-w-2xl">Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-1.5">
+            <span class="chip">Homelab</span><span class="chip">Unraid</span><span class="chip">Postmortem</span>
+          </div>
+        </header>
+
+        <div class="container-narrow pb-12">
+          <div class="prose">
+            <p>I run an Unraid server at home. It holds the family photos, the media library, a few databases, and some things I'd rather not lose. Over three months this year it broke roughly a dozen times, and each time it broke differently enough that I treated it as a new problem.</p>
+
+<p>It wasn't. There were two causes. Everything else was a symptom wearing a costume.</p>
+
+<h2>The empty room</h2>
+
+<p>The first real outage looked like total data loss. Every container gone. My password manager showed a fresh setup screen. Nextcloud offered to walk me through installation. The photo library was empty.</p>
+
+<p>Nothing had been deleted. Unraid's <code>emhttpd</code> had skipped mounting the user-share filesystem at boot, so <code>/mnt/user</code> was just an empty directory sitting in RAM. Containers started, found nothing where their data should be, and did the reasonable thing: they initialised themselves. Meanwhile the real data sat untouched on the cache pool, a few inches away.</p>
+
+<p>That shape repeated all year. When a mount is missing, this system doesn't refuse to start. It writes to RAM and shows you an empty room, and every layer above it behaves correctly given what it can see. The diagnostic that settles it in one line:</p>
+
+<pre><code>stat -c %i /mnt/user/appdata/somefile
+stat -c %i /mnt/cache/appdata/somefile</code></pre>
+
+<p>Different inode numbers mean <code>/mnt/user</code> isn't really mounted. I've since used that check more times than I'd like.</p>
+
+<h2>The wedge that never fired the OOM killer</h2>
+
+<p>One afternoon I typed "check the homelab" out of habit. The server had been frozen for fifty minutes and I had no idea.</p>
+
+<p>15 GB of RAM, no swap. A VM I'd started for a side project pushed the baseline to 90%, then a bulk phone photo sync fired machine-learning jobs that load two to three gigabyte models on demand. The host layer thrashed itself to a standstill while the containers kept serving traffic. SSH accepted my TCP connection and then never sent a banner. Load average peaked near 200.</p>
+
+<p>The part I didn't expect: <strong>the kernel's OOM killer never fired.</strong> Not once, across three separate wedges. With no swap, a machine can thrash indefinitely without ever crossing the threshold that triggers the thing designed to rescue it. It just stops, politely, for ten hours.</p>
+
+<p>The worst one I ended by walking over and holding the power button.</p>
+
+<h2>Failures that hide</h2>
+
+<p>Almost nothing announced itself. This turned out to be the expensive part.</p>
+
+<p>A scheduler died silently and froze a catalogue six days in the past — I found out because something downstream looked stale, not because anything alerted. A reboot reset the server's timezone to US Pacific; the absolute time stayed correct, so nothing looked wrong, while every cron job fired twelve and a half hours off. My notification system kept working perfectly for weeks while a corrupted config file quietly routed everything to a browser bell nobody was watching. It had faithfully recorded 27 alerts I never saw.</p>
+
+<p>The lesson I keep relearning is that a silent failure and a working system are indistinguishable from the outside. If you can't tell them apart without logging in, you don't have monitoring — you have a dashboard.</p>
+
+<h2>The backup that ate the database</h2>
+
+<p>My favourite failure, in hindsight.</p>
+
+<p>One morning a self-hosted service stopped accepting logins with a SQLite disk I/O error. The cause was the nightly backup script I'd written to protect it. The script ran <code>sqlite3 .backup</code> from the host through one mount path, while the container held the same database open through a different one — a FUSE overlay over the same bytes. SQLite's write-ahead-log locking can't coordinate across two mount views of one file. The backup corrupted the live WAL state of the thing it was backing up.</p>
+
+<p>The script was careful in every way I'd thought to be careful. It verified the dump, refused to ship an empty one, and shipped offsite. It was just wrong about the filesystem underneath it. The fix was to stop the container, copy, and start it again — three seconds of downtime at 5am — and the general rule is now simply: <strong>no host process touches a running container's SQLite file.</strong></p>
+
+<h2>Only flash is real</h2>
+
+<p>A whole category of my fixes didn't survive a reboot, which is a humiliating thing to discover twice.</p>
+
+<p>A container restart policy set with <code>docker update</code> survives restarts but not template recreation. A memory limit applied to a running container does the same. Cron entries written to <code>/etc/cron.d/root</code> get regenerated from flash at every boot, so a watchdog I'd installed to catch silent failures was itself erased by a power cut — and then, of course, the thing it was watching died silently, with nothing left alive to catch it.</p>
+
+<p>On this OS the root filesystem is a RAM disk rebuilt at every boot. If a change isn't written to the flash drive, it didn't happen. Obvious in retrospect; not obvious at 1am.</p>
+
+<h2>The two causes</h2>
+
+<p>After the third wedge I stopped diagnosing incidents and went looking for what they had in common. There were exactly two things:</p>
+
+<ol>
+<li><strong>15 GB of RAM, oversubscribed, with no swap.</strong> Every freeze traces back to this. No single process was at fault — it was a flat 93% baseline that any small allocation could tip over.</li>
+<li><strong>Power-loss reboots, with no UPS.</strong> Every unclean shutdown found a different victim: a DNS race at boot, a web server spinning at 500% CPU on stale state, a wiped cron table, a zeroed config file, a cache pool that lost its device assignments.</li>
+</ol>
+
+<p>Everything else — a dozen distinct incidents across three months — was one of those two things wearing a different costume.</p>
+
+<h2>What the UPS proved in 72 hours</h2>
+
+<p>I'd been told to buy a UPS since June. I bought one in September.</p>
+
+<p>Three days after I plugged it in, the logs showed <strong>five power failures</strong>. Four of them in a single evening, between 8pm and 10:30. Eighty-two seconds total on battery.</p>
+
+<p>The server didn't notice any of them. No unclean reboot, no filesystem repair, no parity check, no dead scheduler, no corrupted config. Every event logged as <em>low line voltage</em> — the mains at my address sags constantly, and I had simply never known. I'd been reading those sags as "the homelab is unreliable."</p>
+
+<p>Ten days on it's absorbed eighteen power events and about eight minutes on battery, with continuous uptime throughout. The last piece was enabling the UPS to cut its own output after a clean shutdown, so that when mains returns the board's power-on setting boots the machine by itself. Nobody has to be home.</p>
+
+<h2>A coda about decimals</h2>
+
+<p>I also write an iOS app for managing these servers, and it has a card that displays UPS status. That card had never worked. Not once, for anyone.</p>
+
+<p>The API reports the current load in watts. My server said <code>77.85</code>. The code expected an integer, and Swift's JSON decoder does not quietly round — it throws. That error landed in the one query deliberately wrapped in a "this server might not have a UPS" catch, so the failure was swallowed and the card just never appeared.</p>
+
+<p>It had shipped broken and stayed broken because no real UPS had ever tested it. Mine was the first. There's something fitting about the server finally teaching the app that watches it.</p>
+
+<h2>What I'd tell myself in June</h2>
+
+<p>Buy the UPS first. Not because power cuts are dramatic, but because unclean shutdowns are how a stable system becomes a system with a dozen unrelated-looking bugs. Add swap even if you think you have enough RAM, because the failure mode without it isn't a crash you can read afterwards — it's a machine that stops answering and never says why.</p>
+
+<p>And check that your monitoring can tell the difference between "fine" and "not reporting". Mine couldn't, for about a month, and it was the most expensive thing on this list.</p>
+          </div>
+        </div>
+
+        
+
+        <div class="container-narrow pb-20">
+          <a href="./" class="arrow-link text-sm">More thoughts&nbsp;</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="border-t border-line py-10 mt-10">
+      <div class="container-wide flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm">
+        <div>
+          <p class="font-mono text-xs">
+            <span class="text-fg">livin</span><span class="text-subtle">.mathew</span>
+            <span class="text-subtle"> · cochin, in</span>
+          </p>
+          <p class="mt-2 label-mono">© <span id="year">2026</span> Livin Mathew.</p>
+        </div>
+        <div class="flex items-center gap-5 text-muted">
+          <a href="https://github.com/livin21" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-fg transition-colors">github</a>
+          <a href="https://linkedin.com/in/livin21" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-fg transition-colors">linkedin</a>
+          <a href="https://medium.com/@livinmathew" target="_blank" rel="noopener" aria-label="Medium" class="hover:text-fg transition-colors">medium</a>
+          <a href="mailto:reach.livin@gmail.com" aria-label="Email" class="hover:text-fg transition-colors">email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("mobile-menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        if (!btn || !menu) return;
+        btn.addEventListener("click", () => {
+          const open = !menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menuIcon.classList.toggle("hidden");
+          closeIcon.classList.toggle("hidden");
+          btn.setAttribute("aria-expanded", String(!open));
+        });
+        menu.querySelectorAll("a").forEach((a) =>
+          a.addEventListener("click", () => {
+            menu.classList.add("hidden");
+            menuIcon.classList.remove("hidden");
+            closeIcon.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false");
+          }),
+        );
+      })();
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

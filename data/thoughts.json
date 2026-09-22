@@ -1,12 +1,29 @@
 [
   {
+    "slug": "homelab-two-causes",
+    "title": "My homelab broke a dozen times. There were two causes.",
+    "date": "2026-09-22",
+    "source": "original",
+    "excerpt": "Three months of Unraid outages that each looked unique, and the two structural problems underneath all of them.",
+    "tags": [
+      "Homelab",
+      "Unraid",
+      "Postmortem"
+    ],
+    "body": "<p>I run an Unraid server at home. It holds the family photos, the media library, a few databases, and some things I'd rather not lose. Over three months this year it broke roughly a dozen times, and each time it broke differently enough that I treated it as a new problem.</p>\n\n<p>It wasn't. There were two causes. Everything else was a symptom wearing a costume.</p>\n\n<h2>The empty room</h2>\n\n<p>The first real outage looked like total data loss. Every container gone. My password manager showed a fresh setup screen. Nextcloud offered to walk me through installation. The photo library was empty.</p>\n\n<p>Nothing had been deleted. Unraid's <code>emhttpd</code> had skipped mounting the user-share filesystem at boot, so <code>/mnt/user</code> was just an empty directory sitting in RAM. Containers started, found nothing where their data should be, and did the reasonable thing: they initialised themselves. Meanwhile the real data sat untouched on the cache pool, a few inches away.</p>\n\n<p>That shape repeated all year. When a mount is missing, this system doesn't refuse to start. It writes to RAM and shows you an empty room, and every layer above it behaves correctly given what it can see. The diagnostic that settles it in one line:</p>\n\n<pre><code>stat -c %i /mnt/user/appdata/somefile\nstat -c %i /mnt/cache/appdata/somefile</code></pre>\n\n<p>Different inode numbers mean <code>/mnt/user</code> isn't really mounted. I've since used that check more times than I'd like.</p>\n\n<h2>The wedge that never fired the OOM killer</h2>\n\n<p>One afternoon I typed \"check the homelab\" out of habit. The server had been frozen for fifty minutes and I had no idea.</p>\n\n<p>15 GB of RAM, no swap. A VM I'd started for a side project pushed the baseline to 90%, then a bulk phone photo sync fired machine-learning jobs that load two to three gigabyte models on demand. The host layer thrashed itself to a standstill while the containers kept serving traffic. SSH accepted my TCP connection and then never sent a banner. Load average peaked near 200.</p>\n\n<p>The part I didn't expect: <strong>the kernel's OOM killer never fired.</strong> Not once, across three separate wedges. With no swap, a machine can thrash indefinitely without ever crossing the threshold that triggers the thing designed to rescue it. It just stops, politely, for ten hours.</p>\n\n<p>The worst one I ended by walking over and holding the power button.</p>\n\n<h2>Failures that hide</h2>\n\n<p>Almost nothing announced itself. This turned out to be the expensive part.</p>\n\n<p>A scheduler died silently and froze a catalogue six days in the past — I found out because something downstream looked stale, not because anything alerted. A reboot reset the server's timezone to US Pacific; the absolute time stayed correct, so nothing looked wrong, while every cron job fired twelve and a half hours off. My notification system kept working perfectly for weeks while a corrupted config file quietly routed everything to a browser bell nobody was watching. It had faithfully recorded 27 alerts I never saw.</p>\n\n<p>The lesson I keep relearning is that a silent failure and a working system are indistinguishable from the outside. If you can't tell them apart without logging in, you don't have monitoring — you have a dashboard.</p>\n\n<h2>The backup that ate the database</h2>\n\n<p>My favourite failure, in hindsight.</p>\n\n<p>One morning a self-hosted service stopped accepting logins with a SQLite disk I/O error. The cause was the nightly backup script I'd written to protect it. The script ran <code>sqlite3 .backup</code> from the host through one mount path, while the container held the same database open through a different one — a FUSE overlay over the same bytes. SQLite's write-ahead-log locking can't coordinate across two mount views of one file. The backup corrupted the live WAL state of the thing it was backing up.</p>\n\n<p>The script was careful in every way I'd thought to be careful. It verified the dump, refused to ship an empty one, and shipped offsite. It was just wrong about the filesystem underneath it. The fix was to stop the container, copy, and start it again — three seconds of downtime at 5am — and the general rule is now simply: <strong>no host process touches a running container's SQLite file.</strong></p>\n\n<h2>Only flash is real</h2>\n\n<p>A whole category of my fixes didn't survive a reboot, which is a humiliating thing to discover twice.</p>\n\n<p>A container restart policy set with <code>docker update</code> survives restarts but not template recreation. A memory limit applied to a running container does the same. Cron entries written to <code>/etc/cron.d/root</code> get regenerated from flash at every boot, so a watchdog I'd installed to catch silent failures was itself erased by a power cut — and then, of course, the thing it was watching died silently, with nothing left alive to catch it.</p>\n\n<p>On this OS the root filesystem is a RAM disk rebuilt at every boot. If a change isn't written to the flash drive, it didn't happen. Obvious in retrospect; not obvious at 1am.</p>\n\n<h2>The two causes</h2>\n\n<p>After the third wedge I stopped diagnosing incidents and went looking for what they had in common. There were exactly two things:</p>\n\n<ol>\n<li><strong>15 GB of RAM, oversubscribed, with no swap.</strong> Every freeze traces back to this. No single process was at fault — it was a flat 93% baseline that any small allocation could tip over.</li>\n<li><strong>Power-loss reboots, with no UPS.</strong> Every unclean shutdown found a different victim: a DNS race at boot, a web server spinning at 500% CPU on stale state, a wiped cron table, a zeroed config file, a cache pool that lost its device assignments.</li>\n</ol>\n\n<p>Everything else — a dozen distinct incidents across three months — was one of those two things wearing a different costume.</p>\n\n<h2>What the UPS proved in 72 hours</h2>\n\n<p>I'd been told to buy a UPS since June. I bought one in September.</p>\n\n<p>Three days after I plugged it in, the logs showed <strong>five power failures</strong>. Four of them in a single evening, between 8pm and 10:30. Eighty-two seconds total on battery.</p>\n\n<p>The server didn't notice any of them. No unclean reboot, no filesystem repair, no parity check, no dead scheduler, no corrupted config. Every event logged as <em>low line voltage</em> — the mains at my address sags constantly, and I had simply never known. I'd been reading those sags as \"the homelab is unreliable.\"</p>\n\n<p>Ten days on it's absorbed eighteen power events and about eight minutes on battery, with continuous uptime throughout. The last piece was enabling the UPS to cut its own output after a clean shutdown, so that when mains returns the board's power-on setting boots the machine by itself. Nobody has to be home.</p>\n\n<h2>A coda about decimals</h2>\n\n<p>I also write an iOS app for managing these servers, and it has a card that displays UPS status. That card had never worked. Not once, for anyone.</p>\n\n<p>The API reports the current load in watts. My server said <code>77.85</code>. The code expected an integer, and Swift's JSON decoder does not quietly round — it throws. That error landed in the one query deliberately wrapped in a \"this server might not have a UPS\" catch, so the failure was swallowed and the card just never appeared.</p>\n\n<p>It had shipped broken and stayed broken because no real UPS had ever tested it. Mine was the first. There's something fitting about the server finally teaching the app that watches it.</p>\n\n<h2>What I'd tell myself in June</h2>\n\n<p>Buy the UPS first. Not because power cuts are dramatic, but because unclean shutdowns are how a stable system becomes a system with a dozen unrelated-looking bugs. Add swap even if you think you have enough RAM, because the failure mode without it isn't a crash you can read afterwards — it's a machine that stops answering and never says why.</p>\n\n<p>And check that your monitoring can tell the difference between \"fine\" and \"not reporting\". Mine couldn't, for about a month, and it was the most expensive thing on this list.</p>"
+  },
+  {
     "slug": "keralas-demographics-crisis",
     "title": "Kerala's demographics crisis: built on borrowed labor",
     "date": "2026-05-06",
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_something-ive-been-watching-in-kerala-for-activity-7457693059766722560-G3KR",
     "excerpt": "Kerala's construction sites went quiet when migrant workers travelled home to vote. The pause exposed how heavily the state now leans on interstate labor.",
-    "tags": ["Kerala", "Demographics", "Economy"]
+    "tags": [
+      "Kerala",
+      "Demographics",
+      "Economy"
+    ]
   },
   {
     "slug": "github-jevons-paradox",
@@ -15,7 +32,11 @@
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_github-just-posted-insane-growth-numbers-activity-7452364193762254848-Fmte",
     "excerpt": "Cheaper code means more code. GitHub's growth is the Jevons paradox playing out in software, and it's pushing the underlying infrastructure (API calls, scrapers, agent traffic) toward new limits.",
-    "tags": ["Software", "Infrastructure", "AI"]
+    "tags": [
+      "Software",
+      "Infrastructure",
+      "AI"
+    ]
   },
   {
     "slug": "ai-agent-iteration-limits",
@@ -24,7 +45,11 @@
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_i-went-deep-into-my-own-go-agent-framework-activity-7449780690637996032-FG7V",
     "excerpt": "Most agent frameworks treat budget exhaustion as failure. A small Go framework I built routes to synthesis with partial results instead, then asks the user whether to continue.",
-    "tags": ["Agents", "Go", "UX"]
+    "tags": [
+      "Agents",
+      "Go",
+      "UX"
+    ]
   },
   {
     "slug": "stop-falling-in-love-with-your-code",
@@ -33,7 +58,11 @@
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_stop-falling-in-love-with-your-code-that-activity-7439559428787482624-fms5",
     "excerpt": "AI agents are automating code generation fast. Developers' centre of gravity is shifting away from implementation craft toward product understanding and user empathy.",
-    "tags": ["AI", "Software", "Career"]
+    "tags": [
+      "AI",
+      "Software",
+      "Career"
+    ]
   },
   {
     "slug": "dynamic-tool-discovery",
@@ -42,7 +71,11 @@
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_tool-search-tool-activity-7437137099767693312-gpuI",
     "excerpt": "Loading every tool definition upfront wastes tokens and degrades selection accuracy. A meta-tool that discovers tools on demand fixes both problems, especially as integrations multiply.",
-    "tags": ["Agents", "Claude API", "Optimization"]
+    "tags": [
+      "Agents",
+      "Claude API",
+      "Optimization"
+    ]
   },
   {
     "slug": "realtime-conflict-dashboard",
@@ -51,7 +84,11 @@
     "source": "linkedin",
     "source_url": "https://www.linkedin.com/posts/livin21_youre-doomscrolling-twitter-for-war-updates-activity-7434623707517538304-5Arg",
     "excerpt": "A real-time conflict intelligence dashboard pulling Telegram OSINT and news feeds through an AI pipeline for live mapping. Whole stack pair-programmed in two days with Claude Code.",
-    "tags": ["MidEast Pulse", "Claude Code", "AI"]
+    "tags": [
+      "MidEast Pulse",
+      "Claude Code",
+      "AI"
+    ]
   },
   {
     "slug": "monolith-microservice-serverless",
@@ -60,7 +97,11 @@
     "source": "medium",
     "source_url": "https://medium.com/@livinmathew/monolith-vs-microservice-vs-serverless-407cbaa63f50",
     "excerpt": "A short tour of monolith, microservice, and serverless architectures, and the honest test for which one your team should reach for next.",
-    "tags": ["Architecture", "Serverless", "Microservices"],
+    "tags": [
+      "Architecture",
+      "Serverless",
+      "Microservices"
+    ],
     "body": "<h2>The monolith</h2><p>Everything is contained within a single codebase. That makes it easy to develop, test, and deploy an application, but it can quickly become unwieldy as the application grows in size and complexity.</p><h2>Microservices</h2><p>Microservices break the application down into smaller, independently-shippable components. The result is greater flexibility, scalability, and fault tolerance. If one component fails, the rest of the application can keep running.</p><p>The price is complexity. Developers now have to manage multiple interdependent components, with high-level coordination and communication between teams.</p><h2>Serverless</h2><p>Serverless takes the microservices idea one step further by removing the need for servers altogether. You write code that runs in response to specific events or triggers, without worrying about server infrastructure.</p><p>You get cost efficiency: you only pay for the compute used during execution. The trade-offs include harder debugging and observability, and concerns around vendor lock-in.</p><h2>So which architecture is best?</h2><p>Each has its own strengths and weaknesses. The right choice depends on the specific shape of your application: its size, its complexity, your team's skillset, and your budget. The honest answer is almost always, it depends.</p>"
   },
   {
@@ -70,7 +111,11 @@
     "source": "medium",
     "source_url": "https://medium.com/@livinmathew/i-built-an-spa-in-an-hour-and-this-is-what-i-learned-part-2-32b6e31bb959",
     "excerpt": "Picking up where part 1 left off: collecting and importing data, writing the template with Vue directives, and shipping the SPA to production.",
-    "tags": ["Vue.js", "Frontend", "JavaScript"],
+    "tags": [
+      "Vue.js",
+      "Frontend",
+      "JavaScript"
+    ],
     "body": "<p>In <a href=\"./spa-in-an-hour-part-1.html\">part one</a>, Vue was introduced and we set up and created a simple app. If you haven't read that, start there.</p><h2>Step 2. Collect and organise data</h2><p>For the webapp, I collected names, roles, and social-media profile links and organised them in JSON. Drop the JSON file inside <code>src/assets</code>.</p><h2>Step 3. Import JSON to component</h2><p><code>Hello.vue</code> is a Vue component file inside <code>src/components</code>. Components are one of Vue's most powerful features; they extend basic HTML elements to encapsulate reusable code.</p><p>In <code>Hello.vue</code>, import the JSON. Set the component name inside <code>default{}</code>, and put the imported JSON inside <code>data(){}</code>.</p><h2>Step 4. Write the template</h2><p>Vue uses an HTML-based template syntax that lets you declaratively bind the rendered DOM to the underlying instance's data.</p><h3>Directives</h3><p>Directives are special attributes prefixed with <code>v-</code>. Example: <code>&lt;p v-if=\"seen\"&gt;Now you see me&lt;/p&gt;</code></p><h3>Data binding</h3><ul><li><strong>Text</strong>: the most basic form, using mustache syntax: <code>{{ msg }}</code></li><li><strong>Raw HTML</strong>: use the <code>v-html</code> directive</li><li><strong>Attributes</strong>: use <code>v-bind</code>: <code>&lt;div v-bind:id=\"dynamicId\"&gt;&lt;/div&gt;</code></li><li><strong>Expressions</strong>: Vue supports full JavaScript expressions inside bindings: <code>{{ 1 + 2 }}</code> renders as <code>3</code></li></ul><h3>Looping through arrays</h3><p>Use <code>v-for</code> to loop array elements: <code>&lt;li v-for=\"mem in members\"&gt;</code></p><h3>Rendering data</h3><p>Access object properties through the loop variable to render profile images, names, roles, and social links, using directives like <code>:src</code> for attributes.</p><h2>Step 5. Add styles and build</h2><p>Add CSS styles. Run the development server with <code>npm run dev</code>, build for production with <code>npm run build</code>.</p><p>Go build something with <a href=\"https://vuejs.org/v2/guide/\">Vue.js</a>. Happy coding.</p>"
   },
   {
@@ -80,7 +125,11 @@
     "source": "medium",
     "source_url": "https://medium.com/@livinmathew/i-built-a-spa-in-an-hour-and-this-is-what-i-learned-part-1-3d7b6001dc24",
     "excerpt": "Vue.js fundamentals through the lens of a quick build: installation, project setup with Vue CLI + Webpack, and the structure of a single-file component.",
-    "tags": ["Vue.js", "Frontend", "JavaScript"],
+    "tags": [
+      "Vue.js",
+      "Frontend",
+      "JavaScript"
+    ],
     "body": "<p>So my teammates and I were planning to develop a basic webpage displaying about / contact information. After discovering Quasar, a Vue.js framework, I decided to build the project with Vue.</p><blockquote><p>Simple. Elegant. Powerful.</p></blockquote><p>Vue is a progressive JavaScript framework focused on building user interfaces. As a front-end framework, it makes it easy to create beautiful webpages.</p><h3>What Vue offers</h3><ul><li><strong>Reactive interfaces</strong>: dynamically update parts of the page in response to user interaction.</li><li><strong>Declarative rendering</strong>: bind dynamic variables straight to the DOM.</li><li><strong>Data binding</strong>: bind data to UI elements.</li><li><strong>Directives</strong>: compiler-level attributes for behaviour.</li><li><strong>Template logic</strong>: if-else, loops, and more.</li><li><strong>Components &amp; nesting</strong>: extend basic HTML elements with reusable code.</li><li><strong>Event handling</strong>, <strong>computed properties</strong>, <strong>CSS transitions</strong>, and <strong>custom filters</strong>.</li></ul><h2>Step 1. Install Vue.js and set up the project</h2><p>There are a few ways to add Vue:</p><ul><li>Include a <code>&lt;script&gt;</code> tag in an HTML file</li><li>Install via npm</li><li>Use the Vue CLI tool with Webpack</li><li>Install via Bower</li></ul><p>The recommended path is the Vue CLI; it ships with everything you need. Run:</p><pre><code>$ npm install -g vue-cli\n$ vue init webpack myapp</code></pre><p>Answer the setup questions, then:</p><pre><code>$ cd myapp\n$ npm install</code></pre><p>This installs the project's dependencies. Run the template app with:</p><pre><code>$ npm run dev</code></pre><h2>Project structure</h2><p>All code lives inside the <code>src</code> folder. The <code>assets</code> folder holds images and other assets, while <code>components</code> holds Vue files.</p><h3>main.js</h3><p>In <code>main.js</code>, a Vue instance is created with parameters:</p><ul><li><strong>el</strong>: the id of the div this Vue instance binds to. Check <code>index.html</code> for the matching div.</li><li><strong>template</strong>: HTML-based template syntax that binds the rendered DOM to the Vue instance's data.</li><li><strong>components</strong>: the main component, <code>App</code>.</li></ul><h3>App.vue</h3><p>App.vue has three sections:</p><ul><li><strong>HTML</strong>: defines the template tag.</li><li><strong>Script</strong>: JavaScript that imports another Vue file component.</li><li><strong>CSS</strong>: style for the current component.</li></ul><p>App.vue itself is a component. The <code>Hello.vue</code> and <code>App.vue</code> files share the same shape because both are components. The <code>scoped</code> attribute on the <code>style</code> block scopes the CSS to that component only.</p><p>In <a href=\"./spa-in-an-hour-part-2.html\">part 2</a>, we'll wire up data, write the template, and ship.</p>"
   }
 ]
