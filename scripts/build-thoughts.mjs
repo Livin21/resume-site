@@ -21,6 +21,10 @@ const SOURCES = {
 
 const SITE = "https://livinmathew.com";
 
+// Cloudflare serves <page>.html at <page> and 307s the .html form to it, so the extensionless
+// URL is the one that answers 200. Canonicals and og:url must point there, not at a redirect.
+const postURL = (slug) => `${SITE}/thoughts/${slug}`;
+
 // HTML escape — used for everything except `body` (already HTML).
 const esc = (s) =>
   String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -334,7 +338,7 @@ async function main() {
     blogPost: posts.map((p) => ({
       "@type": "BlogPosting",
       headline: p.title,
-      url: p.body ? `${SITE}/thoughts/${p.slug}.html` : p.source_url,
+      url: p.body ? postURL(p.slug) : p.source_url,
       datePublished: p.date,
       author: { "@type": "Person", name: "Livin Mathew" },
     })),
@@ -360,7 +364,7 @@ async function main() {
 
   // Posts
   for (const p of posts) {
-    const canonical = p.body ? `${SITE}/thoughts/${p.slug}.html` : p.source_url;
+    const canonical = p.body ? postURL(p.slug) : p.source_url;
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -382,7 +386,7 @@ async function main() {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: "Thoughts", item: `${SITE}/thoughts/` },
-        { "@type": "ListItem", position: 3, name: p.title, item: `${SITE}/thoughts/${p.slug}.html` },
+        { "@type": "ListItem", position: 3, name: p.title, item: postURL(p.slug) },
       ],
     };
     const html = pageShell({

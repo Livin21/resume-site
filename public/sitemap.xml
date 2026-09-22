@@ -7,14 +7,14 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/about.html</loc>
-    <lastmod>2026-07-24</lastmod>
+    <loc>https://livinmathew.com/about</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/projects.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <loc>https://livinmathew.com/projects</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -25,73 +25,67 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/case-studies/centric-plm.html</loc>
+    <loc>https://livinmathew.com/case-studies/sage-rag</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/case-studies/sage-rag.html</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://livinmathew.com/thoughts/homelab-two-causes.html</loc>
+    <loc>https://livinmathew.com/thoughts/homelab-two-causes</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/keralas-demographics-crisis.html</loc>
+    <loc>https://livinmathew.com/thoughts/keralas-demographics-crisis</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/github-jevons-paradox.html</loc>
+    <loc>https://livinmathew.com/thoughts/github-jevons-paradox</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/ai-agent-iteration-limits.html</loc>
+    <loc>https://livinmathew.com/thoughts/ai-agent-iteration-limits</loc>
     <lastmod>2026-04-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/stop-falling-in-love-with-your-code.html</loc>
+    <loc>https://livinmathew.com/thoughts/stop-falling-in-love-with-your-code</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/dynamic-tool-discovery.html</loc>
+    <loc>https://livinmathew.com/thoughts/dynamic-tool-discovery</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/realtime-conflict-dashboard.html</loc>
+    <loc>https://livinmathew.com/thoughts/realtime-conflict-dashboard</loc>
     <lastmod>2026-03-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/monolith-microservice-serverless.html</loc>
+    <loc>https://livinmathew.com/thoughts/monolith-microservice-serverless</loc>
     <lastmod>2023-02-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/spa-in-an-hour-part-2.html</loc>
+    <loc>https://livinmathew.com/thoughts/spa-in-an-hour-part-2</loc>
     <lastmod>2017-09-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://livinmathew.com/thoughts/spa-in-an-hour-part-1.html</loc>
+    <loc>https://livinmathew.com/thoughts/spa-in-an-hour-part-1</loc>
     <lastmod>2017-09-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

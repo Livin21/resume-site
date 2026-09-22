@@ -14,12 +14,21 @@ const today = new Date().toISOString().slice(0, 10);
 
 const STATIC_PAGES = [
   { path: "/", priority: "1.0", changefreq: "monthly" },
-  { path: "/about.html", priority: "0.7", changefreq: "yearly" },
-  { path: "/projects.html", priority: "0.8", changefreq: "monthly" },
+  { path: "/about", priority: "0.7", changefreq: "yearly" },
+  { path: "/projects", priority: "0.8", changefreq: "monthly" },
   { path: "/thoughts/", priority: "0.8", changefreq: "weekly" },
-  { path: "/case-studies/centric-plm.html", priority: "0.7", changefreq: "yearly" },
-  { path: "/case-studies/sage-rag.html", priority: "0.7", changefreq: "yearly" },
+  { path: "/case-studies/centric-plm", priority: "0.7", changefreq: "yearly" },
+  { path: "/case-studies/sage-rag", priority: "0.7", changefreq: "yearly" },
 ];
+
+// Sitemap locs are the extensionless URLs Cloudflare actually serves 200 for; the file on
+// disk still has its .html (or index.html for a directory), which is what mtime needs.
+const fileFor = (urlPath) => (urlPath.endsWith("/") ? `${urlPath}index.html` : `${urlPath}.html`);
+
+async function exists(relPath) {
+  try { await stat(join(root, "public", relPath.replace(/^\//, ""))); return true; }
+  catch { return false; }
+}
 
 async function fileMtime(relPath) {
   try {
@@ -37,13 +46,21 @@ async function main() {
   const entries = [];
 
   for (const p of STATIC_PAGES) {
-    const lastmod = p.path === "/" ? await fileMtime("/index.html") : await fileMtime(p.path === "/thoughts/" ? "/thoughts/index.html" : p.path);
+    const file = fileFor(p.path);
+    // A sitemap entry for a page that does not exist is reported by search engines as an error.
+    // /case-studies/centric-plm was listed here while 404ing, so the list states intent and the
+    // build decides what is real.
+    if (!(await exists(file))) {
+      console.warn(`sitemap: skipping ${p.path} — ${file} not found`);
+      continue;
+    }
+    const lastmod = await fileMtime(file);
     entries.push({ loc: `${SITE}${p.path}`, lastmod, changefreq: p.changefreq, priority: p.priority });
   }
 
   for (const post of posts) {
     entries.push({
-      loc: `${SITE}/thoughts/${post.slug}.html`,
+      loc: `${SITE}/thoughts/${post.slug}`,
       lastmod: post.date,
       changefreq: "yearly",
       priority: "0.6",
